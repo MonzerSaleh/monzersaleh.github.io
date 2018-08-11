@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>001_TheBasics</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>005_Classes</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11775,7 +11775,22 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-basics">The basics<a class="anchor-link" href="#The-basics">&#182;</a></h2><p>This page is intended to be quick start tutorial. Assuming you already have some programming experience it should suffice to get you up and running</p>
+<p>The following tutorial comes from the official python documentation at</p>
+<p><a href="https://docs.python.org/3/tutorial/classes.html">https://docs.python.org/3/tutorial/classes.html</a></p>
+<h2 id="Scopes-&amp;-Namespaces">Scopes &amp; Namespaces<a class="anchor-link" href="#Scopes-&amp;-Namespaces">&#182;</a></h2><p>Define:</p>
+<ol>
+<li>A namespace is a mapping from names to objects, currently implemented in python as dictionaries. </li>
+<li>An attribute is basically any name following a dot, which can refer to both variables and functions. </li>
+<li>Scope is a textual region where a namespace is directly accessible. "Directly Accessible" simply means that an unqualified reference to a name will search for the name in the namespace.</li>
+</ol>
+<p>At any point during the execution of a program there are at least 3 nested scopes</p>
+<ol>
+<li>The innermost scope, which is always searched first.</li>
+<li>The scope of any enclosing functions</li>
+<li>The next to last scope containing the current module's global names</li>
+<li>The outermost scope, searched last, is the namespace containing built in names</li>
+</ol>
+<p>Example:</p>
 
 </div>
 </div>
@@ -11785,15 +11800,52 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Code blocks in other languages generally use brackets like { &amp; } to denote the start and end. </span>
-<span class="c1"># Python drops this method in favour of indentation. Thus misplaced indentation will throw an error</span>
-<span class="c1"># consider</span>
-<span class="n">a</span><span class="o">=</span><span class="mi">1</span>
-<span class="c1">#  b=2 # BAD ... throws an indentation error</span>
-<span class="n">b</span><span class="o">=</span><span class="mi">2</span>    <span class="c1"># Good .. no error thrown</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">scope_test</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">do_local</span><span class="p">():</span>
+        <span class="n">spam</span> <span class="o">=</span> <span class="s2">&quot;Local spam&quot;</span>
+        
+    <span class="k">def</span> <span class="nf">do_nonlocal</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">spam</span>
+        <span class="n">spam</span> <span class="o">=</span> <span class="s2">&quot;Non-local spam&quot;</span>
+        
+    <span class="k">def</span> <span class="nf">do_global</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">spam</span>
+        <span class="n">spam</span> <span class="o">=</span> <span class="s2">&quot;Global spam&quot;</span>
+        
+    <span class="n">spam</span> <span class="o">=</span> <span class="s2">&quot;test spam&quot;</span>
+    <span class="n">do_local</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;local assignment=NoChange-&gt;&quot;</span><span class="p">,</span><span class="n">spam</span><span class="p">)</span>
+    <span class="n">do_nonlocal</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nonlocal assignment=Change-&gt;&quot;</span><span class="p">,</span> <span class="n">spam</span><span class="p">)</span>
+    <span class="n">do_global</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;global assignment=Change-&gt;&quot;</span><span class="p">,</span> <span class="n">spam</span><span class="p">)</span>
+
+<span class="n">scope_test</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In global scope:&quot;</span><span class="p">,</span> <span class="n">spam</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>local assignment=NoChange-&gt; test spam
+nonlocal assignment=Change-&gt; Non-local spam
+global assignment=Change-&gt; Non-local spam
+In global scope: Global spam
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -11802,10 +11854,14 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Indentation becomes a much more important concept when writing a function, loop, class, or other construct which require proper indentation. Failure to do so will cause unexpected/unintended behaviour.</p>
-<h3 id="Print-Function-(Basic-version)">Print Function (Basic version)<a class="anchor-link" href="#Print-Function-(Basic-version)">&#182;</a></h3><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="o">&lt;</span><span class="n">variable</span><span class="o">&gt;</span><span class="p">)</span>
+<h2 id="Classes">Classes<a class="anchor-link" href="#Classes">&#182;</a></h2><h4 id="A-first-look">A first look<a class="anchor-link" href="#A-first-look">&#182;</a></h4><p>The syntax is pretty straight forward</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassName</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statement_1</span><span class="o">&gt;</span>
+        <span class="o">.</span>
+        <span class="o">.</span>
+    <span class="o">&lt;</span><span class="n">statement_n</span><span class="o">&gt;</span>
 </pre></div>
-<p>Variable can be a string, or a number but you CANNOT concatenate one of each without an explicit conversion</p>
+<p>Classes support two types of operations: Attribute references and instantiation</p>
 
 </div>
 </div>
@@ -11815,12 +11871,16 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hey Joe&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="c1">#print(5 + &#39;Joe&#39;) #uncomment to see the Thrown error</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="s1">&#39;Joes&#39;</span><span class="p">)</span>
-<span class="c1"># Alternatively you use the formatted version of print </span>
-<span class="c1"># which acts similar to that found in C. We show this later on</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1234</span>
+    
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Hello world&#39;</span>
+    
+<span class="c1">#Now we can instatiate and assign the instantiation to a variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="c1">#now we call it</span>
+<span class="n">x</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11833,61 +11893,36 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[2]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hey Joe
-5
-5-Joes
-</pre>
-</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Hello world&#39;</pre>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Variables,-types,-and-assignment">Variables, types, and assignment<a class="anchor-link" href="#Variables,-types,-and-assignment">&#182;</a></h3><p>Naming Rules</p>
-<ol>
-<li>Names are case sensitive, and have an unlimited length</li>
-<li>Must begin with a letter, underscore but can contain numbers (just not start with one)</li>
-<li>You may not use a reserved keyword</li>
-</ol>
-<p>Naming conventions</p>
-<ol>
-<li>avoid using an underscore as the first letter because this has a special significance to special functions. </li>
-<li>Basic variables should begin with a lowercase letter. Class variables should begin with a capital.</li>
-</ol>
-<p>Implicit types</p>
-<div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>              <span class="c1">#floating point</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mf">3.</span>                 <span class="c1">#float</span>
-<span class="n">t</span> <span class="o">=</span> <span class="mi">1</span>                  <span class="c1">#integer (short)</span>
-<span class="n">t2</span><span class="o">=</span><span class="il">223372036854775808L</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2j</span>    <span class="c1">#Complex a.real=1, a.imag=2</span>
-<span class="n">k</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span> <span class="c1">#string</span>
-<span class="n">l</span> <span class="o">=</span> <span class="s2">&quot;HELLO&quot;</span> <span class="c1">#string you can also use 3double quotes ie: &quot;&quot;&quot;hello&quot;&quot;&quot;</span>
-<span class="n">m</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;hello3&quot;&quot;&quot;</span>
-</pre></div>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span> 
-<span class="n">l</span> <span class="o">=</span> <span class="s2">&quot;HELLO&quot;</span> 
-<span class="n">m</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;hello3&quot;&quot;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># While not mandatory there is an optional instantiation construct that can be implemented</span>
+<span class="c1"># it is a special function called __init()</span>
+<span class="k">class</span> <span class="nc">MyComplex</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">imaginary</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">real</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">imaginary</span>
+        
+<span class="c1">#y = MyComplex()  #will throw an error since the constructor requires 2 parameters</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">MyComplex</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="o">-</span><span class="mf">4.5</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">r</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">i</span>
 </pre></div>
 
 </div>
@@ -11900,15 +11935,15 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[3]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>HELLO
-hello
-hello3
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(3.0, -4.5)</pre>
 </div>
+
 </div>
 
 </div>
@@ -11920,28 +11955,16 @@ hello3
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Assigning, determining, &amp; deleting variables</span>
-<span class="n">num</span> <span class="o">=</span> <span class="mi">5</span> 
-<span class="n">mybool</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">num2</span><span class="p">,</span><span class="n">num3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span> <span class="c1">#we&#39;ll explain tuples later on</span>
-<span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="s2">&quot;ABC&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your variable is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">num</span><span class="p">)</span>  <span class="c1">#format as string</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your variable is </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">num</span><span class="p">)</span>  <span class="c1">#Format as float</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Var_1: </span><span class="si">%s</span><span class="s1">  Var_2: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span> <span class="p">(</span><span class="n">num2</span><span class="p">,</span><span class="n">num3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>   <span class="c1"># pretty weird huh?</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>             <span class="c1"># type(&lt;var&gt;) returns the variable type</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">mybool</span><span class="p">))</span>        
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">)</span>  <span class="c1"># Here we can see how to test for a type</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>     <span class="c1"># this returns the variable&#39;s unique id</span>
-                 <span class="c1">#NB if you assign a variable say y to a variable x then they&#39;ll have the same id</span>
-<span class="k">del</span> <span class="n">num2</span>         <span class="c1"># deletes the variable from memory</span>
-
-<span class="c1">#there are also some built in attributes unique to the math module</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="nb">getattr</span><span class="p">(</span><span class="n">math</span><span class="p">,</span> <span class="s1">&#39;pi&#39;</span><span class="p">)</span>
-<span class="c1"># setattr(math, &#39;pi&#39;) = 3.14  #will set it, of course you really shouldn&#39;t do this</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Consider the following piece of code</span>
+<span class="c1"># recall that MyClass() is defined above</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="c1"># this will add the attribute &#39;counter&#39; to MyClass. It need not already exist or be defined</span>
+<span class="n">x</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="k">while</span> <span class="n">x</span><span class="o">.</span><span class="n">counter</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">counter</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span>
+<span class="c1"># the following will effectively remove the variable</span>
+<span class="k">del</span> <span class="n">x</span><span class="o">.</span><span class="n">counter</span>
 </pre></div>
 
 </div>
@@ -11958,31 +11981,171 @@ hello3
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Your variable is 5
-Your variable is 5.000000
-Var_1: 11  Var_2: 22
-A B C
-&lt;class &#39;str&#39;&gt;
-&lt;class &#39;bool&#39;&gt;
-True
-2198500428296
+<pre>16
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>An oddity in python is the difference between Function objects and Method objects.
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># MyClass.f is a function object</span>
+<span class="c1"># x.f is a method object</span>
+<span class="n">xf</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">f</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">xf</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello world
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Recall: Mutable object is one that can be changed after construction</span>
+<span class="c1"># Mutable objects can have some surprising behaviour and should be avoided</span>
+<span class="c1"># Consider the following</span>
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="n">tricks</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># will be shared across all instances of Dog</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">def</span> <span class="nf">add_trick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">trick</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tricks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trick</span><span class="p">)</span>
+
+<span class="c1"># Create two distinct instances</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;bob&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;joe&#39;</span><span class="p">)</span>
+
+<span class="n">e</span><span class="o">.</span><span class="n">add_trick</span><span class="p">(</span><span class="s1">&#39;roll over&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">add_trick</span><span class="p">(</span><span class="s1">&#39;play dead&#39;</span><span class="p">)</span>
+
+<span class="n">e</span><span class="o">.</span><span class="n">tricks</span>  <span class="c1">#Oddly enough returns both tricks</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3.141592653589793</pre>
+<pre>[&#39;roll over&#39;, &#39;play dead&#39;]</pre>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Consider the following</span>
+<span class="c1"># where we moved tricks to the class constructor</span>
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tricks</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># will NOT be shared across all instances of Dog</span>
+    <span class="k">def</span> <span class="nf">add_trick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">trick</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tricks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trick</span><span class="p">)</span>
+
+<span class="c1"># Create two distinct instances</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;bob&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;joe&#39;</span><span class="p">)</span>
+
+<span class="n">e</span><span class="o">.</span><span class="n">add_trick</span><span class="p">(</span><span class="s1">&#39;roll over&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">add_trick</span><span class="p">(</span><span class="s1">&#39;play dead&#39;</span><span class="p">)</span>
+
+<span class="n">e</span><span class="o">.</span><span class="n">tricks</span>  <span class="c1">#Returns only one trick ... as we would expect</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;roll over&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Data Attibutes override method attributes with the same name</span>
+<span class="c1"># Any function object that is a class attribute defines a method for instances of that class. </span>
+<span class="c1"># It is not necessary that the function definition is textually enclosed in the class definition: </span>
+<span class="c1"># assigning a function object to a local variable in the class is also ok. </span>
+<span class="c1"># For example:</span>
+<span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">f1</span>
+    <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Hello&#39;</span> 
+    <span class="n">h</span><span class="o">=</span><span class="n">g</span>
+<span class="c1"># Now f,g, and h are attributes, of the class C, that refer to function objects.</span>
+<span class="c1"># Consequently they&#39;re all methods of instances of C, with h and exact equivalent to g</span>
+</pre></div>
+
+</div>
 </div>
 </div>
 
@@ -11991,68 +12154,98 @@ True
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Operations">Operations<a class="anchor-link" href="#Operations">&#182;</a></h3><ol>
-<li>Operating on mixed types with return the most complex input type</li>
-<li>Explicit conversion should be used to clarify things. The following functions do that for you
-int(),float(),complex(),long(),oct()-octadecimal,hex()-hexadecimal</li>
-</ol>
-<hr>
-<p><strong>Mathematical Operations</strong></p>
-<p>+, -, /, *, % =(addition, subtraction, division, Multiplication, Modulus)</p>
-<p>** is unique to python its the exponential function or you can use pow() function</p>
-<p>There are also augmented versions of the above</p>
-<p>example (x += 1) is equivalent to (x = x + 1)</p>
-<hr>
-<p><strong>Mathematical Functions</strong></p>
-<p>abs(), max(), min(), round()</p>
-<hr>
-<p><strong>Bitwise Operators</strong></p>
-<p>~   = sign inversion(negation) ~10 = -10</p>
-<p>'&gt;&gt;, &lt;&lt;  = right,left bit shift</p>
-<p>|,^      = bitwise OR,XOR</p>
-<hr>
-<p>NaN and inf may appear to indicate an error of an operation</p>
+<h2 id="Inheritance">Inheritance<a class="anchor-link" href="#Inheritance">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">BaseClassName</span><span class="p">)</span>
+    <span class="o">&lt;</span><span class="n">statement_1</span><span class="o">&gt;</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">&lt;</span><span class="n">statement_N</span><span class="o">&gt;</span>
+</pre></div>
+<p>The name BaseClassName must be defined in a scope containing the derived class definition. However, In place of a base class name, other arbitrary expression are also allowed. This can be helpful when deriving from a base class in another module</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">modname</span><span class="o">.</span><span class="n">BaseClassName</span><span class="p">):</span>
+</pre></div>
+<p>Execution of a derived class definition proceeds the same as for a base class. When the class object is constructed, the base class is remembered. This is used for resolving attribute references: if a requested attribute is not found in the class, the search proceeds to look in the base class. This rule is applied recursively if the base class itself is derived from some other class.</p>
+<p>Derived classes may override methods of their base class. This can cause a base class to call a method in the derived class whenever it's been over-written. To explicitly call the baseclass method simply call BaseClassName.method(self,args).</p>
+<p>Python has two functions to check for inheritance attributes
+isinstance() to check an instance's type against another
+issubclass() to check if a class inherits from another</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Multiple-inheritance-follows-a-similar-syntax">Multiple inheritance follows a similar syntax<a class="anchor-link" href="#Multiple-inheritance-follows-a-similar-syntax">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">Base1</span><span class="p">,</span> <span class="n">Base2</span><span class="p">,</span> <span class="o">...</span> <span class="p">,</span> <span class="n">BaseN</span><span class="p">)</span>
+    <span class="o">&lt;</span><span class="n">statement_1</span><span class="o">&gt;</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">&lt;</span><span class="n">statement_N</span><span class="o">&gt;</span>
+</pre></div>
+<p>Basic Case: Searching for an attribute will proceed as from 1. depth then 2. left-to-right as defined in the class definition.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Name-mangling-&amp;-Private-Variables">Name mangling &amp; Private Variables<a class="anchor-link" href="#Name-mangling-&amp;-Private-Variables">&#182;</a></h2><p>Private variables similar to other languages do not exist in python. However, there is a general convention that variables beginning with an underscore should be treated as a non-public part of an API. Any identifier beginning with two underscores, and possibly one trailing underscore, will be textually replace with the same name plus the prefix '_classname'. This is called name mangling and can be helpful in letting a subclass override base methods without breaking intraclass method calls.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">3.9</span>  <span class="c1">#returns a float because it&#39;s more complex than an int</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">x</span> <span class="o">**=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Mapping</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterable</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__update</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">iterable</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">items_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            
+    <span class="n">__update</span> <span class="o">=</span> <span class="n">update</span> <span class="c1">#a private copy of original update() method</span>
+    
+<span class="k">class</span> <span class="nc">MappingSubClass</span><span class="p">(</span><span class="n">Mapping</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">keys</span><span class="p">,</span><span class="n">values</span><span class="p">):</span>
+        <span class="c1"># provides a new version without breaking the base class __init</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span><span class="n">values</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">items_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+<span class="c1"># zip() is a built-in function</span>
+<span class="c1"># https://docs.python.org/3.3/library/functions.html#zip</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Struct-trick">Struct trick<a class="anchor-link" href="#Struct-trick">&#182;</a></h2><p>There is no special construct for creating C-like structs. However, an empty can be used to emulate one for all intents and purposes.</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyStruct</span><span class="p">:</span>
+    <span class="k">pass</span>
 
+<span class="n">tmpStruct</span> <span class="o">=</span> <span class="n">MyStruct</span><span class="p">()</span>
+<span class="c1"># Now simply add whatever fields you&#39;d like</span>
+<span class="n">tmpStruct</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Joe&#39;</span>
+<span class="n">tmpStruct</span><span class="o">.</span><span class="n">Age</span> <span class="o">=</span> <span class="mi">34</span>
+<span class="c1">#etc etc</span>
+</pre></div>
 
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;float&#39;&gt;
-2.5
-4
-</pre>
 </div>
 </div>
-
-</div>
-</div>
-
 </div>
     </div>
   </div>
