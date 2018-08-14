@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>Index</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<link rel = "stylesheet" type = "text/css" href="./JupyterStyleSheet.css"></link>
+<link rel = "stylesheet" type = "text/css" href="./JupyterStyleSheet_2.css"></link>
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+ul,li {
+  list-style: none;
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="custom.css">
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
+<body>
+
+ <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+
+<h1>Welcome to Monzer's Cheat sheets</h1>
+<p>Hosted on GitHub Pages.</p>
+<p>These are simply my reference notes on various topics.</p>
+
+<h3>Python</h3>
+<p>For a more complete tutorial please visit the following sites:
+<ul><li>The official documentation can be found 
+		<a href="https://docs.python.org/3/tutorial/index.html">here</a></li>
+	<li>Another favourite of mine is the 
+		<a href="https://www.python-course.eu/index.php">Python Course</a>. 
+		This also contains tutorials on more advanced topics</li>
+</ul>
+</p>
+<ol>
+	<li><a href="./001_TheBasics.html">Basic Syntax</a></li>
+	<li><a href="./002_DataTypes.html">Data Types</a></li>
+	<li><a href="./003_Functions_n_Conditions.html">Conditions & Functions</a></li>
+	<li><a href="./005_Classes.html">Classes</a></li>
+</ol>	
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
