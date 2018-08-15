@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>Index</title>
+
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+-->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	<link rel="stylesheet" type ="text/css" href="JupyterStyleSheet.css"></link>
+	<link rel="stylesheet" type ="text/css" href="JupyterStyleSheet_2.css"></link>
+	<link rel="stylesheet" type ="text/css" href="Navbar.css">
+	
+<style type="text/css">
+
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+ul,li {
+  list-style: none;
+}
+</style>	
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="custom.css">
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header"><h4>Menu</h4></div>
+		<ul class="list-unstyled components">
+            
+            <li><a href="Index.html">Home</a></li>
+			<li class="active"><a href="001_SASNotes.html">SAS</a></li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Python</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li><a href="000_PythonIndex.html">Tutorials</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About</a></li>
+			<li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+	 <!-- Page Content -->
+    <div id="content">
+	<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+		<h2>SAS</h2>
+		<h4>Tutorials</h4>
+		<li><a href="http://mehtahemal.com/sas/different-types-of-merging-using-data-step-or-proc-sql-in-sas/450/">
+				Different types of merging using Data Step or Proc SQL in SAS
+			</a>
+		</li>
+		<li><a href="https://www.analyticsvidhya.com/blog/2015/01/introduction-merging-sas/">
+				Comprehensive Introduction to merging in SAS
+			</a>
+		</li>
+		<li><a href="http://www.cpc.unc.edu/research/tools/data_analysis/sastopics/datastep">
+				Handy little tutorial - University of North Carolina
+			</a>
+		</li>
+		<li><a href="https://blogs.sas.com/content/sgf/2013/10/25/do-you-understand-the-program-data-vector/">
+				Understanding the program data Vector
+			</a>
+		</li>
+		<li><a href="https://www.sascrunch.com/">
+				Another Tutorial - SAS_Crunch.com
+			</a>
+		</li>	
+	<!-- -->
+					
+		<h4>SAS Procs</h4>
+		<div class="btn-group">
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex00">MERGE</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex12">Excel Import</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex01">Upload/Include</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex02">Export/Download</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex08">TRANSPOSE</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex09">FREQ</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex13">GLMMOD (Dummy Vars)</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex14">UNIVARIATE</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex15">FASTCLUS</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex29">APPEND</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex03">Results to HTML</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex04">Create/Delete Variables</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex05">Working with Date Vars</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex06">Wildcards & Escaping</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex07">XLXM Export</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex10">Cleaning Dupes</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex11">Script Timer</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex25">if-then-else</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex26">DO</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex27">Select</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex28">Retain</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sasex30">Put/Input</button>
+		</div>	
+		<div id="sasex00" class="collapse">
+		<pre>
+SYNTAX:	
+	DATA  Output_datasets;
+	MERGE input_dataset1(in=A)
+		  ...
+		  input_datasetn(in=N)
+	;
+	BY column;
+	if A=1 and B=1; /*This is equiv to a full outer join	*/
+	if A=1 and B=1; /*This is equiv to an inner join		*/
+	if A=1;  		/*This is equiv to a left join			*/
+	if B=1;  		/*This is equiv to a right join			*/
+	RUN;
+Notes:
+	The optional "IN" variable will be set to 1 whenever a match is found in that data set
+		</pre>
+		</div>
+		<div id="sasex01" class="collapse">
+		<pre>
+rsubmit;
+	Proc Upload
+	infile='\\TORK211\SharedFiles\D2D\D2D_Analytics_Team\Data Team Routines\Shared\_SASEG_UDFunctions_v01.sas'
+	outfile='/u/s6111505/my_functions.sas' ;
+	run;
+endrsubmit;
+
+rsubmit;
+%include '/u/s6111505/my_functions.sas';
+endrsubmit;
+		</pre>
+		</div>
+		<div id="sasex02" class="collapse">
+		<pre>
+rsubmit;   
+   proc download infile="/sasdata/d2d/Monzer/myresults.xlsx"
+				 outfile='C:\Users\s6111505\Desktop\Proj\myresults.xlsx' binary;
+   run;
+endrsubmit;
+
+
+proc export data=monzdata.aa1_test1
+	outfile="/sasdata/d2d/Monzer/myresults.xlsx"
+	DBMS=xlsx replace;	/* Export to Excel      */
+	DBMS=csv replace;	/* Export to a CSV      */
+	sheet="aa1_test1";	/* Keep for Excel only  */
+run; 
+		</pre>
+		</div>
+		<div id="sasex03" class="collapse">
+		<pre>
+%let workingpath = C:\Users\s6111505\Desktop;
+ods _all_ close;
+ods html body    ='C:\Users\s6111505\Desktop\Testoutput.html' 
+		 contents='Testoutput.htm' 
+		 frame   ='Testoutput.htm'
+		 gpath   ='C:\Users\s6111505\Desktop\'
+		 style=HTMLBlue;
+ods graphics on;
+Proc freq data=pmwork.MIS079_YTD;
+	Tables month/ plots=freqplot (type=bar );
+Run;
+ods html close;
+ods listing;
+		</pre>
+		</div>
+		<div id="sasex04" class="collapse">
+		<pre>
+Syntax:	%SYMDEL variable-name ;
+* Create a macro variable via call symputx;
+data _null_;
+   if 0 then set sashelp.class nobs=nobs;
+   call symputx('no_records',nobs);
+   stop;
+run;
+* Create a macro variable via %LET; 
+%let my_constant = ABC; 
+
+* Check they exist (see log file); 
+%put _user_; 
+
+* Clean up; 
+%symdel no_records my_constant; 
+
+* Check they do not exist (see log file); 
+%put _user_;
+		</pre>
+		</div>
+		<div id="sasex05" class="collapse">
+		<pre>
+INTNX & INTCK are SAS Interval functions 
+The INTNX function increments dates by intervals. INTNX computes the date or datetime of the start of the interval 
+a specified number of intervals from the interval that contains a given date or datetime value
+	SYNTAX: INTNX(interval, from, n, [,alignment] ) 
+The INTCK function counts the number of interval boundaries between two date values or between two datetime values.
+	SYNTAX: INTCK ( interval, from, to ) 
+
+data _null_;
+	last_dt=put(intnx('month',input("&thismth",yymmn6.),0,'ending'),yymmdd10.);
+	month=put(input("&thismth",yymmn6.),yymmn4.);
+	lastmth=put(input("&thismth",yymmn6.)- 1,yymmn6.);
+	firstday = intnx('dtmonth', input("&thismth",yymmn6.), 0, 'B');
+	lastday  = intnx('dtmonth', input("&thismth",yymmn6.), 0, 'E');
+	if weekday(intnx('month',input("&thismth",yymmn6.),0,'ending'))=1 
+		then call symput('eff_dt', compress("'"||put(intnx('month',input("&thismth",yymmn6.),0,'ending')-1,yymmdd10.)||"'"));
+		else call symput('eff_dt', compress("'"||last_dt||"'"));
+	call symput('month', month);		
+	call symput('lastmth', lastmth);	
+	call symput('last_dt', last_dt);	
+	call symput('firstday', firstday);	
+	call symput('lastday', lastday); 
+output;
+stop;
+run;
+
+/* Note that you cannot use a variable until the datastep has completed. T/f moving effdate to above would throw an error */
+data _null_;
+	effdate 	= input(&eff_dt,yymmdd10.); 
+	format effdate date9.;  
+	call symput('effdate', effdate); 	
+output;
+stop;
+run;
+		</pre>
+		</div>
+		<div id="sasex06" class="collapse">
+		<pre>
+/* : is a sas variable wildcard character acting much like a the % in sql 
+This will match anydatasets beginning with "accounts_201" 						*/
+
+data xwork.accounts;
+set  xwork.accounts_201:;  
+run;
+
+/* Searching for sql special characters  
+	the escape keyword lets you define your escape symbol  
+This returns customers with a percent in their name = Bad data 					*/
+proc sql;
+	select * from customers where name like '%#%%' escape '#'
+;quit;
+		</pre>
+		</div>
+		<div id="sasex07" class="collapse">
+		<pre>
+https://communities.sas.com/t5/Base-SAS-Programming/export-large-datasets-to-xlsm-file/td-p/294316
+
+basically you copy the xlsm to a xlsx, then export, then copy your xlsx back to a xlsm
+
+%sysexec( copy "Path\workbookname.xlsm" "Path\workbookname.xlsx" ) ;
+Proc export 
+	data = your_data 
+	outfile = "Path\workbookname.xlsx"
+	Dbms = Xlsx replace ; 
+run ; 
+%sysexec( copy "Path\workbookname.xlsx" "Path\workbookname.xlsm" ) ;
+		</pre>
+		</div>
+		<div id="sasex08" class="collapse">
+		<pre>
+proc transpose
+	data=AcctTypes&FiscalYR._MoM(drop= FiscalMth FiscalQrtr ) 
+	OUT =AcctTypes&FiscalYR._MoMTr(drop = _NAME_);
+	By type;
+	Id FiscalYear;
+	var mthly;
+	RUN;
+		</pre>
+		</div>
+		<div id="sasex09" class="collapse">
+		<pre>
+SYNTAX
+	PROC FREQ options;
+	    DATA=[sas_dataset]
+		BY variable-list;
+		TABLES requests / options;
+		WEIGHT variable;
+		OUTPUT [OUT= sas_dataset][output-statistic-list];
+		FORMAT ;
+		EXACT statistic-keywords [/computation-option];
+		TEST options;
+	RUN;
+EXAMPLE:
+	proc freq 
+		data=pmwork.zHist_AttrAcctDetails
+			(where=(YearMth in ("201801","201712","201711","201710","201709"))); 
+		tables type*YearMth /missing nocum nocol;
+		
+		title 'pmwork.zHist_AttrAcctDetails By type*YearMth';
+	run;
+		</pre>
+		</div>
+		<div id="sasex10" class="collapse">
+		<pre>
+proc sort data=pmwork.ACCT&THISMTH._2;	by acct_num; run;
+data pmwork.ACCT&THISMTH._3 pmwork.ACCTDupes&THISMTH.;
+set  pmwork.ACCT&THISMTH._2
+	 ; 	
+By Acct_Num;
+if not first.acct_num and last.acct_num
+	THEN OUTPUT pmwork.ACCTDupes&THISMTH. ;
+	ELSE OUTPUT pmwork.ACCT&THISMTH._3;
+run;
+		</pre>
+		</div>
+		<div id="sasex11" class="collapse">
+		<pre>
+/* Start your timer */
+%let Start_Timer = %sysfunc(datetime());
+
+... do some stuff ...
+/* Get end time, compute duration */
+data _null_;
+	dur = datetime() - &Start_Timer;
+	put 30*'-' / ' TOTAL DURATION (ScriptName):' dur time13.2 / 30*'-';
+run;
+		</pre>
+		</div>
+		<div id="sasex12" class="collapse">
+		<pre>
+PROC IMPORT OUT= rwork.Subs_BL
+		DATAFILE= "M:\Data\ERM Reports\SASJobs\CMD-IAR Upload\Mapping tables\BL_map.xls" 
+		DBMS=EXCEL REPLACE;
+	SHEET=Subs_BL;
+	GETNAMES=YES;
+	MIXED=YES;
+	SCANTEXT=YES;
+	USEDATE=YES;
+	SCANTIME=YES;
+RUN;
+		</pre>
+		</div>
+		<div id="sasex13" class="collapse">
+		<pre>
+Replacing categorical variables with dummy variables
+**NB: If a procedure contains a CLASS statement, then the procedure will automatically create and use dummy variables as part of the analysis
+	  In this example we replace Tenure & Age_grps with dummy variable columns
+proc sql;			/*Sample data to work with*/
+create table test1 as
+select YearMth,Tenure,Age_Grp,count(*) as NAccts
+	from d2ddr.attrition_accts
+	group by YearMth,Tenure,Age_Grp
+	;quit;
+
+proc glmmod data=test1 outdesign=test2 outparm=GLMParms NoPrint;
+    class Tenure Age_Grp;
+    model NAccts = Tenure Age_Grp;
+	run;
+/******************************************************************************/
+Your final result set should have a column for each possible category in Tenure and Age_Grp
+	each row should still have the NAccts value from the original table
+		</pre>
+		</div>
+		<div id="sasex14" class="collapse">
+		<pre>
+rsubmit;
+proc univariate data=d2ddr.attrition_accts;
+	class type;
+	var PrevMthBalance;
+	output out=Means	mean=Type_Mean;
+   	output out=Stats 	mean=Type_Mean std=Type_SD 
+                         min=Type_Min  max=Type_Max;
+	output out=PTiles   pctlpts = 1 5 25 50 75 95 99
+						pctpre  = type
+						pctlname = pct1 pct5 pct25 pct50 pct75 pct95 pct99;
+run;
+endrsubmit;
+		</pre>
+		</div>
+		<div id="sasex15" class="collapse">
+		<pre>
+The FASTCLUS procedure performs a disjoint cluster analysis on the basis of distances computed from one or more quantitative variables
+By default, the FASTCLUS uses Euclidean distances centered on least-squares estimation. 
+This kind of clustering method is often called a k-means model
+
+rsubmit;	/*Example using numeric cols only */			
+PROC FASTCLUS DATA=attr_num
+	MAXCLUSTERS=5
+	OUT=a1_RESULT 
+	OUTSEED=a1_CENTRES
+    OUTSTAT=a1_CLUSTER_STAT 
+	REPLACE=RANDOM
+	RANDOM=187413849 
+	CONVERGE=0.001 
+	MAXITER=350;
+	VAR _ALL_;
+RUN;
+endrsubmit;
+		</pre>
+		</div>
+		<div id="sasex25" class="collapse">
+		<pre>
+Executes a SAS statement for observations that meet specific conditions.
+IF (condition) 
+	THEN statement; 
+	[ELSE statement; optional]
+	
+data region;
+   input city $ 1-30;
+   if city='New York City'
+      or city='Miami' then
+      region='ATLANTIC COAST';
+   else if city='San Francisco'
+      or city='Los Angeles' then
+         region='PACIFIC COAST';
+   datalines;
+	[...more data lines...]
+;
+		</pre>
+		</div>
+		<div id="sasex26" class="collapse">
+		<pre>
+Specifies a group of statements to be executed as a unit.
+DO; 
+	...more SAS statements...
+END;
+
+if years>5 then
+   do;
+      months=years*12;
+      put years= months=;
+   end;
+   else yrsleft=5-years;
+		</pre>
+		</div>
+		<div id="sasex27" class="collapse">
+		<table class="table">
+		<tbody>
+		<tr>
+		<pre>
+Executes one of several statements or groups of statements.
+SYNTAX
+SELECT (select-expression);
+	 WHEN_1 (when-expression-1 [..., when-expression-n]) statement;
+	 [... WHEN-n (when-expression-1 [..., when-expression-n]) statement;]
+[OTHERWISE statement;]
+END;
+		</pre>
+		</tr>
+		<tr>
+		<td><pre>
+Example 1: Using Statements
+select (a);
+   when (1) x=x*10;
+   when (2);
+   when (3,4,5) x=x*100;
+   otherwise;
+end;
+		</pre></td>
+		<td><pre>
+Example 2: Using DO Groups
+select (payclass);
+   when ('monthly') amt=salary;
+   when ('hourly')
+	  do;
+		amt=hrlywage*min(hrs,40);
+		if hrs>40 then put 'CHECK TIMECARD';
+	  end;         /* end of do     */
+   otherwise put 'PROBLEM OBSERVATION';
+end;               /* end of select */
+		</pre></td>
+		<td><pre>
+Example 3: Using a Compound Expression
+select;
+   when (mon in ('JUN', 'JUL', 'AUG') 
+   and temp>70) put 'SUMMER ' mon=;
+   when (mon in ('MAR', 'APR', 'MAY')) 
+   put 'SPRING ' mon=;
+   otherwise put 'FALL OR WINTER ' mon=;
+end;
+		</pre></td>
+		</tr>  
+		</tbody>
+		</table>
+		</div>
+		<div id="sasex28" class="collapse">
+		<pre>
+The RETAIN statement is used to keep (retain) values from one observation to the next during iterations of the SAS Data Step. 
+By default, SAS initializes variable values to missing after each iteration of a Data Step until a value is assigned through 
+an INPUT statement or other assignment statement. The RETAIN statement overrides this default behaviour, and retains the value 
+from the previous observation before completing the next iteration of the Data Step.
+
+NB: By default "retain" initializes to the first observation encountered
+    This can be overriden by specifying the value.
+
+data profits;
+ input qrtr $ month profit @@;
+ datalines;
+ Q1 1 12451  Q1 2 54325  Q1 3 43514  Q2 4 13455  Q2 5 45161  Q2 6 54151
+ Q3 7 54261  Q3 8 43251  Q3 9 43515  Q4 10 83711 Q4 11 45236 Q4 12 54361
+ ;
+run;
+
+data cumulative_profit2;
+ set profits;
+  retain cumulative_profit -100;
+  cumulative_profit = sum(profit,cumulative_profit);
+run;
+
+/*This will aggregate by Quarter as well as by the total year*/
+data cumulative_profit3;
+ set profits;
+ by qrtr; 
+ retain cumulative_profit 0;
+ retain QTD 0;
+  	cumulative_profit = sum(profit,cumulative_profit);
+
+ if first.qrtr 
+	then QTD = profit;
+ 	else QTD = profit + QTD;
+run;
+		</pre>
+		</div>
+		<div id="sasex29" class="collapse">
+		<pre>
+proc append base=base_data data=new_data;
+run;
+		</pre>
+		</div>
+		<div id="sasex30" class="collapse">
+		<pre>
+data x;	/* Convert a number to text with leading zeros */
+   a=374747830939;
+   b=put(a,z15.);
+   format a z15.;
+run;
+		</pre>
+		</div>
+
+		<h4>SAS Examples</h4>
+		<div class="btn-group">
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sastrick00">Asynchronous rsubmit</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sastrick01">Rows->CSV Column</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sastrick02">Search for Cols</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sastrick03">Random sampling</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sastrick04">Update/Append</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sastrick05">CHMOD via SAS</button>
+		</div>
+		<div id="sastrick00" class="collapse">
+		<pre>
+%let mynode=cs2iw610 7551;
+options comamid=tcp remote=mynode;
+signon user= s6111505  password='2017Jan15';
+
+rsubmit;
+	libname pmwork    '/sasdata/d2d/pmwork';
+	libname d2ddr     '/sasdata/d2d/D2DDataRepo';
+endrsubmit;
+
+/* We're going to try to run multiple sessions in single program */
+options sascmd='C:\Program Files\SASHome\SASFoundation\9.4\sas.exe -nosyntaxcheck'
+autosignon;
+
+rsubmit remote1 wait=no remote=mynode;
+proc sql; create table pmwork.a111_Jan2018 as select count(*) from d2ddr.acct201801;	;quit;
+endrsubmit;
+
+rsubmit remote2 wait=no remote=mynode;
+proc sql; create table pmwork.a111_Dec2017 as select count(*) from d2ddr.acct201712;	;quit;
+endrsubmit;
+
+waitfor _all_ remote1 remote2; 							/* 5 */
+
+rsubmit mynode;
+proc sql;
+create table results as
+	  select * from pmwork.a111_Jan2018
+union select * from pmwork.a111_Dec2017;
+;quit;
+endrsubmit;
+		</pre>
+		</div>
+		<div id="sastrick01" class="collapse">
+		<pre>
+data inTable;
+input letter $ number $;
+datalines;
+a 1
+a 2
+a 3
+b 4
+b 5
+b 6
+;
+
+data want;
+length cat $20.;
+   do until (last.letter);
+      set intable;
+        by letter notsorted;
+      cat=catx(',',cat,number);
+   end;
+   drop number;
+run;
+		</pre>
+		</div>
+		<div id="sastrick02" class="collapse">
+		<pre>
+proc sql; 
+   select name,memname
+   from dictionary.columns
+   where libname eq 'SOWSTAR' 
+      and upcase(name) like '%CUST_ID%' 
+      /* and memtype eq 'DATA' */
+;quit; 
+run;
+		</pre>
+		</div>
+		<div id="sastrick03" class="collapse">
+		<pre>
+proc sql; 
+   select name,memname
+   from dictionary.columns
+   where libname eq 'SOWSTAR' 
+      and upcase(name) like '%CUST_ID%' 
+      /* and memtype eq 'DATA' */
+;quit; 
+run;
+		</pre>
+		</div>
+		<div id="sastrick04" class="collapse">
+		<pre>
+data base_dataset;
+set  new_dataset
+     base_dataset(where=(YearMth ne "&curmth."))
+    ;
+RUN;
+		</pre>
+		</div>
+		<div id="sastrick05" class="collapse">
+		<pre>
+rsubmit;
+
+%macro chmod(libname,dataset,permis=744);
+	proc sql noprint;	/* get the absolute path of the libname               */
+    	select path into: extpath from dictionary.members
+       		where libname="%UPCASE(&LIBNAME)"
+	;quit;
+	proc sql noprint;	/* find out if there are any datasets in the library  */
+    	select count(path) into: cnt from dictionary.members
+       		where libname="%UPCASE(&LIBNAME)";
+	;quit;
+    /* if there are datasets...then issue the below command to change the
+       permissions of the dataset called in this macro  to 777 				  */
+     %if &cnt > 0 %then %do;
+        filename chmod pipe "chmod &PERMIS %trim(&extpath)/&dataset..sas7bdat";
+        data _null_;
+          file chmod;
+        run;
+     %end;
+%mend;
+
+%chmod(d2ddr,acct201804);
+
+
+endrsubmit;
+		</pre>
+		</div>
+
+		
+		<h4>SAS Sample Data/Cards</h4>
+		<div class="btn-group">
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sas_snip1">Sample cards</button>
+<!--
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sas_snip2">Debit Card Types</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sas_snip3">POS Types</button>
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sas_snip4">OWSTAR Cust/Acct types</button>
+-->
+		</div>	
+		<div id="sas_snip1" class="collapse">
+		<pre>
+data example1;
+input x y $ z;
+cards;
+201701 A 60
+201702 A 70
+201703 A 100
+201704 B 10
+201705 B 67
+201706 C 81
+201707 C 63
+201708 C 55
+201709 C 55
+201710 C 55
+201711 C 55
+201712 C 55
+201612 C 55
+201611 C 55
+201610 C 55
+201609 C 55
+;
+run;
+		</pre>
+		</div>
+	
+		<div id="sas_snip2" class="collapse">
+		<pre>
+data CardTypes;
+input CardType $ Name_abbrev $25;
+cards;
+V Virtual
+T Passport
+S Scene
+P WealthMgmt
+O OttawaSenators
+N NHL
+M Commercial
+L Momentum
+I iTrade
+E SmallBus
+C Calgary
+. Regular
+;
+run;
+		</pre>
+		</div>
+		<div id="sas_snip3" class="collapse">
+		<pre>
+data d2ddr.ref_DebitPOSTypes;
+	length POSType $4 POS_Descr $50;
+	infile datalines delimiter=',' ; 
+	input POSType $ POS_Descr $ ;
+cards;
+POS,Debit Cards
+APOS,Apple Pay - InStore
+CHIP,Chip & Pin TXN
+FPOS,Flash 
+MPOS,Mobile Wallet
+OPOS,Visa Debit Online
+VPOS,Visa Debit - Out Of Country
+SPOS,Apple Pay - Foreign,NonDomestic
+GPOS,Android/Google wallet
+XPOS,Samsung Pay
+IPOS,Interac Online
+;
+run;
+		</pre>
+		</div>
+		<div id="sas_snip4" class="collapse">
+		<pre>
+/*
+rsubmit;
+proc sql;
+create table a3 as
+	select distinct CIS_CUST_TP_CODE,CIS_CUST_TP_DESC
+	from sowstar.iwd_cust
+	;quit;
+endrsubmit;
+*/
+
+rsubmit;
+
+data d2ddr.Ref_OWSTAR_CustTypes;
+LENGTH CIS_CUST_TP_CODE $2 CIS_CUST__TP_DESC $50;
+infile datalines delimiter=',' ; 
+INPUT  CIS_CUST_TP_CODE $ CIS_CUST__TP_DESC $;
+cards;
+FA,Fraternal Associations
+PB,Private Banking Client
+RO,Retail - Other
+RM,Retail - Montreal Trust
+RN,Retail - National Trust
+RX,Retail - MT/BNS/NT
+u,Unknown
+.,Unknown
+;
+run;
+
+endrsubmit;
+		</pre>
+		</div>
+    </div>
+	</div>
+	</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+
+</body>
+</html>
