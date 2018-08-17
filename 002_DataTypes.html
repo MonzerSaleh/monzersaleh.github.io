@@ -4,12 +4,19 @@
 <head><meta charset="utf-8"/>
 <title>Index</title>
 <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>  -->
+<<<<<<< HEAD
 	
 	<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet"/>
 	<link rel="stylesheet" type ="text/css" href="css/JupyterStyleSheet.css"></link>
 	<link rel="stylesheet" type ="text/css" href="css/JupyterStyleSheet_2.css"></link>
 	<link rel="stylesheet" type ="text/css" href="css/Navbar.css">
 	
+=======
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet"/>
+<link href="css/JupyterStyleSheet.css" rel="stylesheet" type="text/css"/>
+<link href="css/JupyterStyleSheet_2.css" rel="stylesheet" type="text/css"/>
+<link href="css/Navbar.css" rel="stylesheet" type="text/css"/>
+>>>>>>> 1685e502e7daab3fe5997d15c025ad94003de756
 <style type="text/css">
 
 /* Overrides of notebook CSS for static HTML export */
@@ -95,7 +102,7 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Data-Structures">Data Structures<a class="anchor-link" href="#Data-Structures">¶</a></h3><p>Lists[square brackets],</p>
+<h3 id="Data-Structures">Data Structures<a class="anchor-link" href="#Data-Structures">Â¶</a></h3><p>Lists[square brackets],</p>
 <p>Tuples(rounded brackets),</p>
 <p>Dictionaries{squiggly brackets},</p>
 <p>Strings - single',double" or triple double quotes"""</p>
@@ -107,7 +114,7 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Lists">Lists<a class="anchor-link" href="#Lists">¶</a></h4><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<h4 id="Lists">Lists<a class="anchor-link" href="#Lists">Â¶</a></h4><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>            <span class="c1">#notice that the added list is intact</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]]</span>
@@ -125,7 +132,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">InÂ [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># operators # del mylist</span>
@@ -163,7 +170,7 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="List-comprehension">List comprehension<a class="anchor-link" href="#List-comprehension">¶</a></h4><div class="highlight"><pre><span></span><span class="n">evens1</span> <span class="o">=</span> <span class="p">[]</span>          <span class="c1">#The long way</span>
+<h4 id="List-comprehension">List comprehension<a class="anchor-link" href="#List-comprehension">Â¶</a></h4><div class="highlight"><pre><span></span><span class="n">evens1</span> <span class="o">=</span> <span class="p">[]</span>          <span class="c1">#The long way</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">evens1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -173,7 +180,7 @@ MathJax.Hub.Config({
 <span class="k">print</span><span class="p">(</span><span class="n">evens2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 </pre></div>
-<h4 id="Copying-lists">Copying lists<a class="anchor-link" href="#Copying-lists">¶</a></h4><div class="highlight"><pre><span></span><span class="n">list2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>      <span class="c1"># These produce shallow copies. Nested objects are not copied</span>
+<h4 id="Copying-lists">Copying lists<a class="anchor-link" href="#Copying-lists">Â¶</a></h4><div class="highlight"><pre><span></span><span class="n">list2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>      <span class="c1"># These produce shallow copies. Nested objects are not copied</span>
 <span class="n">list3</span> <span class="o">=</span> <span class="n">mylist</span><span class="p">[:]</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 <span class="n">list4</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
@@ -193,19 +200,19 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Tuples">Tuples<a class="anchor-link" href="#Tuples">¶</a></h3><p>Are faster than lists, protect the data which is immutable, can be used as keys on dictionaries</p>
+<h3 id="Tuples">Tuples<a class="anchor-link" href="#Tuples">Â¶</a></h3><p>Are faster than lists, protect the data which is immutable, can be used as keys on dictionaries</p>
 <div class="highlight"><pre><span></span><span class="n">mytple1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>     <span class="c1"># construction</span>
 <span class="n">mytple2</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
 <span class="n">mytple3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,)</span>        <span class="c1">#  a tuple with only one element. The comma is mandatory</span>
 <span class="n">mytple2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>            <span class="c1"># returns element at index 1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
 </pre></div>
-<h4 id="Methods">Methods<a class="anchor-link" href="#Methods">¶</a></h4><p>Only two methods count &amp; index are avaliable</p>
+<h4 id="Methods">Methods<a class="anchor-link" href="#Methods">Â¶</a></h4><p>Only two methods count &amp; index are avaliable</p>
 <div class="highlight"><pre><span></span><span class="n">mytple2</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
 <span class="n">mytple2</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>   <span class="c1">#counts the number of occurances</span>
 <span class="n">mytple2</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>   <span class="c1">#returns the index of first occurance</span>
 </pre></div>
-<h4 id="Operators">Operators<a class="anchor-link" href="#Operators">¶</a></h4><div class="highlight"><pre><span></span><span class="n">mytple2</span> <span class="o">*</span> <span class="mi">5</span>        <span class="c1"># returns mytuple repeated 5 times</span>
+<h4 id="Operators">Operators<a class="anchor-link" href="#Operators">Â¶</a></h4><div class="highlight"><pre><span></span><span class="n">mytple2</span> <span class="o">*</span> <span class="mi">5</span>        <span class="c1"># returns mytuple repeated 5 times</span>
 <span class="n">mytuple</span> <span class="o">*=</span> <span class="mi">5</span>       <span class="c1"># augments by repeating</span>
 <span class="n">mytuple</span> <span class="o">+=</span> <span class="mi">5</span>       <span class="c1"># appends to the end</span>
 <span class="n">mydata</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
@@ -217,7 +224,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">InÂ [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#some examples</span>
@@ -263,8 +270,8 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Dictionaries-{}">Dictionaries {}<a class="anchor-link" href="#Dictionaries-{}">¶</a></h3><p>In the simplest form are unsorted key value pairs where the keys must be unique.</p>
-<h4 id="Methods">Methods<a class="anchor-link" href="#Methods">¶</a></h4><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span>  <span class="p">{</span><span class="s1">'first'</span><span class="p">:</span><span class="s1">'string value'</span><span class="p">,</span> <span class="s1">'second'</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]}</span>
+<h3 id="Dictionaries-{}">Dictionaries {}<a class="anchor-link" href="#Dictionaries-{}">Â¶</a></h3><p>In the simplest form are unsorted key value pairs where the keys must be unique.</p>
+<h4 id="Methods">Methods<a class="anchor-link" href="#Methods">Â¶</a></h4><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span>  <span class="p">{</span><span class="s1">'first'</span><span class="p">:</span><span class="s1">'string value'</span><span class="p">,</span> <span class="s1">'second'</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]}</span>
 <span class="n">d2</span><span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s1">'first'</span><span class="p">,</span> <span class="s1">'second'</span><span class="p">])</span>  <span class="c1">#create dictionary from a set of keys</span>
 <span class="n">d3</span><span class="o">=</span> <span class="p">{}</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s1">'first'</span><span class="p">,</span> <span class="s1">'second'</span><span class="p">])</span> <span class="c1">#</span>
 <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>         <span class="c1"># return a list of tuples containing the dictionaries contents</span>
@@ -289,7 +296,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">InÂ [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'nth'</span><span class="p">:</span><span class="mi">5</span><span class="p">}</span>
@@ -329,7 +336,7 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Sets">Sets<a class="anchor-link" href="#Sets">¶</a></h3><p>Sets are mutable, and may therefore not be used, for example, as keys in dictionaries.</p>
+<h3 id="Sets">Sets<a class="anchor-link" href="#Sets">Â¶</a></h3><p>Sets are mutable, and may therefore not be used, for example, as keys in dictionaries.</p>
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="n">a</span> <span class="o">|</span> <span class="n">b</span>            <span class="c1"># Union</span>
@@ -350,7 +357,7 @@ MathJax.Hub.Config({
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Frozensets">Frozensets<a class="anchor-link" href="#Frozensets">¶</a></h3><p>An immutable form of sets. which can be used as keys for a dictionary</p>
+<h3 id="Frozensets">Frozensets<a class="anchor-link" href="#Frozensets">Â¶</a></h3><p>An immutable form of sets. which can be used as keys for a dictionary</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
@@ -361,14 +368,14 @@ MathJax.Hub.Config({
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 </pre></div>
-<h4 id="Methods">Methods<a class="anchor-link" href="#Methods">¶</a></h4><p>include: intersection(), union(), symmetric_difference(), difference(), issubset(), isdisjoint()
+<h4 id="Methods">Methods<a class="anchor-link" href="#Methods">Â¶</a></h4><p>include: intersection(), union(), symmetric_difference(), difference(), issubset(), isdisjoint()
          issuperset() and copy()</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">InÂ [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
