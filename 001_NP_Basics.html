@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>001_NP_Basics</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11781,7 +11781,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {"height": "187px", "width": "213px"}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": true, "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": true, "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11797,11 +11797,122 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Home"><a href="index.html">Home</a><a class="anchor-link" href="#Home">&#182;</a></h1><p>Welcome to my github web pages. This site is a collection of notes for my personal reference. I hope you find them as useful as I do.</p>
-<p>Please note that this site is not intended to be a tutorial but rather a refresher of things already learned .... and perhaps a bit forgotten</p>
-<h1 id="SAS"><a href="001_SASNotes.html">SAS</a><a class="anchor-link" href="#SAS">&#182;</a></h1><h1 id="Python">Python<a class="anchor-link" href="#Python">&#182;</a></h1><h2 id="Basics"><a href="001_PyBasics.html">Basics</a><a class="anchor-link" href="#Basics">&#182;</a></h2><h2 id="Advanced---ToDo"><a href="001_PyAdvanced.html">Advanced - ToDo</a><a class="anchor-link" href="#Advanced---ToDo">&#182;</a></h2><h2 id="Numpy---InProgress"><a href="001_NP_Basics.html">Numpy - InProgress</a><a class="anchor-link" href="#Numpy---InProgress">&#182;</a></h2><h2 id="Pandas---InProgress"><a href="001_PD_Basics.html">Pandas - InProgress</a><a class="anchor-link" href="#Pandas---InProgress">&#182;</a></h2><h1 id="Analytics-(wPython)">Analytics (wPython)<a class="anchor-link" href="#Analytics-(wPython)">&#182;</a></h1><h3 id="Regression">Regression<a class="anchor-link" href="#Regression">&#182;</a></h3><h4 id="Linear">Linear<a class="anchor-link" href="#Linear">&#182;</a></h4><h4 id="Logistic">Logistic<a class="anchor-link" href="#Logistic">&#182;</a></h4><h4 id="Multivariate">Multivariate<a class="anchor-link" href="#Multivariate">&#182;</a></h4>
+<h1 id="Home"><a href="index.html">Home</a><a class="anchor-link" href="#Home">&#182;</a></h1><h1 id="Numpy">Numpy<a class="anchor-link" href="#Numpy">&#182;</a></h1><p>Numpy is an abbreviation of NUMerical Python. It adds support for multi-dimensional arrays and matrices, as well as many of the algebraic formulae often used in working with these structures.</p>
+<p>For a great tutorial see: <a href="https://docs.scipy.org/doc/numpy/user/quickstart.html">https://docs.scipy.org/doc/numpy/user/quickstart.html</a></p>
+<p>Recall that the main Python datastructs are as follows:</p>
+<div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">]</span>                    <span class="c1"># list := mutable &amp; unordered collection of items</span>
+<span class="n">xd</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cat&#39;</span><span class="p">:</span> <span class="s1">&#39;cute&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">:</span> <span class="s1">&#39;furry&#39;</span><span class="p">}</span>  <span class="c1"># dictionary:= (key,value) pairs</span>
+<span class="n">xa</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">}</span>                   <span class="c1"># set := unordered collection of distinct elements</span>
+<span class="n">xt</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>                           <span class="c1"># tuple := immutable &amp; ordered list of values</span>
+</pre></div>
+<h2 id="NDArray">NDArray<a class="anchor-link" href="#NDArray">&#182;</a></h2><p>A numpy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers.<br>
+rank = number of dimensions of the array<br>
+shape= a tuple of integers giving the size of the array along each dimension</p>
+<h3 id="Creation">Creation<a class="anchor-link" href="#Creation">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>       <span class="c1"># Create a rank 2 array from 2 python lists</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>                        <span class="c1"># Prints &quot;(2, 3)&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>      <span class="c1"># Prints &quot;1 2 4&quot;</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">5</span> <span class="p">)</span>                <span class="c1"># creates a sequence of numbers similar to range</span>
+<span class="c1">#&gt;&gt;&gt; array([10, 15, 20, 25])          </span>
+    <span class="c1"># arange() can also work with floating numbers but this is inadvisable as it the number of elements is unpredictable</span>
+    <span class="c1"># Use linspace instead when dealing with floats</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span> <span class="p">)</span>                <span class="c1"># 9 numbers from 0 to 2</span>
+<span class="c1">#&gt;&gt;&gt; array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ,  1.25,  1.5 ,  1.75,  2.  ])</span>
+
+<span class="c1"># there are some built in functions to create and populate often used arrays</span>
+<span class="n">np</span><span class="o">.</span><span class="n">zeroes</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>         <span class="c1"># 2x2 array of zeroes</span>
+<span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>          <span class="c1"># 2x2 uninitialized, output may vary </span>
+<span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>           <span class="c1"># 2x2 array of ones</span>
+<span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="mi">7</span><span class="p">)</span>        <span class="c1"># 2x2 array of sevens</span>
+<span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                <span class="c1"># 2x2 identity matrix</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># 2x2 array of random numbers between(0,1)</span>
+</pre></div>
+<h3 id="Basic-Ops">Basic Ops<a class="anchor-link" href="#Basic-Ops">&#182;</a></h3><p>Arithmetic operators on arrays apply elementwise. A new array is created and filled with the result.</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="mi">4</span> <span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span>                           <span class="c1"># c(0,0) = [a(0,0)-b(0,0), ...etc ]</span>
+<span class="n">b</span><span class="o">**</span><span class="mi">2</span>                              <span class="c1"># each element of b raised to the 2nd power</span>
+<span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>                      <span class="c1"># [10*sine(a(0,0)), ... ,10*sine(a(3,3))</span>
+<span class="n">a</span> <span class="o">&lt;</span> <span class="mi">35</span>                            <span class="c1"># array([ True, True, False, False])</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span> <span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span> <span class="p">)</span>
+<span class="n">A</span> <span class="o">*</span> <span class="n">B</span>                             <span class="c1"># elementwise product</span>
+<span class="n">A</span> <span class="err">@</span> <span class="n">B</span>                             <span class="c1"># matrix product</span>
+<span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>                          <span class="c1"># another matrix product</span>
+
+<span class="c1"># Some operations, such as += and *=, act in place to modify an existing array rather than create a new one.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">*=</span> <span class="mi">3</span>                            <span class="c1"># multiply each element of a by 3</span>
+<span class="n">b</span> <span class="o">+=</span> <span class="n">a</span>                            <span class="c1"># upcasting is permitted</span>
+                                  <span class="c1"># adds each element of a to the corresponding element of b</span>
+<span class="c1">#  a += b                         # Downcasting is not permitted</span>
+                                  <span class="c1"># ERROR: b is not automatically converted to integer type</span>
+</pre></div>
+<h3 id="Math-Functions">Math Functions<a class="anchor-link" href="#Math-Functions">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>     <span class="c1"># create an array</span>
+<span class="c1">#&gt;&gt;&gt; [  0   1   8  27  64 125 216 343 512 729]</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1">#&gt;&gt;&gt; [[  0   1   8  27  64]</span>
+<span class="c1">#&gt;&gt;&gt;  [125 216 343 512 729]]</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>                  <span class="c1"># sum all elements</span>
+<span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>            <span class="c1"># sum each row</span>
+<span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>            <span class="c1"># sum each column</span>
+    <span class="c1"># Similarly there is min(), max(), cumsum() cumulative summation</span>
+    <span class="c1">#</span>
+</pre></div>
+<h3 id="Indexing">Indexing<a class="anchor-link" href="#Indexing">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>          <span class="c1"># Create a 1dim array</span>
+<span class="c1">#&gt;&gt;&gt; array([  0,   1,   8,  27,  64, 125, 216, 343, 512, 729])</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>                          <span class="c1"># get element at i = 2</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>                        <span class="c1"># get elements [2,3,4] </span>
+<span class="n">a</span><span class="p">[:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1000</span>               <span class="c1"># from start to position 6, exclusive, set every 2nd element to -1000</span>
+                              <span class="c1"># equivalent to a[0:6:2] = -1000</span>
+<span class="n">a</span><span class="p">[</span> <span class="p">:</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                     <span class="c1"># a in reverse order </span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>                   <span class="c1"># iterate over a</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.</span><span class="p">))</span>
+</pre></div>
+
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>          <span class="c1"># Create a 1dim array</span>
+<span class="c1">#&gt;&gt;&gt; array([  0,   1,   8,  27,  64, 125, 216, 343, 512, 729])</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 8, 27, 64], dtype=int32)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>

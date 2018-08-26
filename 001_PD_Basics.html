@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>001_PD_Basics</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11781,7 +11781,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {"height": "187px", "width": "213px"}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": true, "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "340px"}, "toc_section_display": true, "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11797,11 +11797,974 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Home"><a href="index.html">Home</a><a class="anchor-link" href="#Home">&#182;</a></h1><p>Welcome to my github web pages. This site is a collection of notes for my personal reference. I hope you find them as useful as I do.</p>
-<p>Please note that this site is not intended to be a tutorial but rather a refresher of things already learned .... and perhaps a bit forgotten</p>
-<h1 id="SAS"><a href="001_SASNotes.html">SAS</a><a class="anchor-link" href="#SAS">&#182;</a></h1><h1 id="Python">Python<a class="anchor-link" href="#Python">&#182;</a></h1><h2 id="Basics"><a href="001_PyBasics.html">Basics</a><a class="anchor-link" href="#Basics">&#182;</a></h2><h2 id="Advanced---ToDo"><a href="001_PyAdvanced.html">Advanced - ToDo</a><a class="anchor-link" href="#Advanced---ToDo">&#182;</a></h2><h2 id="Numpy---InProgress"><a href="001_NP_Basics.html">Numpy - InProgress</a><a class="anchor-link" href="#Numpy---InProgress">&#182;</a></h2><h2 id="Pandas---InProgress"><a href="001_PD_Basics.html">Pandas - InProgress</a><a class="anchor-link" href="#Pandas---InProgress">&#182;</a></h2><h1 id="Analytics-(wPython)">Analytics (wPython)<a class="anchor-link" href="#Analytics-(wPython)">&#182;</a></h1><h3 id="Regression">Regression<a class="anchor-link" href="#Regression">&#182;</a></h3><h4 id="Linear">Linear<a class="anchor-link" href="#Linear">&#182;</a></h4><h4 id="Logistic">Logistic<a class="anchor-link" href="#Logistic">&#182;</a></h4><h4 id="Multivariate">Multivariate<a class="anchor-link" href="#Multivariate">&#182;</a></h4>
+<h1 id="Home"><a href="index.html">Home</a><a class="anchor-link" href="#Home">&#182;</a></h1><h1 id="Pandas">Pandas<a class="anchor-link" href="#Pandas">&#182;</a></h1><p>Pandas is a python package providing various data structures and routines for the analysis of data. It's popularity has made it the defacto library for analytics</p>
+<p>The following tutorial is based on the lesson found at <a href="http://www.gregreda.com/2013/10/26/intro-to-pandas-data-structures/">http://www.gregreda.com/2013/10/26/intro-to-pandas-data-structures/</a></p>
+
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we begin by importing the required packages</span>
+<span class="kn">import</span> <span class="nn">pyodbc</span> <span class="k">as</span> <span class="nn">pydb</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;max_columns&#39;</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Series">Series<a class="anchor-link" href="#Series">&#182;</a></h2><p>We begin by looking at series: a one-dimensional ndarray, like a vector or list, with axis labels.</p>
+<p>SYNTAX:<br>
+    <strong>pandas.Series( data[, index, dtype, copy])</strong><br>
+Data := can be a list, dictionary, array, or simply a scalar<br>
+Index := must be unique and hashable. Will be assigned a zero based numerical index if not given.<br>
+dtype := is the data type. Will be inferred if omitted</p>
+<h3 id="Constructing">Constructing<a class="anchor-link" href="#Constructing">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">empty_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">()</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Heisenberg&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="o">-</span><span class="mi">1789710578</span><span class="p">,</span> <span class="s1">&#39;Happy Eating!&#39;</span><span class="p">])</span>
+
+<span class="c1"># You can also assign an index as follows</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Heisenberg&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="o">-</span><span class="mi">1789710578</span><span class="p">,</span> <span class="s1">&#39;Happy Eating!&#39;</span><span class="p">],</span>
+              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">])</span>
+
+<span class="c1"># If you use a dictionary the keys will form the index</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Chicago&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">:</span> <span class="mi">1300</span><span class="p">,</span> <span class="s1">&#39;Portland&#39;</span><span class="p">:</span> <span class="mi">900</span><span class="p">,</span> 
+     <span class="s1">&#39;San Francisco&#39;</span><span class="p">:</span> <span class="mi">1100</span><span class="p">,</span><span class="s1">&#39;Austin&#39;</span><span class="p">:</span> <span class="mi">450</span><span class="p">,</span> <span class="s1">&#39;Boston&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+<span class="n">cities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+<h3 id="Selecting">Selecting<a class="anchor-link" href="#Selecting">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                         <span class="c1"># By Index</span>
+<span class="n">cities</span><span class="p">[</span><span class="s1">&#39;New York&#39;</span><span class="p">]</span>                <span class="c1"># By Index Name</span>
+<span class="n">cities</span><span class="p">[</span><span class="s1">&#39;New York&#39;</span><span class="p">,</span><span class="s1">&#39;Portland&#39;</span><span class="p">]</span>     <span class="c1"># fails!!!!</span>
+<span class="n">cities</span><span class="p">[[</span><span class="s1">&#39;New York&#39;</span><span class="p">,</span><span class="s1">&#39;Portland&#39;</span><span class="p">]]</span>   <span class="c1"># Select multiple indices</span>
+<span class="n">cities</span><span class="p">[</span><span class="n">cities</span> <span class="o">&lt;=</span> <span class="mi">900</span><span class="p">]</span>             <span class="c1"># By condition</span>
+<span class="n">cities</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>                        <span class="c1"># first 2 elements</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Toronto&#39;</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">)</span>        <span class="c1"># Existence check</span>
+<span class="n">cities</span> <span class="o">%</span> <span class="mi">3</span>                        <span class="c1"># Math ops using a scalar are applied elementwise</span>
+
+<span class="c1"># isnull() and notnull() are used to filter out nulls</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">cities</span><span class="o">.</span><span class="n">isnull</span><span class="p">()])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">cities</span><span class="o">.</span><span class="n">notnull</span><span class="p">()])</span>
+</pre></div>
+<h3 id="Updating-&amp;-Filtering">Updating &amp; Filtering<a class="anchor-link" href="#Updating-&amp;-Filtering">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;San Francisco&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>     <span class="c1"># to change a value</span>
+<span class="n">cities</span><span class="p">[</span><span class="n">cities</span> <span class="o">&lt;=</span> <span class="mi">900</span><span class="p">]</span> <span class="o">=</span> <span class="mi">111</span>       <span class="c1"># multiple updates</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Toronto&#39;</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">)</span>        <span class="c1"># Existence check</span>
+<span class="n">cities</span> <span class="o">%</span> <span class="mi">3</span>                        <span class="c1"># Math ops using a scalar are applied elementwise</span>
+
+    <span class="c1"># Addition of two Series results in a union of index values and an intersection of their values</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cities</span><span class="p">[[</span><span class="s1">&#39;Chicago&#39;</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;Portland&#39;</span><span class="p">]]</span> <span class="o">+</span> <span class="n">cities</span><span class="p">[[</span><span class="s1">&#39;Austin&#39;</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">]])</span>
+    <span class="c1">#Only New York has a value because it is the only element in both of the Series</span>
+
+<span class="c1"># isnull() and notnull() are used to filter out nulls</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">cities</span><span class="o">.</span><span class="n">isnull</span><span class="p">()])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">cities</span><span class="o">.</span><span class="n">notnull</span><span class="p">()])</span>
+</pre></div>
+<p>Series are not terribly exciting so we move on to dataframes which is where the real beauty lies in Pandas</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dataframes">Dataframes<a class="anchor-link" href="#Dataframes">&#182;</a></h2><p>Similar to R dataframes or even a table in most RDBMS</p>
+<h3 id="Simple-construction">Simple construction<a class="anchor-link" href="#Simple-construction">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">],</span>
+        <span class="s1">&#39;team&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Bears&#39;</span><span class="p">,</span> <span class="s1">&#39;Bears&#39;</span><span class="p">,</span> <span class="s1">&#39;Bears&#39;</span><span class="p">,</span> <span class="s1">&#39;Packers&#39;</span><span class="p">,</span> <span class="s1">&#39;Packers&#39;</span><span class="p">,</span> <span class="s1">&#39;Lions&#39;</span><span class="p">,</span> <span class="s1">&#39;Lions&#39;</span><span class="p">,</span> <span class="s1">&#39;Lions&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;wins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+        <span class="s1">&#39;losses&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]}</span>
+<span class="n">football</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;wins&#39;</span><span class="p">,</span> <span class="s1">&#39;losses&#39;</span><span class="p">])</span>
+</pre></div>
+<h3 id="File-construction">File construction<a class="anchor-link" href="#File-construction">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">from_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;mariano-rivera.csv&#39;</span><span class="p">)</span>
+<span class="n">from_csv</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># More often than not you&#39;ll be reading CSVs or other data into a dataframe</span>
+<span class="n">from_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;mariano-rivera.csv&#39;</span><span class="p">)</span>
+<span class="n">from_csv</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[17]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Age</th>
+      <th>Tm</th>
+      <th>Lg</th>
+      <th>W</th>
+      <th>L</th>
+      <th>W-L%</th>
+      <th>ERA</th>
+      <th>G</th>
+      <th>GS</th>
+      <th>GF</th>
+      <th>CG</th>
+      <th>SHO</th>
+      <th>SV</th>
+      <th>IP</th>
+      <th>H</th>
+      <th>R</th>
+      <th>ER</th>
+      <th>HR</th>
+      <th>BB</th>
+      <th>IBB</th>
+      <th>SO</th>
+      <th>HBP</th>
+      <th>BK</th>
+      <th>WP</th>
+      <th>BF</th>
+      <th>ERA+</th>
+      <th>WHIP</th>
+      <th>H/9</th>
+      <th>HR/9</th>
+      <th>BB/9</th>
+      <th>SO/9</th>
+      <th>SO/BB</th>
+      <th>Awards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1995</td>
+      <td>25</td>
+      <td>NYY</td>
+      <td>AL</td>
+      <td>5</td>
+      <td>3</td>
+      <td>0.625</td>
+      <td>5.51</td>
+      <td>19</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>67.0</td>
+      <td>71</td>
+      <td>43</td>
+      <td>41</td>
+      <td>11</td>
+      <td>30</td>
+      <td>0</td>
+      <td>51</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>301</td>
+      <td>84</td>
+      <td>1.507</td>
+      <td>9.5</td>
+      <td>1.5</td>
+      <td>4.0</td>
+      <td>6.9</td>
+      <td>1.70</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1996</td>
+      <td>26</td>
+      <td>NYY</td>
+      <td>AL</td>
+      <td>8</td>
+      <td>3</td>
+      <td>0.727</td>
+      <td>2.09</td>
+      <td>61</td>
+      <td>0</td>
+      <td>14</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>107.2</td>
+      <td>73</td>
+      <td>25</td>
+      <td>25</td>
+      <td>1</td>
+      <td>34</td>
+      <td>3</td>
+      <td>130</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>425</td>
+      <td>240</td>
+      <td>0.994</td>
+      <td>6.1</td>
+      <td>0.1</td>
+      <td>2.8</td>
+      <td>10.9</td>
+      <td>3.82</td>
+      <td>CYA-3MVP-12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1997</td>
+      <td>27</td>
+      <td>NYY</td>
+      <td>AL</td>
+      <td>6</td>
+      <td>4</td>
+      <td>0.600</td>
+      <td>1.88</td>
+      <td>66</td>
+      <td>0</td>
+      <td>56</td>
+      <td>0</td>
+      <td>0</td>
+      <td>43</td>
+      <td>71.2</td>
+      <td>65</td>
+      <td>17</td>
+      <td>15</td>
+      <td>5</td>
+      <td>20</td>
+      <td>6</td>
+      <td>68</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>301</td>
+      <td>239</td>
+      <td>1.186</td>
+      <td>8.2</td>
+      <td>0.6</td>
+      <td>2.5</td>
+      <td>8.5</td>
+      <td>3.40</td>
+      <td>ASMVP-25</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1998</td>
+      <td>28</td>
+      <td>NYY</td>
+      <td>AL</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1.000</td>
+      <td>1.91</td>
+      <td>54</td>
+      <td>0</td>
+      <td>49</td>
+      <td>0</td>
+      <td>0</td>
+      <td>36</td>
+      <td>61.1</td>
+      <td>48</td>
+      <td>13</td>
+      <td>13</td>
+      <td>3</td>
+      <td>17</td>
+      <td>1</td>
+      <td>36</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>246</td>
+      <td>233</td>
+      <td>1.060</td>
+      <td>7.0</td>
+      <td>0.4</td>
+      <td>2.5</td>
+      <td>5.3</td>
+      <td>2.12</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1999</td>
+      <td>29</td>
+      <td>NYY</td>
+      <td>AL</td>
+      <td>4</td>
+      <td>3</td>
+      <td>0.571</td>
+      <td>1.83</td>
+      <td>66</td>
+      <td>0</td>
+      <td>63</td>
+      <td>0</td>
+      <td>0</td>
+      <td>45</td>
+      <td>69.0</td>
+      <td>43</td>
+      <td>15</td>
+      <td>14</td>
+      <td>2</td>
+      <td>18</td>
+      <td>3</td>
+      <td>52</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+      <td>268</td>
+      <td>257</td>
+      <td>0.884</td>
+      <td>5.6</td>
+      <td>0.3</td>
+      <td>2.3</td>
+      <td>6.8</td>
+      <td>2.89</td>
+      <td>ASCYA-3MVP-14</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Here&#39;s a fuller illustration</span>
+<span class="c1">#The column names we want to assign</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="s1">&#39;game&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;home_away&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent&#39;</span><span class="p">,</span><span class="s1">&#39;result&#39;</span>
+        <span class="s1">&#39;quarter&#39;</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="s1">&#39;receiver&#39;</span><span class="p">,</span> <span class="s1">&#39;score_before&#39;</span><span class="p">,</span><span class="s1">&#39;score_after&#39;</span><span class="p">]</span>
+<span class="n">no_headers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;peyton-passing-TDs-2012.csv&#39;</span><span class="p">,</span> 
+                         <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> 
+                         <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                         <span class="n">names</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">no_headers</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>num</th>
+      <th>game</th>
+      <th>date</th>
+      <th>team</th>
+      <th>home_away</th>
+      <th>opponent</th>
+      <th>resultquarter</th>
+      <th>distance</th>
+      <th>receiver</th>
+      <th>score_before</th>
+      <th>score_after</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2012-09-09</td>
+      <td>DEN</td>
+      <td>NaN</td>
+      <td>PIT</td>
+      <td>W 31-19</td>
+      <td>3</td>
+      <td>71</td>
+      <td>Demaryius Thomas</td>
+      <td>Trail 7-13</td>
+      <td>Lead 14-13*</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>2012-09-09</td>
+      <td>DEN</td>
+      <td>NaN</td>
+      <td>PIT</td>
+      <td>W 31-19</td>
+      <td>4</td>
+      <td>1</td>
+      <td>Jacob Tamme</td>
+      <td>Trail 14-19</td>
+      <td>Lead 22-19*</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>2012-09-17</td>
+      <td>DEN</td>
+      <td>@</td>
+      <td>ATL</td>
+      <td>L 21-27</td>
+      <td>2</td>
+      <td>17</td>
+      <td>Demaryius Thomas</td>
+      <td>Trail 0-20</td>
+      <td>Trail 7-20</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>2012-09-23</td>
+      <td>DEN</td>
+      <td>NaN</td>
+      <td>HOU</td>
+      <td>L 25-31</td>
+      <td>4</td>
+      <td>38</td>
+      <td>Brandon Stokley</td>
+      <td>Trail 11-31</td>
+      <td>Trail 18-31</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>2012-09-23</td>
+      <td>DEN</td>
+      <td>NaN</td>
+      <td>HOU</td>
+      <td>L 25-31</td>
+      <td>4</td>
+      <td>6</td>
+      <td>Joel Dreessen</td>
+      <td>Trail 18-31</td>
+      <td>Trail 25-31</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are a lot of options like skipping lines, parsing dates etc. The documentation is your friend here</p>
+<p>And for every read function there's a write as well</p>
+<p>Next we will write to an excel (Note: Reading from an excel requires the xlrd lib)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">football</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">football</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;football.xlsx&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Now we&#39;ll delete the dataframe</span>
+<span class="k">del</span> <span class="n">football</span>
+<span class="c1">#And read it back in</span>
+<span class="n">soccer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;football.xlsx&#39;</span><span class="p">,</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">)</span>
+<span class="n">soccer</span>  <span class="c1">#Voila</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[20]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>team</th>
+      <th>wins</th>
+      <th>losses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010</td>
+      <td>Bears</td>
+      <td>11</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2011</td>
+      <td>Bears</td>
+      <td>8</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2012</td>
+      <td>Bears</td>
+      <td>10</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2011</td>
+      <td>Packers</td>
+      <td>15</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2012</td>
+      <td>Packers</td>
+      <td>11</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2010</td>
+      <td>Lions</td>
+      <td>6</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2011</td>
+      <td>Lions</td>
+      <td>10</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2012</td>
+      <td>Lions</td>
+      <td>4</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Now we&#39;ll connect to a db and pull some data</span>
+<span class="n">cnxn</span> <span class="o">=</span> <span class="n">pydb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;Driver={SQL Server Native Client 11.0};&quot;</span>
+                      <span class="s2">&quot;Server=Someone\MZRSQLExpress;&quot;</span>
+                      <span class="s2">&quot;Database=AdventureWorks2012;&quot;</span>
+                      <span class="s2">&quot;Trusted_Connection=yes;&quot;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">cnxn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT top 10 PersonType,LastName,MiddleName,FirstName FROM Person.Person&#39;</span><span class="p">)</span>   
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;pyodbc.Cursor at 0x250064e1e70&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;row = </span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">row</span><span class="p">,))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>row = (&#39;EM&#39;, &#39;Sánchez&#39;, &#39;J&#39;, &#39;Ken&#39;)
+row = (&#39;EM&#39;, &#39;Duffy&#39;, &#39;Lee&#39;, &#39;Terri&#39;)
+row = (&#39;EM&#39;, &#39;Tamburello&#39;, None, &#39;Roberto&#39;)
+row = (&#39;EM&#39;, &#39;Walters&#39;, None, &#39;Rob&#39;)
+row = (&#39;EM&#39;, &#39;Erickson&#39;, &#39;A&#39;, &#39;Gail&#39;)
+row = (&#39;EM&#39;, &#39;Goldberg&#39;, &#39;H&#39;, &#39;Jossef&#39;)
+row = (&#39;EM&#39;, &#39;Miller&#39;, &#39;A&#39;, &#39;Dylan&#39;)
+row = (&#39;EM&#39;, &#39;Margheim&#39;, &#39;L&#39;, &#39;Diane&#39;)
+row = (&#39;EM&#39;, &#39;Matthew&#39;, &#39;N&#39;, &#39;Gigi&#39;)
+row = (&#39;EM&#39;, &#39;Raheem&#39;, None, &#39;Michael&#39;)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#The panda way is to read it into a dataframe</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT top 10 PersonType,LastName,MiddleName,FirstName FROM Person.Person&quot;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">cnxn</span><span class="p">)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[37]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PersonType</th>
+      <th>LastName</th>
+      <th>MiddleName</th>
+      <th>FirstName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>EM</td>
+      <td>Sánchez</td>
+      <td>J</td>
+      <td>Ken</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>EM</td>
+      <td>Duffy</td>
+      <td>Lee</td>
+      <td>Terri</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>EM</td>
+      <td>Tamburello</td>
+      <td>None</td>
+      <td>Roberto</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>EM</td>
+      <td>Walters</td>
+      <td>None</td>
+      <td>Rob</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>EM</td>
+      <td>Erickson</td>
+      <td>A</td>
+      <td>Gail</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Copying from a clipboard can be finicky</span>
+<span class="n">hank</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_clipboard</span><span class="p">()</span>
+<span class="n">hank</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[41]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ticker</th>
+      <th>Date</th>
+      <th>shares</th>
+      <th>$-Open</th>
+      <th>Comm</th>
+      <th>BookVal</th>
+      <th>Date.1</th>
+      <th>Shares</th>
+      <th>$-Close</th>
+      <th>Comm .1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AMD</td>
+      <td>12/28/2016</td>
+      <td>4,180</td>
+      <td>$11.9600</td>
+      <td>$9.95</td>
+      <td>$49,982.85</td>
+      <td>1/12/2017</td>
+      <td>4,180</td>
+      <td>$10.7707</td>
+      <td>10.93</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>UGAZ</td>
+      <td>1/12/2017</td>
+      <td>1,630</td>
+      <td>$31.9000</td>
+      <td>$9.95</td>
+      <td>$51,987.05</td>
+      <td>1/12/2017</td>
+      <td>1,630</td>
+      <td>$31.0500</td>
+      <td>11.05</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>JNUG</td>
+      <td>1/17/2017</td>
+      <td>5,640</td>
+      <td>$9.1200</td>
+      <td>$-</td>
+      <td>$51,436.80</td>
+      <td>1/18/2017</td>
+      <td>5,640</td>
+      <td>$8.9000</td>
+      <td>11.04</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>DSLV</td>
+      <td>1/18/2017</td>
+      <td>1,855</td>
+      <td>$27.0500</td>
+      <td>$9.95</td>
+      <td>$50,167.80</td>
+      <td>1/18/2017</td>
+      <td>1,855</td>
+      <td>$26.7500</td>
+      <td>11.03</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>JNUG</td>
+      <td>1/18/2017</td>
+      <td>5,840</td>
+      <td>$8.4297</td>
+      <td>$-</td>
+      <td>$49,229.45</td>
+      <td>1/18/2017</td>
+      <td>5,840</td>
+      <td>$8.1311</td>
+      <td>10.99</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
