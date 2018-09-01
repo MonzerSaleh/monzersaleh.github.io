@@ -11818,7 +11818,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-step">Data step<a class="anchor-link" href="#Data-step">&#182;</a></h2>
+<h1 id="Data-step">Data step<a class="anchor-link" href="#Data-step">&#182;</a></h1>
 <pre><code>DATA output_DS outputDS_options;
     &lt;statements 1 ... n&gt;
 RUN;
@@ -11841,7 +11841,15 @@ Where outputDS_options incl:
     if A=1;         /*This is equiv to a left join          */
     if B=1;         /*This is equiv to a right join         */
     RUN;</code></pre>
-<h2 id="PROCS">PROCS<a class="anchor-link" href="#PROCS">&#182;</a></h2><h3 id="Import-Export">Import-Export<a class="anchor-link" href="#Import-Export">&#182;</a></h3>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="PROCS">PROCS<a class="anchor-link" href="#PROCS">&#182;</a></h1><h3 id="Import-Export">Import-Export<a class="anchor-link" href="#Import-Export">&#182;</a></h3>
 <pre><code># Importing from an excel 
 PROC IMPORT OUT= sas_Dataset
         DATAFILE= "path_to_sourceFile_inclFileName" 
@@ -11934,6 +11942,11 @@ Your final result set should have a column for each possible category in Tenure 
 <h3 id="Append">Append<a class="anchor-link" href="#Append">&#182;</a></h3>
 <pre><code>proc append base=base_data data=new_data;
 run;</code></pre>
+<h3 id="Contents">Contents<a class="anchor-link" href="#Contents">&#182;</a></h3>
+<pre><code>proc contents data=libname.dataset   # replace dataset with _all_ to get a listing of all tables and columns
+              out =results 
+        noprint;
+        run;</code></pre>
 
 </div>
 </div>
