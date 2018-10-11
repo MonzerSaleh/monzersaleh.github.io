@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
-<title>001_SASNotes</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<head><meta charset="utf-8">
+<title>LDA01_LinearDiscriminantAnalysis</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11769,7 +11767,7 @@ div#notebook {
     });
     </script>
     <!-- End of mathjax configuration --></head>
-
+	
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
@@ -11783,7 +11781,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": true, "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {"height": "187px", "width": "213px"}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": true, "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11792,10 +11790,7 @@ $( document ).ready(function(){
     });
 </script>
 
-
-
 <body>
-
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
@@ -11803,50 +11798,11 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Home"><a href="index.html">Home</a><a class="anchor-link" href="#Home">&#182;</a></h1><h1 id="SAS-Notes">SAS Notes<a class="anchor-link" href="#SAS-Notes">&#182;</a></h1><h2 id="Tutorials">Tutorials<a class="anchor-link" href="#Tutorials">&#182;</a></h2><ul>
-<li>Different types of merging using Data Step or Proc SQL in SAS <br />
- (<a href="http://mehtahemal.com/sas/different-types-of-merging-using-data-step-or-proc-sql-in-sas/450/">http://mehtahemal.com/sas/different-types-of-merging-using-data-step-or-proc-sql-in-sas/450/</a>)</li>
-<li>Comprehensive Introduction to merging in SAS <br />
- (<a href="https://www.analyticsvidhya.com/blog/2015/01/introduction-merging-sas/">https://www.analyticsvidhya.com/blog/2015/01/introduction-merging-sas/</a>)</li>
-<li>Handy little tutorial - University of North Carolina <br />
- (<a href="http://www.cpc.unc.edu/research/tools/data_analysis/sastopics/datastep">http://www.cpc.unc.edu/research/tools/data_analysis/sastopics/datastep</a>)</li>
-<li>Understanding the program data Vector <br />
- (<a href="https://blogs.sas.com/content/sgf/2013/10/25/do-you-understand-the-program-data-vector/">https://blogs.sas.com/content/sgf/2013/10/25/do-you-understand-the-program-data-vector/</a>)</li>
-<li>Another Tutorial - SAS_Crunch.com <br />
- (<a href="https://www.sascrunch.com/">https://www.sascrunch.com/</a>)</li>
+<h1 id="Home"><a href="index.html">Home</a><a class="anchor-link" href="#Home">¶</a></h1><p>Ref:</p>
+<ul>
+<li><a href="https://sebastianraschka.com/Articles/2014_python_lda.html">https://sebastianraschka.com/Articles/2014_python_lda.html</a>  </li>
+<li><a href="http://scikit-learn.org/stable/auto_examples/classification/plot_lda_qda.html">http://scikit-learn.org/stable/auto_examples/classification/plot_lda_qda.html</a>  </li>
 </ul>
-<h2 id="Abbreviations">Abbreviations<a class="anchor-link" href="#Abbreviations">&#182;</a></h2><p>DS = Dataset, similar to a table in a database SAS uses DataSets to organize, retain, and describe Data</p>
-<h2 id="Handy-Tips">Handy Tips<a class="anchor-link" href="#Handy-Tips">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Data-step">Data step<a class="anchor-link" href="#Data-step">&#182;</a></h1>
-<pre><code>DATA output_DS outputDS_options;
-    &lt;statements 1 ... n&gt;
-RUN;
-
-Where outputDS_options incl:
-    (keep= x y z ) - to keep only the columns x y &amp; z
-    (drop= x y z ) - to drop x,y, &amp; z but keep all others</code></pre>
-<h3 id="NULL-step"><em>NULL</em> step<a class="anchor-link" href="#NULL-step">&#182;</a></h3><p>set output dataset name = <em>NULL</em> to run code rather than produce an output data. This is often used to set or manipulate variables.</p>
-
-<pre><code>DATA _NULL_;</code></pre>
-<h2 id="Merge">Merge<a class="anchor-link" href="#Merge">&#182;</a></h2>
-<pre><code>    DATA  Output_datasets;
-    MERGE input_dataset1(in=A)
-          ...
-          input_datasetn(in=N)
-    ;
-    BY column;
-    if A=1 and B=1; /*This is equiv to a full outer join    */
-    if A=1 and B=1; /*This is equiv to an inner join        */
-    if A=1;         /*This is equiv to a left join          */
-    if B=1;         /*This is equiv to a right join         */
-    RUN;</code></pre>
 
 </div>
 </div>
@@ -11855,289 +11811,149 @@ Where outputDS_options incl:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="PROCS">PROCS<a class="anchor-link" href="#PROCS">&#182;</a></h1><h3 id="Import-Export">Import-Export<a class="anchor-link" href="#Import-Export">&#182;</a></h3>
-<pre><code># Importing from an excel 
-PROC IMPORT OUT= sas_Dataset
-        DATAFILE= "path_to_sourceFile_inclFileName" 
-        DBMS=EXCEL REPLACE;
-    SHEET=Subs_BL;
-    GETNAMES=YES;
-    MIXED=YES;
-    SCANTEXT=YES;
-    USEDATE=YES;
-    SCANTIME=YES;
-RUN;
-
-proc export 
-    data=sas_Dataset
-    outfile="/sasdata/d2d/Monzer/myresults.xlsx"
-    DBMS=xlsx replace;  /* Export to Excel      */
-    DBMS=csv replace;   /* Export to a CSV      */
-    sheet="aa1_test1";  /* Keep for Excel only  */
-run;</code></pre>
-<h3 id="Upload---Download">Upload - Download<a class="anchor-link" href="#Upload---Download">&#182;</a></h3>
-<pre><code>Proc Upload
-    infile='input_Path_To_readFile'
-    outfile='output_Path_To_DestinationFile' ;
-    run;
-
-proc download 
-    infile="input_Path_To_readFile"
-    outfile='output_Path_To_DestinationFile' 
-    binary;
-   run;</code></pre>
-<h3 id="Transpose">Transpose<a class="anchor-link" href="#Transpose">&#182;</a></h3>
-<pre><code>proc transpose
-    data=input_DS
-    OUT =output_DS;
-    By  grouping_col;
-    Id  row_col;
-    var pivot_col;
-    RUN;</code></pre>
-<h3 id="Frequency">Frequency<a class="anchor-link" href="#Frequency">&#182;</a></h3>
-<pre><code>PROC FREQ options;
-    DATA=[sas_dataset]
-    BY variable-list;
-    TABLES requests / options;
-    WEIGHT variable;
-    OUTPUT [OUT= sas_dataset][output-statistic-list];
-    FORMAT ;
-    EXACT statistic-keywords [/computation-option];
-    TEST options;
-RUN;
-EXAMPLE:
-proc freq 
-    data=Attrition(where=(YearMth in ("201801","201712","201711","201710","201709"))); 
-    tables type*YearMth /missing nocum nocol;
-    title 'attrition by type*YearMth';
-run;</code></pre>
-<h3 id="Univariate">Univariate<a class="anchor-link" href="#Univariate">&#182;</a></h3>
-<pre><code>proc univariate data=Accounts;
-    class type;
-    var Previous_Amount;
-    output out=Means    mean=Type_Mean;
-    output out=Stats    mean=Type_Mean std=Type_SD 
-                        min=Type_Min  max=Type_Max;
-    output out=PTiles   pctlpts = 1 5 25 50 75 95 99
-                        pctpre  = type
-                        pctlname = pct1 pct5 pct25 pct50 pct75 pct95 pct99;
-run;</code></pre>
-<h3 id="Fastclus">Fastclus<a class="anchor-link" href="#Fastclus">&#182;</a></h3><p>The FASTCLUS procedure performs a disjoint cluster analysis on the basis of distances computed from one or more quantitative variables. By default, the FASTCLUS uses Euclidean distances centered on least-squares estimation. This kind of clustering method is often called a k-means model</p>
-
-<pre><code>PROC FASTCLUS DATA=attr_num
-    MAXCLUSTERS=5
-    OUT=a1_RESULT 
-    OUTSEED=a1_CENTRES
-    OUTSTAT=a1_CLUSTER_STAT 
-    REPLACE=RANDOM
-    RANDOM=187413849 
-    CONVERGE=0.001 
-    MAXITER=350;
-    VAR _ALL_;
-RUN;</code></pre>
-<h3 id="GLMMOD">GLMMOD<a class="anchor-link" href="#GLMMOD">&#182;</a></h3><p>Replaces a categorical variable with binary indicator dummy columns</p>
-
-<pre><code>proc glmmod 
-    data=test1 
-    outdesign=test2 
-    outparm=GLMParms NoPrint;
-    class Tenure Age_Grp;
-    model NAccts = Tenure Age_Grp;
-    run;
-Your final result set should have a column for each possible category in Tenure and Age_Grp each row should still have the NAccts value from the original table</code></pre>
-<h3 id="Append">Append<a class="anchor-link" href="#Append">&#182;</a></h3>
-<pre><code>proc append base=base_data data=new_data;
-run;</code></pre>
-<h3 id="Contents">Contents<a class="anchor-link" href="#Contents">&#182;</a></h3>
-<pre><code>proc contents data=libname.dataset   # replace dataset with _all_ to get a listing of all tables and columns
-              out =results 
-        noprint;
-        run;</code></pre>
+<h1 id="Linear-Discrimanant-Analysis---LDA">Linear Discrimanant Analysis - LDA<a class="anchor-link" href="#Linear-Discrimanant-Analysis---LDA">¶</a></h1><p>The LDA approach is quite similar to Principal Component Analysis (PCA). It's a <strong>SUPERVISED</strong> type classification algorithm commonly used as a dimensional reduction process. Common applications are to reduce the probability of over-fitting as well as improve computational performance.</p>
+<p>We'll leave the math until later. At a high level LDA tries to maximize the ratio of dispersion between groups and within 
+groups. (NB: LDA literature also uses the term class to refer to a group).
+$$ \text{ ie } max( \frac{ D_{within} }{D_{between}} ) $$</p>
+<h1 id="Ex1---Intro">Ex1 - Intro<a class="anchor-link" href="#Ex1---Intro">¶</a></h1><p>Let's get a working example up and going before diving into the algorithm</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h1><h3 id="Symput">Symput<a class="anchor-link" href="#Symput">&#182;</a></h3>
-<pre><code>#places variable on program stack, so you can use it outside the _null_ step
-data _null_;
-    lastday  = intnx('dtmonth', input("&amp;thismth",yymmn6.), 0, 'E');
-    call symput('firstday', firstday);  
-output;
-stop;
-run;</code></pre>
-<h3 id="Intnx-&amp;-Intck">Intnx &amp; Intck<a class="anchor-link" href="#Intnx-&amp;-Intck">&#182;</a></h3>
-<pre><code>INTNX function increments dates by intervals. INTNX computes the date or datetime of the start of the interval a specified number of intervals from the interval that contains a given date or datetime value  
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The usual imports</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span><span class="p">;</span> <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
 
-    SYNTAX: INTNX(interval, from, n, [,alignment] )  
-
-INTCK function counts the number of interval boundaries between two date values or between two datetime values.
-    SYNTAX: INTCK ( interval, from, to ) 
-
-data _null_;
-    firstday = intnx('dtmonth', input("&amp;thismth",yymmn6.), 0, 'B');
-    lastday  = intnx('dtmonth', input("&amp;thismth",yymmn6.), 0, 'E');
-    call symput('firstday', firstday);  
-    call symput('lastday', lastday); 
-output;
-stop;
-run;</code></pre>
-<h3 id="Put-Input">Put-Input<a class="anchor-link" href="#Put-Input">&#182;</a></h3>
-<pre><code>data x; /* Convert a number to text with leading zeros */
-   a=374747830939;
-   b=put(a,z15.);
-   format a z15.;
-run;</code></pre>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h1><h3 id="Timing-Code">Timing Code<a class="anchor-link" href="#Timing-Code">&#182;</a></h3>
-<pre><code>/* Start your timer */
-%let Start_Timer = %sysfunc(datetime());
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">make_blobs</span>
+<span class="kn">from</span> <span class="nn">sklearn.discriminant_analysis</span> <span class="k">import</span> <span class="n">LinearDiscriminantAnalysis</span>
 
-... do some stuff ...
-/* Get end time, compute duration */
-data _null_;
-    dur = datetime() - &Start_Timer;
-    put 30*'-' / ' TOTAL DURATION (ScriptName):' dur time13.2 / 30*'-';
-run;</code></pre>
-<h3 id="Column-Search">Column Search<a class="anchor-link" href="#Column-Search">&#182;</a></h3>
-<pre><code># searching a library for a column
-proc sql; 
-   select name,memname
-   from dictionary.columns
-   where libname eq 'SOWSTAR' 
-      and upcase(name) like '%CUST_ID%' 
-      /* and memtype eq 'DATA' */
-;quit; 
-run;</code></pre>
-<h3 id="Removing-Duplicates">Removing Duplicates<a class="anchor-link" href="#Removing-Duplicates">&#182;</a></h3>
-<pre><code>proc sort data=Accounts;    by account_number; run;
+<span class="c1"># Some silly data</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
-data account_clean accounts_duplicates;
-set  accounts
-     ;  
-By account_number;
-if not first.account_number and last.account_number
-    THEN OUTPUT accounts_duplicates ;
-    ELSE OUTPUT account_clean;
-run;</code></pre>
-<h3 id="Asynchronous-submission">Asynchronous submission<a class="anchor-link" href="#Asynchronous-submission">&#182;</a></h3>
-<pre><code>%let mynode=sas_server_ip port;
-     options comamid=tcp remote=mynode;
-     signon user= XXXX  password='YYYY';
+<span class="c1"># plot functions</span>
+<span class="k">def</span> <span class="nf">plot_decision_boundary</span><span class="p">(</span><span class="n">pred_func</span><span class="p">):</span>
+    <span class="sd">""" Helper function to plot a decision boundary.</span>
+<span class="sd">        It simply draws a graph where pred_func is used to seperate the areas</span>
+<span class="sd">    """</span>
+    <span class="c1"># Set min and max values and give it some padding</span>
+    <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span>
+    <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mf">0.01</span>
+    
+    <span class="c1"># Generate a grid of points with distance h between them</span>
+    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+    
+    <span class="c1"># Predict the function value for the whole gid</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">pred_func</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    
+    <span class="c1"># Plot the contour and training examples</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greys</span><span class="p">)</span>
+    <span class="c1">#plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Greys)</span>
+    
+    
+<span class="c1"># So far so good I hope</span>
+<span class="n">lda</span> <span class="o">=</span> <span class="n">LinearDiscriminantAnalysis</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s2">"svd"</span><span class="p">,</span> <span class="n">store_covariance</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">lda</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-/* sas lib setup goes here */
 
-/* We're going to try to run multiple sessions in single program */
-options sascmd='path_to_sas.exe -nosyntaxcheck'
-autosignon;
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">aa</span><span class="p">,</span> <span class="n">bb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#gmesh = np.concatenate((aa,bb),axis=1)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">aa</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">gmesh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">a2</span><span class="p">,</span><span class="n">bb</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ypred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">gmesh</span><span class="p">)</span>
 
-rsubmit remote1 wait=no remote=mynode;
-proc sql; create table Jan2018 as select count(*) from DS_1;    ;quit;
-endrsubmit;
-
-rsubmit remote2 wait=no remote=mynode;
-proc sql; create table Dec2017 as select count(*) from DS_2;    ;quit;
-endrsubmit;
-
-waitfor _all_ remote1 remote2;                          /* 5 */
-
-rsubmit mynode;
-    proc sql;
-    create table results as
-          select * from Jan2018
-    union select * from Dec2017;
-    ;quit;
-endrsubmit;</code></pre>
-<h3 id="File-Permissions-(UNIX)">File Permissions (UNIX)<a class="anchor-link" href="#File-Permissions-(UNIX)">&#182;</a></h3>
-<pre><code>%macro chmod(libname,dataset,permis=744);
-    proc sql noprint;   /* get the absolute path of the libname               */
-        select path into: extpath from dictionary.members
-            where libname="%UPCASE(&amp;LIBNAME)"
-    ;quit;
-
-    proc sql noprint;   /* find out if there are any datasets in the library  */
-        select count(path) into: cnt from dictionary.members
-            where libname="%UPCASE(&amp;LIBNAME)";
-    ;quit;
-
-    /* if there are datasets...then issue the below command to change the
-       permissions of the dataset called in this macro  to 777                */
-     %if &amp;cnt &gt; 0 %then %do;
-        filename chmod pipe "chmod &amp;PERMIS %trim(&amp;extpath)/&amp;dataset..sas7bdat";
-        data _null_;
-          file chmod;
-        run;
-     %end;
-%mend;</code></pre>
-<h3 id="N+-Rows-to-csv">N+ Rows to csv<a class="anchor-link" href="#N+-Rows-to-csv">&#182;</a></h3>
-<pre><code>data inTable;
-input letter $ number $;
-datalines;
-a 1
-a 2
-a 3
-b 4
-b 5
-b 6
-;
-
-data want;
-length cat $20.;
-   do until (last.letter);
-      set intable;
-        by letter notsorted;
-      cat=catx(',',cat,number);
-   end;
-   drop number;
-run;</code></pre>
+<span class="n">plot_decision_boundary</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span> 
+<span class="c1">#Original points</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'Pastel1'</span> <span class="p">);</span>
+</pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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5eVatGhR8NMxQLZR6kjUNddco3HjxvV7btq0aRo1alTCibKP7QKQJEodidq2bZuOHTvW77nDhw/ryJEjCScCwkKpI1GbN2/WH//4x37PvfHGG+rq6ko4ERAWSh2JW758ud56663PC7yjo0Nr167VL37xC8/JsoPtApAkVr8gcTt37tT3v/99zZ07VzNnztTbb7+tzZs3+44FBIFShzevv/66Xn/9dd8xgKAw/QIAAaHUgQSwXQCSQqkDQEAodQAISMHeKK2srNT999+vq6++WmVlZWpsbNSaNWv0/vvv+44GAENWkKUeRZHWrFmjuXPnfn5s+vTpmjNnju666y41NjZ6TIdQrVu3TvPnz/cdA4EryOmX73znO7r22mvPOj5lyhTdfvvtHhJJFRUVuvTSS1VTU+Pl9QGEoSBH6nPmzFFRUVG/56ZPn55ollQqpRUrVuib3/ymJk+erObmZr366qtasWKFOjs7E80CIP8V5Ei9ra0t47n29vYEk0g/+9nPdOedd2ry5MmSpLFjx2rRokV69NFHE82B7GO7ACShIEv9qaee0p49e8463t3drd///veJ5SgpKdG8efP6PXf99ddr0qRJiWUBEIaCLPVDhw7p4Ycf1qeffvr5sZaWFj355JN6+umnE8sxevRoTZw4MeO5yy67LLEsAMJQkHPqkvTCCy9o/fr1uvnmmzVy5Ei99NJL2rlzZ6IZWlpa1NTUpBkzZpx17tChQ/roo48SzQMg/xXkSP2kzs5OPfPMM3rssccSL3RJOnHihH73u9/1e+61117rd4oI+Y3tApBtBTtSzxWPPvqoiouLNX/+fE2ZMkXNzc165ZVX9OCDD/qOBiAPRc45by9eW1vr78VzTEVFhaZOnaqmpia1trb6joMsWr16te8IyHOLFy/O+A3tBT39kkuOHj2qjz/+mEIvAFu2bPEdAQGj1IGErV271ncEBIw59QJTUlKiG2+8UaNGjdKLL76ovXv3+o4EIEaUegG54YYb9MADD8gYI0n6yU9+oueff14PP/yw52QA4hL79Isx5hJjTKsxpjzua2Poqqqq9NBDD31e6JI0ZswYLVmyRLfeeqvHZIWnsbGReXVkTaylboyplrRS0vE4r4vh+8EPfqCpU6eedXygrQoA5J/YSt0YE0l6TNJySUfjui7iMXr06IznqqurE0wCIJuGNKdujLlD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%0A">
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Sample-dataset">Sample dataset<a class="anchor-link" href="#Sample-dataset">&#182;</a></h2>
-<pre><code>data example1;
-input x y $ z;
-cards;
-201701 A 60
-201702 A 70
-201703 A 100
-201704 B 10
-201705 B 67
-201706 C 81
-201707 C 63
-201708 C 55
-201709 C 55
-201710 C 55
-201711 C 55
-201712 C 55
-201612 C 55
-201611 C 55
-201610 C 55
-201609 C 55
-;
-run;</code></pre>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Shading background</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">aa</span><span class="p">,</span> <span class="n">bb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">aa</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">bb</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">aa</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">bb</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAW8AAAD3CAYAAADSftWOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDIuMS4yLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcvNQv5yAAAH/pJREFUeJztnU/IZ1d5x7/vEI0LM1oKxkU1ooUjgowUkQw4dhGsWOgo2bhJQdGFCxeOuFCpi4LQjTYV2qAWXIU2qBjMRlMIWAcdjUgJbjwSxRQpgkjNGGoGdN4uZm7ym9/cP+fPc87zfc59PhBwXt/3Ps+995zPfX7Pvff8Tk5PT+E4juPY4ox2Ao7jOE4+Lm/HcRyDuLwdx3EM4vJ2HMcxiMvbcRzHIHf0CnT/PRdve6zlwunZ7O1cPrma9Hsl2y6JIxlTIoclpHOTQHL/RmP088UyV2ryyIlZ47qvP/PYydz/f9LrUcFDeZceMFZxswzEY9gE4LKuY8Tz2WKfes/fll66fHKVR94jVduM0maY4C7pvoxyzrXnUw9/lMS49N8P68r7wdc+UBSo1QHJjSEZryb2HJqT10XNieUxYVniLQpNc/LuUW237llJxZ5DY3K6qO2iJXOmcc4m8dTtm5J362pbS9pMAzkFRlkztAhy8eN4g5rjoDUPGVopJuTNJO3aWDVxW+SQgrZkLIpZCu1jD/Q7/ixFTC+J13qNXt5M4taW9sjC3rOgS9EQuwWR70XitPJ2acvHX6OnCFzUbRntXGrPmx6uKPEdpbxbiru3tBkqiCV6THIXNQcjnGsrEu9VhVPJm6Xa1pQ26wRIwUVtC6tjQXNusVThAMEblpO8GartUaXdapK6rMfC4jjRWq6CQeLq8p5b2+SYkVskrQZ2i4nost4XlsYQu8RbOIxe3qNW2wxrN6QwkrBHu5HXE+lj5xKv3z6tvF3abfNYwpp0GJ6DrmXvx5xlTjAvRDW3fUp5s4ubQdp7EfYIcq5lL+fHJZ63bTp5j7S6oERMiRzmYBOCSzoftnMI8I5PxpUEa+I0WxI2hPAqAD8C8M4Y40/Wfrd2PW+WZy8l40nlcAzLZHdRt4XhPLvE8+JJLglb/E06IYSXAPgigN+n/k3Pt5JaxJCMVxN7Ce3J7LLuy/Hx1jj/hzFrzv/0t1L7MG0nNafa+BdOzybFunxyVWwfa74G7bMAvgDgkym/PEq1zSZtq0t9OvJoy1xC5C0knpNLjVxTLxhSAi+Sdwjh/QB+HWN8PISQJO9c2Kptl/Y4ws45dpb3WVPmuZXvMZISZ6zCJfavqOcdQvgOgNOb/70FwE8BXIwx/mrpb6yu510bqyZuqzxSYRWXdnsoB9ZjCNhavVKzeNJ+Kq7Z2iYhhG8D+PDWDUup9byBPm9i1sSpjdsqjxRYZGNJ0DXs8XizLOLGvhTshPgNS2mYqu29SVtLIHsR9BpLx6D3OTmM1/q81LRUpNspPVoprdoo6ut5Ay7uFvG36C0HF7UMI543hkqcYQGqpe1TLQk7wdQm2YO0e018F3U/RlrHRVvirG0UOnmPJm5WafeY3C5rHkY433uQeI7AqeTdsk1iRdpS8ZdoPYld2DawPA40CyIWgQMEa5swfRlDTYzSeNKx52g5UV3W9rE6PixIvKWzKOQ9irj3Im0X9thYGzda8067CleXN8M36WhV22yDeQ0X9j6xNJY05qCmwOnl3XLtk9Ltl8aSirmE9ESzLmyWF10m/HjeSovjwV6FSwqcWt4u7jY5rGFJMGxyrsXKsbcw5kaswo+3Tylv9jaJS7svo0k6l72cmxEk3lPgdPIeTdwsA3IORinsXdSpsJ07ZokzV+E1AqeSN7O4R6q2WSa+i1oOlnMK8I7T3oVXa4HTyJu5v61dbbNOhlxc1v3QPtcA57hlbaOUxFB/w/L+ey6ethS35TYJ4+DPxYXNgfUxoF0QMQpcXd45X8YwMXqbxLq0XdjcWB4XmsURm8DNyZtR3GzVtsbkdGHbxOpY0SyUWO7NmZL3yOJmGtCpWBT2SEvsSmNt/Ixchads34y8Xdzt80iBWUwMN+lSYT6OgK0xpTUPtQVuQt4MK3hJxKmN2yqPFJhkY0nSJezxWLPMBUsCp5e3i7ttHmswSGR0UaeifS72JHErAqeW94jiZhicW2iJwkWdjqbM2cegRoGlIXBaebu45eNvoSEEF7YMI547hkKHWeCU8nZxy8dfo+fEd1m3p7fImcfnyAJfkvcdxRl0ooe4XdoyuLD7cny8W5/nafutzvOF07PF+3D55Gp1XjnxWx+LlP2h/vZ4F3cdPaTtwuZjhIu15pzq8Yk9p+tA1TZxcfMO/BRc2HawfAF3gd9gaVXBM9kRK3Fxtx3sLSfrhdOzLm5jTOfMYrFQkzfDTdDWMbrKu6VYeoq7RpItBoVL20mh5XlsOQYtCFzDBxTfYXlIy48fpdsvjSUZdwm2CePYofUFXxqtudfDL2sxaL6MYQ0Xdzou7Xq2juFejoWlsbRHgdPL28WdTovJZl1U2q+VA34Ml2CZA+wCNylvlnVza+NIx5XKYw1rwmGQdAmWjrOVcbYXgQ8nb6a3oaRjSuaxhAWZWBV1Cns9/gzzwprAaeXt4m6XxxKs4hhZ1luwnhOAf/yNLvAleau+Hu/ibpPDEoyC2LOwDzk+DkznaspF6lxJvMp+SMlr9bU51LzKL4Va5e3ibpPDHEwi0B7wFhn5/GnPmV4VeI3vKCvvVri4X4Rl4mtJ+8nf/Vx8m2+76/Xi21zj8Nhpn0/mKlyjAm8ZZ2t/iirvEMJLAHwZwOsA3AngMzHGx9b+5rDybr2QSykjiVt7kgP9hN1C0KX0FLv2OWYtMnpX4C07ApdPropX3g8A+E2M8W9DCH8K4L8ArMp7onW7pDdSg451IpTQ6nwxSXqJtRylxd56WdItJKtwyxV4y/73Wk6l8v4qgK8d/PsPhdvZhLnP7eJ+EVZht6qES/I6/BvJvBgk7gJPiye5j1U3LEMId+FGxf2vMcZ/W/vd+++5eDpSu4RN3CNIO1eIvXvPOWjui/WxYLWF0qrQFP8mnRDCawA8CuChLXGX0qNd4uIuQ0PazLI+5jjXrX2UrMq1KvFRKnALsYDyG5Z3A/g2gI/EGJ9I+Zu1b4+fQ3slL+lYErHn6D1BpfJOEbYlWZfQ6xhYvbhrzrUen+RTY4h+k04I4fMA3gfgJwc/fneM8fdLf9NK3j3bJS7uurxd2MtsHRuLEt+rwKULT6qvQdti5KrborhbS3uvwl6i9fGyNHaAsQW+W3m7uNtiVdrW5LREy+Nn7RhpCZyhfWJG3t4uWceCuHs+66z9TPsSPW/oWpA409jvNf+lOgjiT5u0gPHpkr2Jm1narKKe4zjXmuN6eOzmjvH0s5Jj3Ov1cIknMXrlKhW39dMnVPJOpWe7RILRxd1S2qKrz11/rurvL595eXnsg/2QELmkxHs9WsgicIYVAY8p2S8aebMdTICnz80q7lbSLn7LrVLONdvPEbuEyLckzlqFs4gzNw/G6pum5812k9LFvc6SuHtKu7Wsa8mt1Fk++bCOuUO05qfG0ycmet6tYLjSl9B6EjFU2zn72FLWbzj/WwDAz668Umybh/mmiLx0oSfpKtxCBT5q+yQHCnn3eMIkB4aq25K4W0q7VNiTjFv+XY7oc0QuLfGSXrjWzcEcNHJsHTNn++rybn3l07iyuriXaSHtUlHXMhc3ReipIq+RuEQV3lpUDJVvrxxaxFHveXuvu00OS+Tm1lPaFoSdS2p1ntJWYT53NTDMlx6eKH3ue5c9bxf3rbBO/lRpSwn7zvvOZf3+tSeeKo51mPOayKdjIFmJr7VRRqrALbR4APnqW1XebL3uWlzctyIh7VJh5wq6dFs5Yk8RearEc87nXBsltw9uRZCl9Hp0UJJhK2+tNykZkRC3ZLUtLW1JUedyHDtV5ltPt2xJvKQKr/1WopbC8ur7VlL254xUUq2wcEIA3qpbquJO5cLp2Spxv+H8b5PEfed95174j4ncvLb298L151aPWc64mbsA557vljf3tOd6bnztm61qlbf2jh9ibdC0orZVUivtLdhEvcVhvlsVeUolvlaF11Tgo7RQWPNqxZBtk94XBqYL0SE5eWmJW0PaZ86/K+v3r195vDrmtA8pEi9ppeS0UZhbKNqPD/aIL9U6UZH3aDcqa2BplxwjdWOyRtw10s4VdMm2SqSeUo33qMKXKnDrX4zRu/ru8dLOpYX/b7jKu/eNSsaqu2efu0TcraQtKeySeLkyv/O+c6uV+FYVri3wUatvK9DfsBwZhk8WNU+WLOW/dpNNWtxnzr/rhf+0Kcll6+bm2g1NiRuZtTcxGSXb++GBngtcHdJd3iO1TKwP3FbiXmJN3LlPjrAIe4kSia/RUuCMWM69F0NV3pae7WYcnJriToVd2sfk5JtShc9Ru9qiV982GUree0fi6ZItSi46EuK2Ju1jciW+RK7Ae7VPWmCpuNJonbi8C6m5smtX3RJvUB5T0uNOEbd1aR/DLPAa9lDpskEp7x6DTVug0vRa1nL255niTu1vjyTtQ1IvSL0Fzlh91zD6BaWrvFsezNFPlBSlVbeUuFMZVdyHtBJ4DTUCbzEHLbVOekNZebPD1jKR+DZySSRaJXuhVuBzaLZP9kzvvrfLe0dI36TMfcrBxT1PjcB7Vd+psH0CZstHkl3Ke6QKhG1wrvW5t9ijuCdq9n3umEtX35q975HmqyRDyJtNYFZo0esuZc/intg6BtZWVXTa0k3eo7xZydbvTqVH5VRadbu465GuvkdqndTA7KMhKm+nL9JVt/MizNW35ccGe9HzwuXyNkyPdYdT8aqbk1EutDUV8EifBA5xee+AFm9UOu0orb5znjxhbgfsjdJzsTt5+6CtQ7KS86qbG7YXdpxb2Z28HXlqHg905vELm7OFy9txDJJzYRyl7+3cSvHXoIUQzgB4CMA5ANcAfCjG+LRUYqn0/Hg2ykfBmue7HcfhoKbyfi+Al8UYzwP4BIDPyaQ0Ji5Dx3EkqZH32wF8CwBijN8H8FaRjJxd4D3dNrRY68ThpEbeZwE8e/DvP4YQhvs2esdxHEZq5H0VwF2H24ox/qEyH2cnXL/yuHYKQ/KzK6/UTsHpRI28vwvgrwEghHAvgB+LZDQoo9zsdByHgxp5Pwrg+RDC9wA8COCSTEp59LwROMpNx5QXLfxi4zjcFPeoY4zXAXxYMBfHcRK59sRTyb97+czLG2biaOEv6TjVLPVZcwTj3IrfE3C22J28vR1Qh2QV54LipmZBs1FajMzsTt57pGaBIac/Wxe1pU80OU+aeBHDQ+m5cHkbpnV1kzOoSlsnXn23ZZR+t9VvsGqJy9vJZhQhMFJadUvja8CX0fNC0U3eqTvF/nHO6jd69Jh4Xn3rMXfsly6yTN/AxA6zj4aovEcaLD2ped5buvp2gffpdTvjMIS8c2G+mubCduGqeWxwzwKX3nfpqluzZTLSfJVkl/LeK6UTUKr6doHPk7LPPavumieR2IoJtnwkcXkXwNb3rsmnxSODa0Jxgd9KC3Fr9br3Tsk8rDknXeXd8io48hVWktJnvnOr79qKcA8CrxF3K9hezNG84LBf7Cgr7x4Hjf3E5NLj4iUl8GtPPLXrCvz6lcerxd2i6h7t8cDRCzpKeVuArXWSQ4s3Lksq8FSBjyTx1H3pLe5aRhclIy7vgciZQNI3L4F2AgfsSzwnfw1xM1bdllomvfvdwGDyzj2AlgZHD1Kr75LcJQQO2JN4rrQlxZ1KrbgZq27GnKTpLu9R3rQEOAdIbfVdK/A1kWwJfCSJ5+a3te8l4rYwh5awnHsvhqq8rdFqgDIIvPQplNynKyZJMoi8JJeUaruluL3qvh0LLROg4pt0WLlwejbrwFw+uVp1snPjMfK2u15/2yR+8nc/T5rEa8fv8pmX48L15277+SSjN5z/7ezfTTK7875zm/EPOZbmmfPvyvr7XGovGKXVNjC2uK3Pp16oyDtVeLVitUCrfZS4qLQUOHBDTksCB8olPrEk1xypS1f0KZ8stj6dMIibld6+aB1vbfsnp6enTYNPPPjaB24JlDrISg9OjrgkTgDresM5eS21SyRe0lgS+MSaxCdKJc5AajuodbUNyIibteoeqWUybfvSfz98Mvf/q/W8mSpq7Y9pLeNLPD6Y0wMv6YMD673diak/bOW7MXPy3dr/PYi7Fta8WkF/w1JbrKn0vuK3olbgQNmz4BMpEgd4RZ6bV4q09yJu7TnQo+qWZLgblhO9b1wyk3ss5m5gAuk9cGC7Dw6st1K2bmoeMifKXi2W0otHTV8byBfN6OK2Mncl28VqPe+Jlr1vjSsp8yCUmPCA/KTf6odPpIg8hVyxS1X3KZ8oUl64GU3cgP686eWKEt8t9byHlnfO9mvj1MRskcMSrAIH0iUOyIm8NamrK/aSNuDilsihdTGZIm/1tgnbY4Mjt0+AshYKcLsIpn/ntFGm+Iu/cyCwLZEfSpFJ5LlL4baQNuDibpmD5uOBh6jLuzUaL9HUxmx9ASnJT6IPDqRJHEjri0/MCbOH0EvXLE9di6R0DO1F3JZyaBFHvW0ywdT7Lo0jEVc6hzUkKzqg7CWPnH3MaauwkbN4lLa0Ad314VOxVHXX+I22bdIDq6+w96jApzipLLVRpp/liuIwdmo1/sLvk8s8d7U/aWkDLu6WOWjHMVd5A/u6eSmVxxYMVfhE1VozSkIvXZZVYgmDOUqPP+tYO0QqRwtVN2Cg8masjiUqX4n96nETtbQPDixX4Ye/k0NONX7b365ItFbstetmv7AdgXHe4sJpQdxSsIm7BJrKe2LERwdL4s7BPrlaVeKHWH0SSGoSW5U2wDMHet4Dk/AZfeXdC603Ly1V4FOsXFpV4occ58Uqc8mKa2tpAq0WVQ4s4u4Zt3UhSidvtue+e8faolcuNRebFIkf/l4Nczn2PFctPxaPIG2AS9xsz3TXQNc2AThvXtbEqo07h6XJ11JCI9L6eFkaO4Bu65Kh6jbVNulx81LrBqlU3J6fBmpaKcB6JX78872KvMcFrncV6eJuS5G8QwivAPAwgLMAXgrgYzHGK5KJpWKxfWJR4EB93ocC2rvIU5fYtShtYL/i7hmjqG0SQvh7AP8bY/ynEEIA8O8xxr9Y+5v777l4mv3Y18Dtk9LYc1idnBM5a4VbFbrGPloeF5K59+xzt7hJKd02eRDAtYNtPF+4nVVY2yd7r8CB+lbKIVttlUOOf4dV5jmyBmT3Q+sm2wjithILSKi8QwgfBHDp6McfiDH+MITwagDfBPDRGON/rm3n/nsungJt1ybpccWUilcbewnrE/eYXAke00rujHlpPhkxirjZqm6gwXreIYQ3A3gEwMdjjN/c+v0e8i7dfkkciXi1sZfQfryJVeTatLqQjCBtwMW9hKi8QwhvAvB1AO+LMSZ9zcgkb4BX4KUDUXvQzaEtcKDfx0gmqfds42ifYxd3fryS+35ff+YxUXl/A8A5AL+4+aNnY4zvWfubQ3kDY7VPamNK5TCH9gSf0FrTooXYNfvsI55P7bnDKu5p+6LyLqGnvEu3XxJHKqZUDkuwTHqAZ3EiK4x87rTnTG38lgXltG06eQMu8FY5LMEkgQkX+Txs54p9LI4qbmBZ3meytypI6wNeM+AY3q66cHpW/GLAJstpH9lk1ZvD48B2LFzcMjGlUa28J7wCb5fHEmyCmINhgrRir8efYV70FLeE25Yqb8q1TVLotTZJaRzpF2ek93faFrNE5nKzKHTmYzyHBWkD+xD3GhSVN8BdfefGkow7h5XJ1RttsVs/hq2OH8scsCpuyhuWx7jA07E00VhZO4Z+HOphGvfs4l6LYULewLgCl4g9h6WJ53DR8pMK01i3LG6AQN4PvvaB016P1rTYfk086dhzWJuIjh4Wx8pexQ2QPCrYUgK9HiEsiScde46Wx5bxEUMnn5bnsdUjjjU5jyDuNbo/552ykz1O1qgC7yFxF7kdepwztmobsPEcd20Mte+wTEm8hxw1WyhS8Zfo9Silw0Wviyvj2NWYz63XaVpaVVDtDUuvwOXiL9HjbT2vxnnodR5ajivNNskUv3VMqXt/9C/plL7skvNSi8QLK9Pflr7QUxt/jZrccjjcvlfk7el9wexRCJTSW9ytj0XK9tXaJhMtn0DJ2X5tnJqY0vG30KiSXeYyjHjuavfJkrhL2sXi36STy5K8ARd4qxy20Gx1uMzTGP0cMRQ6zOIGyOUNjCnwkrit8liDoV/tMr+B9rnodR4Y5kVPJ9Q8oEEvb8AF3jqPFLTlccjoQt/jsWaZC1bEDRiRN9Be4DkxJGLVxG2VRwpMYjnGktT9OL4Iy/i3JG7AkLwBF/gW1iadFuw32rSwNn4k8+017yUdZkrewNgCL4k9h0YFalVYe8fqWBm12s6JYU7eAKfAa+PVxp5Dq43gIufG8riwWG3nxMqJoS7v+++5eKr5NpJUHKl4NbGX0OwFu8g5sD4GpPO3Lm6ARN4A93KvmlV4afw5GG7oucz7MNK51p5LjOIGiOQNcNwEqI0hFU8qhzkYJjbgIpdkxHOqPX96fWovLVzVv4zh+Jt0mAWeE0cypkQOc7BM+ENc6GmwnbuRpC2RQ2txAwTfpLP0NWgj9cElYkrlsQSbDA7Zu9D3cm72JO3SWIfbp5U3wN0Hz40lFVMqjyWYRXHMSFLf83FnmRPM1fbc9qnlDbjAc7AwqXrCJHc/lrfDIm3AnrgBA/IG+PvgObGk485hZaI5/FgaS8zVdk2spRjq8k799vgei05pVOEScZdoVXm6yMfG2rjRKpw0xQ2QyBuQWahliZ4Cz40nHXuOlu0DF7l9rI4PzXnGsNIpjbwBF7hk/CVa94Fd5jawPA4sSLsmXmoMKnkDHFe02hil8VrEX6LHzTwXOQ8jnG/tT7Qs4p62rf6GZc13WFoReG7MVjks0fOpDBd6H0Y6p9pzh2kZjsPt08obaCvw1O1LxCmN2SqHNXo/Xucyr0fjkUj2sThatT23fWp5Ay7wlnlsofWctAt9Gc1n1y2MO2vrfNe0iZvIO4TwRgA/AHB3jPH5td9l+A7LnBi1cUpjtswjBZYXXvYi9j0e7z1JOzXW2vaX5H1HaUIhhLMAPgfgWuk2jpl2YGtnL59cLT6YF07PJp+46fdqB0zqfrXOI4XDGJpi2YptRe4scp7DirAB3eViWV8eLJJ3COEEwJcAfArAN4oir5Ai2Bqh5cq05mJRE3cuj+NtteQ4BpOIJHLZOoZM+yuBxgVvj9LOiVUTY1PeIYQPArh09ONnADwSY3wqhFAcfI3UCtlaFX64jZqB3bMan2CpyqUYYR/W0Px0sldpp8aT2L+inncI4WkAv7z5z3sBPBljfMfa35R+DRrQ52D0PsG18efQbiWMLkN2Rjj/2vOKsdpu9rRJCOEXAN64dcOy9pt0ei0+5RKXw2XejtHOsfY8Yl5tkErewFgCl4gpkcMcLJP8EJd6HmznUPL8ac8bZmlP21d/PX5uSVjWu7i5cSRjSuSwBJsEjtm71JnPD/s41JirLT10uG1KeU+0rMJLt18aSyqmVB5LMItiCetyt3bMpY83y5xglvbc9qnlDfBX4TmxpONK5LGFNbFs0Uv0ftzWaXV8mKVdE2suhrq8U76MwcoCVCwSB1zkTh3Wxo/W3NNcBZVC3sBYqwgySRxoV226zMeh5ScStgLFykqDWzFo5A3wLEKlJXCp2GtYnKSOPK3bR4zFyCjSnqCS98RIVXhuzBbxl+jR/3WhczDCudaeRywL5E3bp10SlqUKr41TGrNF/DV6PrHhQm/LaDdltecNS7V9vG1aeU+4xNvksIXG43cu9TxGPkcMc6SXG0odRy9vgEvgtbFq4rbIIQWG56j3KnbtY29lnGktWKUh7QkT8p5wibfNIxVtoSxhTfCMx9Ha8rAWpZ0aayuGKXkDPDcNpGLVxj7G2uRzdNG64DGNc7YVBlO3b07eE6MvB2t9FUEXOh/an0yYhA3wSTs3hrq8p9fjR1pNUHuQzaE9cQEXek8YzjfAOXYZVxikWhI2ldr1vAGXeC4sE3vCpV4O27kEOIUNcEq7NI4vCVuItsRLcliDUQATLvYb7OEcscwTZmkfbp9S3gC/wHNiScaUyGMNZkksYVnwFo83wC1sYGxpT9DKe2JEiUvFlchjC6tyWcPyuh5a+JKwMjGHWhLWcRzHkeOMdgKO4zhOPi5vx3Ecg7i8HcdxDOLydhzHMYjL23EcxyAub8dxHIO4vB3HcQxyh3YCGoQQ3gjgBwDujjE+r52PFiGEVwB4GMBZAC8F8LEY4xXdrPoSQjgD4CEA5wBcA/ChGOPTulnpEUJ4CYAvA3gdgDsBfCbG+JhqUsqEEF4F4EcA3hlj/Il2PhO7q7xDCGcBfA43Jure+RiAJ2KMfwng/QD+RTcdFd4L4GUxxvMAPoEbY2PPPADgNzHGCwDeDeCflfNR5ebF7IsAfq+dyzG7kncI4QTAlwB8CsD/KafDwIO4MTCBG5/C9vgp5O0AvgUAMcbvA3irbjrqfBXApw/+/QetREj4LIAvAPgf7USOGbZtEkL4IIBLRz9+BsAjMcanQggKWemxcDw+EGP8YQjh1bjRPvlo/8zUOQvg2YN//zGEcEeMcZfSijE+BwAhhLsAfA3A3+lmpEcI4f0Afh1jfDyE8EntfI7Z1domIYSnAfzy5j/vBfBkjPEdiimpE0J4M4BHAHw8xvhN7Xx6E0L4RwDfjzF+5ea/fxlj/DPltFQJIbwGwKMAHooxflk7Hy1CCN8BcHrzv7cA+CmAizHGX6kmdpNhK+85Yox/Pv3vEMIvAPyVWjIEhBDehBsfk98XY3xKOx8lvgvgbwB8JYRwL4AfK+ejSgjhbgD/AeAjMcYntPPR5LCwCyF8G8CHWcQN7Ezezm38A4CXAfj8zTbSszHG9+im1J1HAbwzhPA9ACcAPqCcjzafAvAnAD4dQph63++OMdLdsNs7u2qbOI7jjMKunjZxHMcZBZe34ziOQVzejuM4BnF5O47jGMTl7TiOYxCXt+M4jkFc3o7jOAb5fwGLmieB8+csAAAAAElFTkSuQmCC%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
-  
-
 </body>
 
  
