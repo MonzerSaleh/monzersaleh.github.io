@@ -10854,7 +10854,7 @@ Adapted from GitHub theme
   color: #f00;
 }
 .cm-s-ipython span.cm-tab {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background: url(data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
   background-position: right;
   background-repeat: no-repeat;
 }
@@ -13110,7 +13110,7 @@ $( document ).ready(function(){
 <h2 id="Localization">Localization<a class="anchor-link" href="#Localization">&#182;</a></h2><h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>How can we determine where we are with a high degree of accuracy? Our robot must be able to sense the world around it.</p>
 <p>The idea: Robots are computers at their core. So we can imagine that location is represented as a 1 diminsional line. For our purposes we will take the horizontal y-axis as a measure of probability. At the start of life our robot has no idea where it is so all positions on the line have the same probability. This leads to a state of maximum confusion represented by a uniform distribution. This represents our belief and will be the prior distribution</p>
 <p>In order to begin the localization process the world must have some features. Imagine these as identical doors, and our robot must have some sensors to measure the distance to a feature. Upon measurement our initial belief system will be transformed into a series of normal distributions along the location line. This is now our posterior belief.</p>
-<p><img src="CS7638/CS7638_im01.png"></p>
+<p><img src="CS7638/CS7638_im01.PNG"></p>
 <p>The illustration above better exemplifies what is happening. Notice also what happens when the robot begins to move. The process of moving the beliefs to the right is a convolution. Also note that because robot movement isn't precise the height of the normal bumps is decreasing with each convolution. But in the final posterior there is a spike! This is because the prior distribution illustrates a bump at the same location. Hence the measure of certainty increases at that location.</p>
 
 </div>
@@ -13243,7 +13243,7 @@ effectively creating a posterior distribution</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Motion-Exact">Motion-Exact<a class="anchor-link" href="#Motion-Exact">&#182;</a></h3><p>Continuing our grid/cell model from before. Suppose our robot has the following distribution [1/9, 1/3, 1/3, 1/9, 1/9] and wishes to move 1 cell to the right. (We assume that the world is cyclic). We would expect that after moving one cell right our robot has the following posterior distibution [1/9, 1/9, 1/3, 1/3, 1/9]. (We've shifted the probabilities to the right, and cycled the last entry to the start. This is an example of exact motion. Unfortunately robots are not very exact.</p>
-<p><img src="CS7638/CS7638_im02.png"></p>
+<p><img src="CS7638/CS7638_im02.PNG"></p>
 <p>Let's program this!</p>
 <p>To the above program create a move function that takes an array and shifts the cells one element to the right.</p>
 
@@ -14008,7 +14008,7 @@ Our car also has a steering angle $\alpha$ and a length given by L And we wish t
 </ol>
 <p>Note that the difference between the 2 primed equations hinges on beta. if beta &lt; 0.001 then turning radius goes to infinity due to division by zero so we must drop the turning radius in our primed equations</p>
 <p>Illustrated are the required equations</p>
-<p><img src="CS7638/CS7638_im05.png"></p>
+<p><img src="CS7638/CS7638_im05.PNG"></p>
 <p>The code can be found here: CS7638_AI4R/L9Q3_ParticleMovement.py
 Note that it is in Python 2.7? and needs some cleaning to run on python 3</p>
 
@@ -14019,7 +14019,7 @@ Note that it is in Python 2.7? and needs some cleaning to run on python 3</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Q5-Sensing">Q5 Sensing<a class="anchor-link" href="#Q5-Sensing">&#182;</a></h3><p>Now we need to implement a sensing(measurement) function. What we do here is measure our bearing to possible landmarks. atan2() returns the orientation of the vector in global co-ordinates and then we adjust for our orientation in the robots local co-ordinates. Mathematically: $atan2(\Delta y, \Delta x) - \theta$ where $\theta$ is the orientation.</p>
-<p><img src="CS7638/CS7638_im06.png"></p>
+<p><img src="CS7638/CS7638_im06.PNG"></p>
 <p>Here's the implementation in Python 2.7 (CS7638_AI4R/L9Q5_ParticleSensing.py)</p>
 <p>A full implementation can be found (CS7638_AI4R/L9PS3_FullParticleFilter.py)</p>
 
@@ -14677,7 +14677,7 @@ Xi += [[0],[0],[-Z2],[Z2]]</code></pre>
 <p>In order to reduce we solve for<br>
 Omega = Omega' - A.T <em> B.inverse </em> A<br>
 Xi = Xi' - A.T <em> B.inverse </em> C</p>
-<p><img src="CS7638/cs7638_im12.png" /></p>
+<p><img src="CS7638/cs7638_im12.PNG" /></p>
 
 </div>
 </div>
