@@ -11842,7 +11842,7 @@ Where outputDS_options incl:
           input_datasetn(in=N)
     ;
     BY column;
-    if A=1 and B=1; /*This is equiv to a full outer join    */
+    if A=1 or B=1; /*This is equiv to a full outer join    */
     if A=1 and B=1; /*This is equiv to an inner join        */
     if A=1;         /*This is equiv to a left join          */
     if B=1;         /*This is equiv to a right join         */
