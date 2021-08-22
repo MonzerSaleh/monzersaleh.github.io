@@ -13169,8 +13169,8 @@ Where r is red, g green and b blue</p>
 <span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">d</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/cs6476_dolphin.PNG&#39;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/cs6476_bicycle.PNG&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/CS6476_dolphin.PNG&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/CS6476_bicycle.PNG&#39;</span><span class="p">)</span>
 
 <span class="n">db</span> <span class="o">=</span> <span class="n">b</span><span class="o">+</span><span class="n">d</span>            <span class="c1"># Raw addition amplifies the intensity</span>
 <span class="n">db2</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># So we divide the intesities</span>
@@ -13248,7 +13248,7 @@ Consider (a-b)+(b-a) converted to a signed type like float will preserve the ima
 Noise is just another function that is combined with the original function to get a new function? Basically it's the addition of a noise term similar in many respects to a variance</p>
 <p>$I'(x,y)=I(x,y)+n(x,y)$</p>
 <p>There are several types of noise the most common is Gaussian which of course uses the variance of a normal (aka Gaussian) distribution. Gaussian noise is the often seen salt and pepper type of image. the higher the sigma the noisier it becomes. Multiplying a sample from a normal distribution will spread the numbers out.</p>
-<p><img src="CS6476_resources/cs6476_1_03.PNG"></p>
+<p><img src="CS6476_resources/CS6476_1_03.PNG"></p>
 
 </div>
 </div>
@@ -13266,7 +13266,7 @@ Noise is just another function that is combined with the original function to ge
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">sigma</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/cs6476_dolphin.PNG&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/CS6476_dolphin.PNG&#39;</span><span class="p">)</span>
 <span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="n">ch</span><span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">shape</span>
 <span class="n">var</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="n">var</span><span class="o">**</span><span class="mf">0.5</span>
@@ -14027,9 +14027,9 @@ Doesn't seem all that relevant/important.</p>
 <p><strong><em>Imaging Systems</em></strong> A device that allows the projection of light from some 3 dimensional points to some medium that records the pattern of light. An often forgotten effect of this is the recording doesn't remember the third dimension.</p>
 <p><strong><em>Aperture</em></strong> is the small hole that cameras use to let light in. The larger the aperture the more light that is let in. Too big and you get blurriness. Too small and you difraction, which can also appear blurry.</p>
 <p><strong><em>Lenses</em></strong> are designed such that objects at a specified distance will be focused at a point. 
-<img src="CS6476_resources/cs6476_im35.PNG"></p>
+<img src="CS6476_resources/CS6476_im35.PNG"></p>
 <p><strong><em>Varying Focus</em></strong> Thin lens assumption
-<img src="CS6476_resources/cs6476_im36.PNG"></p>
+<img src="CS6476_resources/CS6476_im36.PNG"></p>
 <p>Any object point satifying the last equation is in focus</p>
 <p><strong><em>Depth of Field</em></strong> The question of focus vs distance. This is heavily infuenced by aperture.<br>
 <strong><em>Field Of view</em></strong>  depends on focal length.<br>
@@ -14252,12 +14252,12 @@ Which will need to be minimized.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3CL1-Extrinsic-Camera-Parameters">3CL1 Extrinsic Camera Parameters<a class="anchor-link" href="#3CL1-Extrinsic-Camera-Parameters">&#182;</a></h3><p><a href="https://www.youtube.com/watch?v=_H8636u3B3s&amp;list=PLAwxTw4SYaPnbDacyrK_kB_RUkuxQBlCm&amp;index=218">Youtube 218</a></p>
 <p>Recall our earlier discussion on camera perpective projection modelling:<br>
-<img src="CS6476_resources/cs6476_309.PNG" width="750" height="250" /></p>
+<img src="CS6476_resources/CS6476_309.PNG" width="750" height="250" /></p>
 <p>Where <strong><em>cop</em></strong> is our centre of projection located at the point of origin.</p>
 <p>Also recall that division by Z produces a nonlinear transformation. So we need to add an extra coordinate to create a homogenous coordinate system:<br>
 ie $\begin{bmatrix} x \\ y \\ w \end{bmatrix}$ becomes $(x/w, y/w)$ and $\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix}$ becomes $(x/w, y/w, z/w)$</p>
 <p>Now we can put these together and treat projection as a matrix multiplication using homogenous coordinates and |z|.<br>
-<img src="CS6476_resources/cs6476_310.PNG"/></p>
+<img src="CS6476_resources/CS6476_310.PNG"/></p>
 <p>Now we need to bridge the coordinate system of the world, to the camera, and then to the image (next lesson).</p>
 <p>Camera Calibration consists of 2 transformations</p>
 <ul>
@@ -14267,7 +14267,7 @@ ie $\begin{bmatrix} x \\ y \\ w \end{bmatrix}$ becomes $(x/w, y/w)$ and $\begin{
 <p>What is camera pose?</p>
 <p>There are 6 degrees of freedom to specify a rigid body. A rigid body is a collection of points those positions relative to each other can't change (basically an box). So to fix just one point we would need an x,y, and z. which is three degrees of freedom. If we choose another point and created a vector from point A to point B then we've added 2 degrees of freedom. Why not 3? well the second point must maintain it's distance, so only 2 of 3 can change. Now if we add a third point then it can be represented as a rotation around the line/vector from A to B. So one more degree of freedom is required</p>
 <p>Before delving straight into the math let's look at the notation.
-<img src="CS6476_resources/cs6476_311.PNG"/></p>
+<img src="CS6476_resources/CS6476_311.PNG"/></p>
 <p>Now imagine you have two frames similar to the one above.</p>
 <p>Translation only ${}^BP = {}_AP + {}^B(O_A) $ or ${}^BP = {}^B(O_A) + {}_AP  $</p>
 
