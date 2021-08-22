@@ -10854,7 +10854,7 @@ Adapted from GitHub theme
   color: #f00;
 }
 .cm-s-ipython span.cm-tab {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background: url(data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
   background-position: right;
   background-repeat: no-repeat;
 }
@@ -13117,7 +13117,7 @@ Computer Photography is about mostly about scene composition where as Computer V
 </ul>
 <p><strong><em>GOTCHA</em></strong><br>
 Remember than when processing an image as an array. Rows go down and are represented by y, cols go across and are represented by x. This can cause confusion as a matrix element (x,y) represents (col,row) contrary to how we think/write. Normally M(i,j) = ith row, jth column = M(y,x)</p>
-<p><img src="CS6476_resources/CS6476_1_01.png" ></p>
+<p><img src="CS6476_resources/CS6476_1_01.PNG" ></p>
 <p><strong><em>Why?</em></strong><br>
 You may wondering why computers think of the top left corner as (0,0) rather than the bottom left which is used in all mathematics. It turns out that computers inherited this from old Television technology. The earliest TVs (aka CRTs) used cathode rays which displayed images by scanning a beam of electrons from Top-left to bottom-right as a series of horizontal lines. The reason why Cathode rays operated this way appears to be lost to history. One theory is that this is similar to how people read. ie a page in book would be read from top-left to bottom-right. Another theory is that matrices are indexed in a similar fashion from the top left ($e_{0,0}$) to the bottom right ($e_{r,c}$)</p>
 <h3 id="1AL1---Environment-setup">1AL1 - Environment setup<a class="anchor-link" href="#1AL1---Environment-setup">&#182;</a></h3>
@@ -13146,7 +13146,7 @@ An image is a function, f or I, from R^2 to R with a finite range<br>
 f:[a,b]x[c,d] -&gt; [min,max]  ( this would represent a greyscale image )<br>
 ( often times 255 is the maximum intensity, but this a pure abstraction. We will often see ranges=(0,1) and even possibly neg numbers )</p>
 <p>Let's consider a simple example</p>
-<p><img src="CS6476_resources/CS6476_1_02.png" ></p>
+<p><img src="CS6476_resources/CS6476_1_02.PNG" ></p>
 <p>For the image above we could express the function as<br>
 f: (10,210) x (15,165) -&gt; (0,10)
     x-domain   y-domain    output</p>
@@ -13169,8 +13169,8 @@ Where r is red, g green and b blue</p>
 <span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">d</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/cs6476_dolphin.png&#39;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/cs6476_bicycle.png&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/cs6476_dolphin.PNG&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/cs6476_bicycle.PNG&#39;</span><span class="p">)</span>
 
 <span class="n">db</span> <span class="o">=</span> <span class="n">b</span><span class="o">+</span><span class="n">d</span>            <span class="c1"># Raw addition amplifies the intensity</span>
 <span class="n">db2</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># So we divide the intesities</span>
@@ -13227,9 +13227,8 @@ Where r is red, g green and b blue</p>
 
 
 
-<div class="output_png output_subarea ">
-<img src="output_3_2.png"
->
+<div class="output_PNG output_subarea ">
+<img src="output_3_2.PNG">
 </div>
 
 </div>
@@ -13249,7 +13248,7 @@ Consider (a-b)+(b-a) converted to a signed type like float will preserve the ima
 Noise is just another function that is combined with the original function to get a new function? Basically it's the addition of a noise term similar in many respects to a variance</p>
 <p>$I'(x,y)=I(x,y)+n(x,y)$</p>
 <p>There are several types of noise the most common is Gaussian which of course uses the variance of a normal (aka Gaussian) distribution. Gaussian noise is the often seen salt and pepper type of image. the higher the sigma the noisier it becomes. Multiplying a sample from a normal distribution will spread the numbers out.</p>
-<p><img src="CS6476_resources/cs6476_1_03.png"></p>
+<p><img src="CS6476_resources/cs6476_1_03.PNG"></p>
 
 </div>
 </div>
@@ -13267,7 +13266,7 @@ Noise is just another function that is combined with the original function to ge
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">sigma</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/cs6476_dolphin.png&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/cs6476_dolphin.PNG&#39;</span><span class="p">)</span>
 <span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="n">ch</span><span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">shape</span>
 <span class="n">var</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="n">var</span><span class="o">**</span><span class="mf">0.5</span>
@@ -13311,8 +13310,8 @@ Noise is just another function that is combined with the original function to ge
 
 
 
-<div class="output_png output_subarea ">
-<img src="output_5_1.png"
+<div class="output_PNG output_subarea ">
+<img src="output_5_1.PNG"
 >
 </div>
 
@@ -13343,7 +13342,7 @@ The second is term is a summation, using a loop, over it's neighbouring pixels.<
 <span class="kn">import</span> <span class="nn">cv2</span> <span class="kn">as</span> <span class="nn">cv</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
-<span class="n">img</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;opencv_logo.png&#39;</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;opencv_logo.PNG&#39;</span><span class="p">)</span>
 <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">/</span><span class="mi">25</span>
 <span class="n">dst</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">kernel</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
@@ -13406,7 +13405,7 @@ Operator behaves the same everywhere, ie the value of the output depends on the 
 </ul>
 <p><strong><em>Seperability</em></strong><br>
 In some cases, filter is seperable, meaning you can get the square kernal H by convolving a single column vector by some row vector.</p>
-<p><img src="CS6476_resources/CS6476_1_06.png"></p>
+<p><img src="CS6476_resources/CS6476_1_06.PNG"></p>
 <p>This was more useful in the past when computers were not as fast. The reason is that multiplying by a row vector and a column vector is less intensive than using the H matrix.</p>
 <p><strong><em>Boundary Issues</em></strong><br>
 You may have also noticed that throughout our discussion our filters ignore the edges of an image.<br>
@@ -13418,7 +13417,7 @@ There are several ways to handle this:</p>
 <li>reflect across edge</li>
 </ul>
 <p>Putting this all together has some interesting results as you can see in the following example.</p>
-<p><img src="CS6476_resources/CS6476_1_07.png"></p>
+<p><img src="CS6476_resources/CS6476_1_07.PNG"></p>
 <p>Here we have a simple impulse less a blurring (mask) to produce a sharpening filter.</p>
 <p><strong><em>Handling Noise</em></strong><br>
 Recall that in previous discussion we looked at gaussian and salt and pepper noise.</p>
@@ -13443,7 +13442,7 @@ Recall that in previous discussion we looked at gaussian and salt and pepper noi
 Consider a 1-dimensional signal, which is similar to a time series, and a filter that is a subset of the signal. We take the filter and apply it to the original signal to produce a nomalized cross-correlation. What this does is score the two series, with possibly very different range of values, according to a similar metric. Similar to how two waves in sync amplify each other the area that matches will amplify the result.</p>
 <p>One example might be how to compare sales to number of customers. One is a dollar value and one is simply a count. The consequence of this is that it becomes easy to interpret high correlation as high similarity or effect.</p>
 <p>In our example above we used a filter that was a subset of the original signal, however this is not the only use case. When applied to images though the filter can reveal similarities by accentuating the area with a high correlation. What we can also do is use a filter that represents our target and apply it to an image to detect the occurance of a target ... effectively detecting a pattern or image.</p>
-<p><img src="CS6476_resources/CS6476_1_08.png"></p>
+<p><img src="CS6476_resources/CS6476_1_08.PNG"></p>
 <p>We can produce a correlation map by applying the template to the scene. As you might suspect the right most pattern in the scene will correspond to the highest intensity. The template doesn't even need to be a perfect match. A car image used as a  filter can detect a car pattern in a larger scene or target image.</p>
 
 </div>
@@ -13523,7 +13522,7 @@ We can think of the values above 80 are on one side of the edge.</p>
 <p><strong><em>GRADIENT</em></strong>  $\nabla f = [ \frac{\partial f }{\partial x} , \frac{\partial f}{\partial y} ]$<br>
 <strong><em>Gradient Direction</em></strong>  $\theta = tan^{-1} (\frac{\partial f }{\partial x} / \frac{\partial f}{\partial y}) $ ( When programming always use atan2 or arctan2 to prevent division by 0 )<br>
 <strong><em>Magnitude or Amount of change</em></strong> $ ||\nabla{f}|| = \sqrt{ (\frac{\partial f }{\partial x})^2 + (\frac{\partial f}{\partial y})^2 }$</p>
-<p><img src="CS6476_resources/CS6476_1_09.png"></p>
+<p><img src="CS6476_resources/CS6476_1_09.PNG"></p>
 <p>NB-The gradient points in the direction of most rapid increase in intensity.</p>
 <p>In the discrete world of images we use the following discrete approximation:<br>
 $\frac{ \partial f(x,y) }{ \partial x } \approx \frac{f(x+1,y) - f(x,y)}{1}$<br>
@@ -13562,9 +13561,9 @@ h is our filter on x (could be sobel or any other)<br>
 g is our gaussian<br>
 $(I \otimes g) \otimes h_x = I \otimes (g \otimes h_x)$</p>
 <p>The output here is a gradient function illustrated by the following image</p>
-<p><img src="CS6476_resources/CS6476_1_10.png"></p>
+<p><img src="CS6476_resources/CS6476_1_10.PNG"></p>
 <p>How big a gaussian should you use? Recall that the larger the sigma the greater the smoothing effect of a filter. There is also an effect here as well. In fact the smaller the sigma the finer features are detected. The larger the sigma the larger scale edges will be detected.</p>
-<p><img src="CS6476_resources/CS6476_1_11.png"></p>
+<p><img src="CS6476_resources/CS6476_1_11.PNG"></p>
 <p>Using Gradients to determine edges:</p>
 <p><strong><em>Primary edges detection process</em></strong></p>
 <ol>
@@ -13600,8 +13599,8 @@ $(I \otimes g) \otimes h_x = I \otimes (g \otimes h_x)$</p>
 <span class="c1">#plt.rcParams[&quot;figure.figsize&quot;] = (10,50)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
-<span class="n">src</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/ex001.png&#39;</span><span class="p">)</span>
-<span class="n">img_grey</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/ex001.png&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">src</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/ex001.PNG&#39;</span><span class="p">)</span>
+<span class="n">img_grey</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;CS6476_resources/ex001.PNG&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="c1">#These are the high and low thresholds respectively</span>
 <span class="n">img_blur</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">blur</span><span class="p">(</span><span class="n">img_grey</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="n">edges</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Canny</span><span class="p">(</span><span class="n">img_blur</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
@@ -13642,8 +13641,8 @@ $(I \otimes g) \otimes h_x = I \otimes (g \otimes h_x)$</p>
 
 
 
-<div class="output_png output_subarea ">
-<img src="output_13_0.png"
+<div class="output_PNG output_subarea ">
+<img src="output_13_0.PNG"
 >
 </div>
 
@@ -13704,9 +13703,9 @@ Consider line fitting. We have a picture and we've run an edge detection. You'll
 <p><strong><em>Hough Transform method</em></strong><br>
 Each edge point votes for compatible lines, Then look for lines that get many votes. In order to understand this we introduce hough space</p>
 <p>Recall that the equation of a line is $y=m_0 x + b_0$. In hough space b is our verical axis and m is our horizontal. Consequently the line $y=m_0 x + b_0$ in the image space maps to $(m_0, b_0)$ in hough space. But a single point in the image say $(x_0,y_0)$ will map to a line in hough space. Why? well because it can be any line in hough space that satisfies the line. So Lines map to points and points map to lines. So far so good? Taking the next step you'll see that 2 points in the image space will map to multiple lines in hough.</p>
-<p><img src="CS6476_resources/CS6476_1_12.png"></p>
+<p><img src="CS6476_resources/CS6476_1_12.PNG"></p>
 <p>Where these 2 lines intersect describes a point, which maps back to the best line in the image space. The best line being the one that describes, or is consistent with, the two points. Now this point is what will effectively be a vote. So we divide our hough space into a grid ( which we call hough accumulator array ). The bin, grid-square, with the most votes wins. There is however some draw back to this namely lines with an infinite slope. To combat this we turn to polar co-ordinates. Which doesn't have issues with a line having infinite slope.</p>
-<p><img src="CS6476_resources/CS6476_1_13.png"></p>
+<p><img src="CS6476_resources/CS6476_1_13.PNG"></p>
 <p><strong><em>Algo</em></strong></p>
 <ol>
 <li>Init H[d,$\theta$] = 0</li>
@@ -13729,7 +13728,7 @@ Each edge point votes for compatible lines, Then look for lines that get many vo
 Space $k^n$ bins - (n dimensions, k bins each)<br>
 Time  will be constant in terms of the detected features.</p>
 <p>Consider the following image of a hough accumulator on a basic image of a square. Notice the 4 bright spots? those are the maximum values as found in step 4. These can also be called peaks. Each one describes 1 line, or side in this case.</p>
-<p><img src="CS6476_resources/CS6476_1_14.png"></p>
+<p><img src="CS6476_resources/CS6476_1_14.PNG"></p>
 <p>Low noise on hough may cause the votes to be spread out just enough to make life difficult.<br>
 Too much noise may cause many peaks to appear, too many peaks would it difficult to distinguish between the lines.</p>
 
@@ -13850,15 +13849,15 @@ The peak in the hough space (x,y,S) is the reference point with the most support
 <p>Note that each algo has 3 dimensions and is cubic, together they're quartic. (we don't count x,y a second time). which is difficult computationally.</p>
 <h5 id="Modern-Approaches">Modern Approaches<a class="anchor-link" href="#Modern-Approaches">&#182;</a></h5><p>Instead of using edges we use feature patches. Little chunks of an image that are thought to be representative of a general pattern. For example an mini-image of a tire can be used to locate the tires in a much larger image of car. These mini-images, patches, visual code words generally also have an assoicated displacement vector. This helps to distinguish a front tire from a back tire. Ideally we want a table of code words each with an associated displacement vectors</p>
 <p><strong><em>Step 1 Developing the code words</em></strong>
-<img src="CS6476_resources/CS6476_1_19.png" width="500" height="500"></p>
+<img src="CS6476_resources/CS6476_1_19.PNG" width="500" height="500"></p>
 <p>one<br>
 You need to determine, or construct, an interest point operator and extract your most interesting points. Then you cluster them to create your visual code words.</p>
 <p>two<br>
 Map the patch around each interest point to the closest codebook entry.</p>
-<p><img src="CS6476_resources/CS6476_1_20.png" width="500" height="500"></p>
+<p><img src="CS6476_resources/CS6476_1_20.PNG" width="500" height="500"></p>
 <p>three<br>
 Finally for each codebook entry, store all displacements relative to object centre.</p>
-<p><img src="CS6476_resources/CS6476_1_21.png" width="500" height="500"></p>
+<p><img src="CS6476_resources/CS6476_1_21.PNG" width="500" height="500"></p>
 
 </div>
 </div>
@@ -14029,9 +14028,9 @@ Doesn't seem all that relevant/important.</p>
 <p><strong><em>Imaging Systems</em></strong> A device that allows the projection of light from some 3 dimensional points to some medium that records the pattern of light. An often forgotten effect of this is the recording doesn't remember the third dimension.</p>
 <p><strong><em>Aperture</em></strong> is the small hole that cameras use to let light in. The larger the aperture the more light that is let in. Too big and you get blurriness. Too small and you difraction, which can also appear blurry.</p>
 <p><strong><em>Lenses</em></strong> are designed such that objects at a specified distance will be focused at a point. 
-<img src="CS6476_resources/cs6476_im35.png"></p>
+<img src="CS6476_resources/cs6476_im35.PNG"></p>
 <p><strong><em>Varying Focus</em></strong> Thin lens assumption
-<img src="CS6476_resources/cs6476_im36.png"></p>
+<img src="CS6476_resources/cs6476_im36.PNG"></p>
 <p>Any object point satifying the last equation is in focus</p>
 <p><strong><em>Depth of Field</em></strong> The question of focus vs distance. This is heavily infuenced by aperture.<br>
 <strong><em>Field Of view</em></strong>  depends on focal length.<br>
@@ -14122,7 +14121,7 @@ PP Projection Plane/Image Plane</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong><em>Parallel Lines</em></strong> in the real world meet/converge in an image, often called the vanishing point. Notice that in the equations below the limit doesn't depend on the initial x &amp; y. That because it doesn't matter where you start. Parallel lines converge regardless where you begin.
-<img src="CS6476_resources/CS6476_im41.png"></p>
+<img src="CS6476_resources/CS6476_im41.PNG"></p>
 <p><strong><em>Horizon Lines</em></strong> Sets of parallel lines on the same plane lead to collinear vanishing points. The direction of parallel lines as well as camera orientation together determine the vanishing point, i.e. where the lines appear to intersect.</p>
 <p><strong><em>Other types of projections</em></strong></p>
 <ul>
@@ -14139,7 +14138,7 @@ projection matrix looks like this
 </li>
 </ul>
 <p>Summary
-<img src="CS6476_resources/CS6476_im42.png"></p>
+<img src="CS6476_resources/CS6476_im42.PNG"></p>
 
 </div>
 </div>
@@ -14254,12 +14253,12 @@ Which will need to be minimized.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3CL1-Extrinsic-Camera-Parameters">3CL1 Extrinsic Camera Parameters<a class="anchor-link" href="#3CL1-Extrinsic-Camera-Parameters">&#182;</a></h3><p><a href="https://www.youtube.com/watch?v=_H8636u3B3s&amp;list=PLAwxTw4SYaPnbDacyrK_kB_RUkuxQBlCm&amp;index=218">Youtube 218</a></p>
 <p>Recall our earlier discussion on camera perpective projection modelling:<br>
-<img src="CS6476_resources/cs6476_309.png" width="750" height="250" /></p>
+<img src="CS6476_resources/cs6476_309.PNG" width="750" height="250" /></p>
 <p>Where <strong><em>cop</em></strong> is our centre of projection located at the point of origin.</p>
 <p>Also recall that division by Z produces a nonlinear transformation. So we need to add an extra coordinate to create a homogenous coordinate system:<br>
 ie $\begin{bmatrix} x \\ y \\ w \end{bmatrix}$ becomes $(x/w, y/w)$ and $\begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix}$ becomes $(x/w, y/w, z/w)$</p>
 <p>Now we can put these together and treat projection as a matrix multiplication using homogenous coordinates and |z|.<br>
-<img src="CS6476_resources/cs6476_310.png"/></p>
+<img src="CS6476_resources/cs6476_310.PNG"/></p>
 <p>Now we need to bridge the coordinate system of the world, to the camera, and then to the image (next lesson).</p>
 <p>Camera Calibration consists of 2 transformations</p>
 <ul>
@@ -14269,7 +14268,7 @@ ie $\begin{bmatrix} x \\ y \\ w \end{bmatrix}$ becomes $(x/w, y/w)$ and $\begin{
 <p>What is camera pose?</p>
 <p>There are 6 degrees of freedom to specify a rigid body. A rigid body is a collection of points those positions relative to each other can't change (basically an box). So to fix just one point we would need an x,y, and z. which is three degrees of freedom. If we choose another point and created a vector from point A to point B then we've added 2 degrees of freedom. Why not 3? well the second point must maintain it's distance, so only 2 of 3 can change. Now if we add a third point then it can be represented as a rotation around the line/vector from A to B. So one more degree of freedom is required</p>
 <p>Before delving straight into the math let's look at the notation.
-<img src="CS6476_resources/cs6476_311.png"/></p>
+<img src="CS6476_resources/cs6476_311.PNG"/></p>
 <p>Now imagine you have two frames similar to the one above.</p>
 <p>Translation only ${}^BP = {}_AP + {}^B(O_A) $ or ${}^BP = {}^B(O_A) + {}_AP  $</p>
 
@@ -14662,7 +14661,7 @@ The BRDF of many surfaces can be approximated(modelled) as the Lambertian + Spec
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="5BL1---Lightness">5BL1 - Lightness<a class="anchor-link" href="#5BL1---Lightness">&#182;</a></h3><p>In general your brain will interpret an image to determine lightness. It prefers consistent interpretations even in the absence of evidence. In the following image we perceive a shadow but in fact the intensity hasn't changed. 
-<img src="CS6476_resources/CS6476_5A04.png"/></p>
+<img src="CS6476_resources/CS6476_5A04.PNG"/></p>
 <p>$L(x,y) = R(x,y) + E(x,y)$<br>
 where R is the surface reflection (colour and texture) and E is the Incoming light (Brightness and angle)<br>
 R will change more frequently, and E changes less.</p>
@@ -14676,7 +14675,7 @@ Goal: to remove slow variations from an image</p>
 <li>Now take the derivative of each (this yields impulses along a line)</li>
 <li>Now take the integral to recover your albedo (less some constant) </li>
 </ul>
-<p><img src="CS6476_resources/CS6476_5A05.png"/>
+<p><img src="CS6476_resources/CS6476_5A05.PNG"/>
 The intensity is the shadow white is the same as the black on the lighted areas.</p>
 <p>This algo will breakdown in the presence of sharp edges. 
 <strong><em>Colour Constancy</em></strong> Determine hue and saturation under different colours of light<br>
@@ -14698,7 +14697,7 @@ The dot product between these two vectors gives us the normal vector.<br>
 Which we divide by the magnitude to get the unit vector: $\frac{1}{\sqrt{p^2+q^2+1}}(p,q,1)^T$</p>
 <p>Gaussian sphere is the set of all possible normal vectors. For any shape we can create a surface normals vector that maps to the gaussian sphere.</p>
 <p>Here are some more equations to put it all together:
-<img src="CS6476_resources/CS6476_5A06.png"/></p>
+<img src="CS6476_resources/CS6476_5A06.PNG"/></p>
 <p>$\theta_i$ determines our brightness. $cos(\theta_i)$ is the lightness term from the lambertian equation.</p>
 <p>To determine the 3 Dimensional shape. In order to determine this we would need to make some assumptions first.</p>
 <p><strong><em>Reflectance Map:</em></strong> Relates image brightness I(x,y) to surface orientation (p,q) for a given source direction and surface reflectance. 
@@ -14706,9 +14705,9 @@ Let k be the source brightness, and $\rho$ be the surface albedo.<br>
 Then Image Brightness: $I = \rho k cos(\theta_i) = \rho \cdot k \cdot (n\cdot s)$<br>
 if we take $\rho \cdot k = 1$ then $I=cos(\theta_i)=n \cdot s$<br>
 then we get 
-<img src="CS6476_resources/CS6476_5A07.png"/></p>
+<img src="CS6476_resources/CS6476_5A07.PNG"/></p>
 <p>This takes som explanation. The p and q in pink are the unit vectors, the iso-brightness contour in pq space describes the equally bright points that have the same $cos(\theta_i)$ from the light source. 
-<img src="CS6476_resources/CS6476_5A08.png"/></p>
+<img src="CS6476_resources/CS6476_5A08.PNG"/></p>
 <p>What about shape from a single image? Given R(p,q), can we determine (p,q) uniquely for each point? NOPE, we need more info. You can add more constraints(more traditional approach), or you can take more images which is a more viable option.</p>
 <p>Adding more constraints or shape from shading.</p>
 <ul>
@@ -14718,15 +14717,15 @@ then we get
 Unfortunately, these constraints are often violated in reality so it isn't often used. </li>
 </ul>
 <p>Photometric Stero: Several images of the same object and the same pose but with different lighting lets us drop the second constraint above. 
-<img src="CS6476_resources/CS6476_5A09.png"/></p>
+<img src="CS6476_resources/CS6476_5A09.PNG"/></p>
 <p>I and S are known, we can take $\tilde{n} = \rho n$<br>
 then $\tilde{n}=S^{-1} I$<br>
 $\rho=|\tilde{n}|$<br>
 and finally $n=\frac{\tilde{n}}{|\tilde{n}|} = \frac{\tilde{n}}{\rho} $</p>
 <p>You can get even better results by using more lights, but this results in solving a least squares soltion
-<img src="CS6476_resources/CS6476_5A10.png"/></p>
+<img src="CS6476_resources/CS6476_5A10.PNG"/></p>
 <p>It's helpful to see a geometric interpretation. Each colour represent the reflectance map of another image or light source.
-<img src="CS6476_resources/CS6476_5A11.png"/></p>
+<img src="CS6476_resources/CS6476_5A11.PNG"/></p>
 
 </div>
 </div>
@@ -14829,26 +14828,26 @@ Of course we want to minimize this!</p>
 <p><strong><em>Method 1:</em></strong> pretend the pixel's neighbours have the same (u,v). We could use a 5x5 window resulting in 25 equations per pixel. 
 <img src="CS6476_resources/CS6476_6_02.PNG"/></p>
 <p>To solve we use the standard least squares approach
-<img src="CS6476_resources/CS6476_6_03.png"/></p>
+<img src="CS6476_resources/CS6476_6_03.PNG"/></p>
 <p>Conditions for solvability</p>
 <ol>
 <li>$A^T A$ should be invertible ie well conditioned (eigenvalues are similar in magnitude)</li>
 <li>$A^T A$ should be solvable when there is no aperture problem<br>
  Recall the Harris corner detector $M = A^T A$ where eigenvalues and vectors of M relate to edge direction and magnitude.
-<img src="CS6476_resources/CS6476_6_04.png"/></li>
+<img src="CS6476_resources/CS6476_6_04.PNG"/></li>
 </ol>
 <p>Interpreting Eigenvalues $\lambda_1 and \lambda_2$.<br>
 Ideally we want both to be fairly large and similar.</p>
 <ul>
 <li>if they are too small then this could be the result of noise  </li>
 <li>if one is greater than the other then we may be looking at an aperture problem
-<img src="CS6476_resources/CS6476_6_05.png"/></li>
+<img src="CS6476_resources/CS6476_6_05.PNG"/></li>
 </ul>
 <p><strong><em>RGB Version</em></strong><br>
 Now the number of equations goes up to 75 equations per (x,y).<br>
 $0 = I_t(p_i)[0,1,2] + \nabla I(p_i)[0,1,2] \cdot [u,v]$<br>
 Note that the RGB value alone at a point (x,y) is not sufficient because they're correlated. 
-<img src="CS6476_resources/CS6476_6_06.png"/></p>
+<img src="CS6476_resources/CS6476_6_06.PNG"/></p>
 <p>Potential Errors in Lucas Kanade:</p>
 <ul>
 <li>if the motion is large (greater than a pixel) then the taylor expansion doesn't hold<br>
@@ -14864,7 +14863,7 @@ Note that the RGB value alone at a point (x,y) is not sufficient because they're
 <li>Repeat until convergence</li>
 </ol>
 <p>Let $d_1, d2, ...$ be our estimates. We keep repeating until $f_1(x-d_i) \approx f_2(x)$</p>
-<p><img src="CS6476_resources/CS6476_6_07.png"/></p>
+<p><img src="CS6476_resources/CS6476_6_07.PNG"/></p>
 <p>Implementation Issues:
 Warping isn't easy: Ensure that warping error are smaller than the estimate refinement<br>
 Often useful to low-pass filter the image before motion estimation. This yields better derivative estimation and linear approximations to image intensity.</p>
