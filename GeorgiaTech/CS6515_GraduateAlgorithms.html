@@ -48,21 +48,41 @@ init_mathjax();
 </script>
 <!-- https://releases.jquery.com/ -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  
-  
-<script src="/path/to/src/jquery-catalog.min.js"></script>
 
+<script src="http://monzersaleh.github.io/js/jquery-catalog.min.js"></script>
+<!--
 <script>
-$( document ).ready(function(){
+	$( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "369.797px"}, "toc_section_display": true, "toc_window_display": true};
+				var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "369.797px"}, "toc_section_display": true, "toc_window_display": true};
 
-            // fire the main function with these parameters
-            require(['nbextensions/toc2/toc2'], function (toc2) {
-                toc2.table_of_contents(cfg);
-            });
-    });
+				// fire the main function with these parameters
+				require(['nbextensions/toc2/toc2'], function (toc2) {
+					toc2.table_of_contents(cfg);
+				});
+		});
+	</script>
+-->
+<script>
+var toc = $('.toc').Catalog({
+    container: '#contentArea',
+    data: [
+      {
+        item: 'h2',
+        title: '.title'
+      },
+      {
+        item: 'h3',
+        title: 'span'
+      }
+    ],
+    callBack: function () {
+      // optional callback
+    }
+});
 </script>
+
+
 
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
@@ -70,7 +90,7 @@ $( document ).ready(function(){
 <div class="toc"></div>
 
 
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="contentArea" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"></div>
 <div class="jp-InputArea jp-Cell-inputArea">
