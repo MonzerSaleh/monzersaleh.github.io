@@ -5,14 +5,13 @@
 
 <title>CS6515_IntroGraduateAlgorithms</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-
-
-<style type="text/css">jlab_p1.css</style>
-<style type="text/css">jlab_p2.css</style>
-<style type="text/css">jlab_p3.css</style>
-<style type="text/css">jlab_p4.css</style>
+<link rel="StyleSheet" href="http://monzersaleh.github.io/css/jlab_p1.css" type="text/css" />
+<link rel="StyleSheet" href="http://monzersaleh.github.io/css/jlab_p2.css" type="text/css" />
+<link rel="StyleSheet" href="http://monzersaleh.github.io/css/jlab_p3.css" type="text/css" />
+<link rel="StyleSheet" href="http://monzersaleh.github.io/css/jlab_p4.css" type="text/css" />
 
 <!-- Load mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
@@ -47,8 +46,29 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<!-- https://releases.jquery.com/ -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
+  
+<script src="/path/to/src/jquery-catalog.min.js"></script>
+
+<script>
+$( document ).ready(function(){
+
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "369.797px"}, "toc_section_display": true, "toc_window_display": true};
+
+            // fire the main function with these parameters
+            require(['nbextensions/toc2/toc2'], function (toc2) {
+                toc2.table_of_contents(cfg);
+            });
+    });
+</script>
+
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+
+<div class="toc"></div>
+
 
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
