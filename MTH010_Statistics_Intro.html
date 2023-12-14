@@ -11781,7 +11781,16 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {"height": "187px", "width": "213px"}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": true, "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {"height": "187px", "width": "213px"}, 
+			"number_sections": true, 
+			"sideBar": true, 
+			"skip_h1_title": false, 
+			"title_cell": "Table of Contents", 
+			"title_sidebar": "Contents", 
+			"toc_cell": false, 
+			"toc_position": {}, 
+			"toc_section_display": true, 
+			"toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
