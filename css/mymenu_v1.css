@@ -142,14 +142,14 @@ label > span {
 }
 /*
 position: fixed;
-position: sticky;top: 0;width: 20%;	float: left;
+position: sticky;top: 0;width: 20%;	float: left; height: 1000px; 
 */
 #leftMenu {
 	margin:4px, 4px; 
 	padding:4px; 
 	background-color: green; 
 	width: 20%; 
-	height: 1000px; 
+	height: 100%; 
 	overflow-x: hidden; 
 	overflow-x: auto; 
 	text-align:justify; 

@@ -41,187 +41,13 @@
     }
     init_mathjax();
     </script>
-<!-- End of mathjax configuration -->
-<link href="https://monzersaleh.github.io/css/jlab.css" rel="stylesheet"/>
-<link href="https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
-<style>
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
-
-body { line-height: 1 }
-
-ol, ul { list-style: none }
-
-
-blockquote, q { quotes: none }
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
-  content: none
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0
-}
-
-body {
-  font: 100% "roboto", "Trebuchet MS", sans-serif;
-  background-color:#EF476F;
-}
-
-a { text-decoration: none; }
-
-/**
- * Hidden fallback
- */
-
-
-/**
- * Styling navigation
- */
-
-header {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 22.5rem;
-  margin-top:150px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
-}
-
-/**
- * Styling top level items
- */
-
-.nav a, .nav label {
-  display: block;
- padding: .55rem;
-  color: #fff;
-  background-color: #151515;
-  box-shadow: inset 0 -1px #1d1d1d;
-  -webkit-transition: all .25s ease-in;
-  transition: all .25s ease-in;
-}
-
-.nav a:focus, .nav a:hover, .nav label:focus, .nav label:hover {
-  color: rgba(255, 255, 255, 0.5);
-  background: #030303;
-}
-
-.nav label { cursor: pointer; }
-
-/**
- * Styling first level lists items
- */
-
-.group-list a, .group-list label {
-  padding-left: 2rem;
-  background: #252525;
-  box-shadow: inset 0 -1px #373737;
-}
-
-.group-list a:focus, .group-list a:hover, .group-list label:focus, .group-list label:hover { background: #131313; }
-
-/**
- * Styling second level list items
- */
-
-.sub-group-list a, .sub-group-list label {
-  padding-left: 4rem;
-  background: #353535;
-  box-shadow: inset 0 -1px #474747;
-}
-
-.sub-group-list a:focus, .sub-group-list a:hover, .sub-group-list label:focus, .sub-group-list label:hover { background: #232323; }
-
-/**
- * Styling third level list items
- */
-
-.sub-sub-group-list a, .sub-sub-group-list label {
-  padding-left: 6rem;
-  background: #454545;
-  box-shadow: inset 0 -1px #575757;
-}
-
-.sub-sub-group-list a:focus, .sub-sub-group-list a:hover, .sub-sub-group-list label:focus, .sub-sub-group-list label:hover { background: #333333; }
-
-/**
- * Hide nested lists
- */
-
-.group-list, .sub-group-list, .sub-sub-group-list {
-  height: 100%;
-  max-height: 0;
-  overflow: hidden;
-  -webkit-transition: max-height .5s ease-in-out;
-  transition: max-height .5s ease-in-out;
-}
-
-.nav__list input[type=checkbox]:checked + label + ul { /* reset the height when checkbox is checked */
-max-height: 1000px; }
-
-/**
- * Rotating chevron icon
- */
-
-label > span {
-  float: right;
-  -webkit-transition: -webkit-transform .65s ease;
-  transition: transform .65s ease;
-}
-
-.nav__list input[type=checkbox]:checked + label > span {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-.nav__list{
-	padding-left: 5px;
-}
-/*
-position: fixed;
-position: sticky;top: 0;width: 20%;	float: left;
-*/
-#leftMenu {
-	margin:4px, 4px; 
-	padding:4px; 
-	background-color: green; 
-	width: 20%; 
-	height: 1000px; 
-	overflow-x: hidden; 
-	overflow-x: auto; 
-	text-align:justify; 
-	float: left;
-	position: fixed;
-}
-#contentBody {
-	width: 75%;
-	padding-left: 20%;
-}
-</style>
-
-</head>
-
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<nav class="nav" id="leftMenu" role="navigation"><ul class="nav__list"><li><input hidden id="group-1" type="checkbox"/><label for="group-1"><span class="fa fa-angle-right"></span>Intro</label><ul class="group-list"><li><a href="#Basic-Details">Basic Details</a></li><li><a href="#Textbooks">Textbooks</a></li><li><a href="#Other-Resources">Other Resources</a></li><li><a href="#Schedule">Schedule</a></li><li><a href="#Grading">Grading</a></li></ul></li><li><input hidden id="group-2" type="checkbox"/><label for="group-2"><span class="fa fa-angle-right"></span>Refresher</label><ul class="group-list"><li><a href="#Pseudo-Code">Pseudo Code</a></li><li><a href="#Big-O-Notation">Big-O Notation</a></li><li><a href="#Summary">Summary</a></li><li><a href="#Graphs">Graphs</a></li></ul></li><li><input hidden id="group-3" type="checkbox"/><label for="group-3"><span class="fa fa-angle-right"></span>DP1-Dynamic Programming - Class</label><ul class="group-list"><li><input hidden id="group-3" type="checkbox"/><label for="group-3"><span class="fa fa-angle-right"></span>Overview</label><ul class="sub-group-3"><li><a href="#Methodology">Methodology</a></li><li><a href="#Tips-and-Tricks">Tips and Tricks</a></li><li><a href="#Summary">Summary</a></li></ul></li><li><a href="#Ex-1:-FIB-Fibonacci-Numbers">Ex 1 FIB-Fibonacci Numbers</a></li><li><a href="#Ex-2:-LIS-Longest-Increasing-Subsequence">Ex 2 LIS-Longest Increasing Subsequence</a></li><li><a href="#Ex-3:-LCS-Longest-Common-Subsequence">Ex 3 LCS-Longest Common Subsequence</a></li><li><a href="#Ex-4:-Contiguous-Subsequence">Ex 4 Contiguous Subsequence</a></li><li><a href="#1.x---Coins">1.x - Coins</a></li><li><a href="#Exercises">Exercises</a></li></ul></li><li><input hidden id="group-4" type="checkbox"/><label for="group-4"><span class="fa fa-angle-right"></span>DP2-Knapsack &amp; Chain Multiply</label><ul class="group-list"><li><a href="#Edit-Distance-(-Bonus-)">Edit Distance  Bonus </a></li><li><input hidden id="group-4" type="checkbox"/><label for="group-4"><span class="fa fa-angle-right"></span>2.0 Knapsack</label><ul class="sub-group-4"><li><a href="#V1---no-repetition">V1 - no repetition</a></li><li><a href="#V2---with-repetition">V2 - with repetition</a></li></ul></li><li><a href="#Ex---Electoral-College">Ex - Electoral College</a></li><li><a href="#2.1:-Chain-Multiply">2.1 Chain Multiply</a></li><li><a href="#Exercises">Exercises</a></li></ul></li><li><input hidden id="group-5" type="checkbox"/><label for="group-5"><span class="fa fa-angle-right"></span>DP3-Shortest Path Problem</label><ul class="group-list"><li><a href="#Intro">Intro</a></li><li><input hidden id="group-5" type="checkbox"/><label for="group-5"><span class="fa fa-angle-right"></span>Single Source - Bellman</label><ul class="sub-group-5"><li><a href="#Bellman-Ford">Bellman Ford</a></li><li><a href="#Negative-Weights">Negative Weights</a></li></ul></li><li><input hidden id="group-5" type="checkbox"/><label for="group-5"><span class="fa fa-angle-right"></span>All Pairs - Floyd</label><ul class="sub-group-5"><li><a href="#Algo:-Floyd-Warshall">Algo Floyd-Warshall</a></li></ul></li><li><a href="#Comparison-Ford-v-Floyd">Comparison Ford v Floyd</a></li><li><a href="#Exercises">Exercises</a></li><li><a href="#Summary">Summary</a></li></ul></li><li><input hidden id="group-6" type="checkbox"/><label for="group-6"><span class="fa fa-angle-right"></span>DC0-Divide &amp; Conquer</label><ul class="group-list"><li><input hidden id="group-6" type="checkbox"/><label for="group-6"><span class="fa fa-angle-right"></span>Review</label><ul class="sub-group-6"><li><a href="#Binary-Search">Binary Search</a></li><li><a href="#Merge-Sort">Merge-Sort</a></li></ul></li><li><a href="#Ex1---Max-Sub-Array-Sum">Ex1 - Max Sub-Array Sum</a></li></ul></li><li><a href="#DC1-Fast-Integer-multiplication">DC1-Fast Integer multiplication</a></li><li><a href="#DC2-Linear-Time-Median">DC2-Linear Time Median</a></li><li><input hidden id="group-9" type="checkbox"/><label for="group-9"><span class="fa fa-angle-right"></span>DC3-Solving Recurrances</label><ul class="group-list"><li><input hidden id="group-9" type="checkbox"/><label for="group-9"><span class="fa fa-angle-right"></span>Example 1</label><ul class="sub-group-9"><li><a href="#Geometric-Series">Geometric Series</a></li><li><a href="#Polynomials">Polynomials</a></li><li><a href="#Example-2">Example 2</a></li><li><a href="#Recurrance-Generalization">Recurrance Generalization</a></li></ul></li></ul></li><li><input hidden id="group-10" type="checkbox"/><label for="group-10"><span class="fa fa-angle-right"></span>DC4-FFT-Fast Fourier Transform</label><ul class="group-list"><li><input hidden id="group-10" type="checkbox"/><label for="group-10"><span class="fa fa-angle-right"></span>P1  Review-Polynomials &amp; Convolutions</label><ul class="sub-group-10"><li><a href="#P2:--Review-Complex-Numbers">P2  Review-Complex Numbers</a></li><li><input hidden id="group-10" type="checkbox"/><label for="group-10"><span class="fa fa-angle-right"></span>Roots of Unity</label><ul class="sub-sub-group-10"><li><a href="#Examples">Examples</a></li></ul></li></ul></li></ul></li><li><input hidden id="group-11" type="checkbox"/><label for="group-11"><span class="fa fa-angle-right"></span>DC5-FFT-Algorithm</label><ul class="group-list"><li><a href="#Example">Example</a></li><li><a href="#FFT-Polynomial-Multiplication">FFT Polynomial Multiplication</a></li><li><a href="#Inverse-FFT">Inverse FFT</a></li><li><a href="#Ex-1">Ex 1</a></li><li><a href="#Ex-2">Ex 2</a></li><li><a href="#FFT-Summary">FFT Summary</a></li></ul></li><li><a href="#DC-Summary">DC-Summary</a></li><li><a href="#RA0-Randomized-Algorithms">RA0-Randomized Algorithms</a></li><li><input hidden id="group-14" type="checkbox"/><label for="group-14"><span class="fa fa-angle-right"></span>RA1-Modular Arithmetic</label><ul class="group-list"><li><a href="#Euclid's-Rule">Euclids Rule</a></li><li><a href="#Extended-Euclid">Extended Euclid</a></li></ul></li><li><input hidden id="group-15" type="checkbox"/><label for="group-15"><span class="fa fa-angle-right"></span>RA2-RSA Cryptosystem</label><ul class="group-list"><li><a href="#Fermat's-little-theorem">Fermats little theorem</a></li><li><a href="#Euler's-Theorem">Eulers Theorem</a></li><li><a href="#RSA-Cryptography">RSA Cryptography</a></li><li><input hidden id="group-15" type="checkbox"/><label for="group-15"><span class="fa fa-angle-right"></span>Primality Testing</label><ul class="sub-group-15"><li><a href="#Fermat-Witness">Fermat Witness</a></li></ul></li></ul></li><li><a href="#RA3-Bloom-Filters---todo">RA3-Bloom Filters - todo</a></li><li><input hidden id="group-17" type="checkbox"/><label for="group-17"><span class="fa fa-angle-right"></span>GR0-Graph Algorithms</label><ul class="group-list"><li><a href="#Background">Background</a></li><li><a href="#Introduction">Introduction</a></li><li><input hidden id="group-17" type="checkbox"/><label for="group-17"><span class="fa fa-angle-right"></span>Review</label><ul class="sub-group-17"><li><a href="#BFS:-Breadth-First-Search">BFS Breadth First Search</a></li><li><a href="#Dijkstra's-Algorithm">Dijkstras Algorithm</a></li></ul></li></ul></li><li><input hidden id="group-18" type="checkbox"/><label for="group-18"><span class="fa fa-angle-right"></span>GR1 Strongly Connected Components</label><ul class="group-list"><li><a href="#DFS-for-undirected-graphs">DFS for undirected graphs</a></li><li><input hidden id="group-18" type="checkbox"/><label for="group-18"><span class="fa fa-angle-right"></span>DFS for directed graphs</label><ul class="sub-group-18"><li><a href="#DFS-vs-Explore">DFS vs Explore</a></li><li><a href="#SCC---Strongly-Connected-Components">SCC - Strongly Connected Components</a></li></ul></li><li><a href="#Summary">Summary</a></li></ul></li><li><input hidden id="group-19" type="checkbox"/><label for="group-19"><span class="fa fa-angle-right"></span>GR2 Satisfiability</label><ul class="group-list"><li><a href="#kSAT-Problem">kSAT Problem</a></li><li><a href="#2SAT-Algorithm">2SAT Algorithm</a></li></ul></li><li><input hidden id="group-20" type="checkbox"/><label for="group-20"><span class="fa fa-angle-right"></span>GR3 Minimum Spanning Tree</label><ul class="group-list"><li><a href="#Kruskal's-Algorithm">Kruskals Algorithm</a></li><li><a href="#Correctness">Correctness</a></li><li><input hidden id="group-20" type="checkbox"/><label for="group-20"><span class="fa fa-angle-right"></span>Graph Cut &amp; Min Cut Property</label><ul class="sub-group-20"><li><a href="#Proof---T'-is-a-tree">Proof - T is a tree</a></li><li><a href="#Proof---T-is-an-MST">Proof - T is an MST</a></li><li><a href="#Prim's-Algorithm">Prims Algorithm</a></li><li><a href="#Kruskal-v-Prim">Kruskal v Prim</a></li></ul></li></ul></li><li><a href="#MF0-Max-Flow-Problem">MF0-Max Flow Problem</a></li><li><input hidden id="group-22" type="checkbox"/><label for="group-22"><span class="fa fa-angle-right"></span>MF1 Ford-Fulkerson Algorithm</label><ul class="group-list"><li><a href="#Residual-Networks">Residual Networks</a></li><li><a href="#Ford-Fulkerson-Algo">Ford Fulkerson Algo</a></li></ul></li><li><input hidden id="group-23" type="checkbox"/><label for="group-23"><span class="fa fa-angle-right"></span>MF2 Max-Flow Min-Cut</label><ul class="group-list"><li><a href="#MaxFlow---MinCut-Theorem">MaxFlow - MinCut Theorem</a></li><li><a href="#Min-ST-cut-Problem-Formulation">Min ST-cut Problem Formulation</a></li><li><a href="#Properties">Properties</a></li></ul></li><li><input hidden id="group-24" type="checkbox"/><label for="group-24"><span class="fa fa-angle-right"></span>MF4 Edmonds-Karp Algorithm</label><ul class="group-list"><li><a href="#Edmonds-Karp">Edmonds Karp</a></li></ul></li><li><input hidden id="group-25" type="checkbox"/><label for="group-25"><span class="fa fa-angle-right"></span>MF5 Max-Flow Generalized</label><ul class="group-list"><li><a href="#Demand-Constraints">Demand Constraints</a></li><li><input hidden id="group-25" type="checkbox"/><label for="group-25"><span class="fa fa-angle-right"></span>Feasible iff Saturating</label><ul class="sub-group-25"><li><a href="#Example">Example</a></li></ul></li></ul></li><li><a href="#MF3-Image-Segmentation">MF3-Image Segmentation</a></li><li><a href="#NP0-P&amp;NP-Completeness">NP0-P&amp;NP Completeness</a></li><li><input hidden id="group-28" type="checkbox"/><label for="group-28"><span class="fa fa-angle-right"></span>NP1 - Intro Examples</label><ul class="group-list"><li><a href="#Intuition">Intuition</a></li></ul></li><li><input hidden id="group-29" type="checkbox"/><label for="group-29"><span class="fa fa-angle-right"></span>NP2 - NP-Completeness Proof</label><ul class="group-list"><li><a href="#3SAT-NP-Complete">3SAT NP-Complete</a></li></ul></li><li><input hidden id="group-30" type="checkbox"/><label for="group-30"><span class="fa fa-angle-right"></span>NP3 - NP-Complete Proofs</label><ul class="group-list"><li><a href="#IS-Independent-Sets">IS Independent Sets</a></li><li><a href="#Clique">Clique</a></li><li><a href="#VC-Vertex-Cover">VC Vertex Cover</a></li><li><a href="#Travelling-Salesman-Problem">Travelling Salesman Problem</a></li><li><a href="#Problems">Problems</a></li><li><a href="#Summary">Summary</a></li></ul></li><li><input hidden id="group-31" type="checkbox"/><label for="group-31"><span class="fa fa-angle-right"></span>NP4 Knapsack</label><ul class="group-list"><li><a href="#Subset-Sum">Subset-Sum</a></li><li><a href="#Knapsack">Knapsack</a></li></ul></li><li><input hidden id="group-32" type="checkbox"/><label for="group-32"><span class="fa fa-angle-right"></span>NP5 Halting Problem</label><ul class="group-list"><li><a href="#Description">Description</a></li><li><a href="#Example">Example</a></li><li><a href="#Proof">Proof</a></li></ul></li><li><a href="#LP0-Linear-Programming">LP0-Linear Programming</a></li><li><input hidden id="group-34" type="checkbox"/><label for="group-34"><span class="fa fa-angle-right"></span>LP1 Linear Programming</label><ul class="group-list"><li><a href="#2Dim-Example">2Dim Example</a></li><li><a href="#3Dim-Example">3Dim Example</a></li><li><a href="#Standard-Formulation">Standard Formulation</a></li><li><a href="#Simplex-Method">Simplex Method</a></li><li><a href="#Simplex-Example-3Dim">Simplex Example 3Dim</a></li></ul></li><li><input hidden id="group-35" type="checkbox"/><label for="group-35"><span class="fa fa-angle-right"></span>LP2 LP Geometry</label><ul class="group-list"><li><a href="#Feasiblity">Feasiblity</a></li><li><input hidden id="group-35" type="checkbox"/><label for="group-35"><span class="fa fa-angle-right"></span>LP Duality</label><ul class="sub-group-35"><li><a href="#Example">Example</a></li></ul></li></ul></li><li><a href="#LP3:-Duality---Weak-and-Strong">LP3 Duality - Weak and Strong</a></li><li><input hidden id="group-37" type="checkbox"/><label for="group-37"><span class="fa fa-angle-right"></span>LP4 Max-SAT Approximation</label><ul class="group-list"><li><a href="#Simple-Algo">Simple Algo</a></li><li><a href="#Ek-SAT">Ek-SAT</a></li><li><a href="#ILP---Integer-LP">ILP - Integer LP</a></li><li><a href="#Summary">Summary</a></li><li><a href="#Comparison:-Simple-v-LP">Comparison Simple v LP</a></li></ul></li><li><a href="#End-of-Notes">End of Notes</a></li><li><a href="#EX1-:-GR4-Markov-Chains-and-Page-Rank---todo">EX1  GR4 Markov Chains and Page Rank - todo</a></li><li><input hidden id="group-40" type="checkbox"/><label for="group-40"><span class="fa fa-angle-right"></span>Slack Notes</label><ul class="group-list"><li><a href="#DP-vs-Memoization">DP vs Memoization</a></li></ul></li><li><input hidden id="group-41" type="checkbox"/><label for="group-41"><span class="fa fa-angle-right"></span>Exam 2</label><ul class="group-list"><li><a href="#Week-2">Week 2</a></li></ul></li><li><input hidden id="group-42" type="checkbox"/><label for="group-42"><span class="fa fa-angle-right"></span>Appendix</label><ul class="group-list"><li><a href="#Feasible-&amp;-Saturating-Solution">Feasible &amp; Saturating Solution</a></li></ul></li></ul></nav>
-
-<div id="contentBody">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<!-- End of mathjax configuration --><link href="https://monzersaleh.github.io/css/jlab.css" rel="stylesheet"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/><link href="https://monzersaleh.github.io/css/mymenu_v1.css" rel="stylesheet"/></head>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="nav" id="leftMenu" role="navigation"><ul class="nav__list"><li><input hidden id="group-1" type="checkbox"/><label for="group-1"><span class="fa fa-angle-right"></span>Intro</label><ul class="group-list"><li><a href="#Basic-Details">Basic Details</a></li><li><a href="#Textbooks">Textbooks</a></li><li><a href="#Other-Resources">Other Resources</a></li><li><a href="#Schedule">Schedule</a></li><li><a href="#Grading">Grading</a></li></ul></li><li><input hidden id="group-2" type="checkbox"/><label for="group-2"><span class="fa fa-angle-right"></span>Refresher</label><ul class="group-list"><li><a href="#Pseudo-Code">Pseudo Code</a></li><li><a href="#Big-O-Notation">Big-O Notation</a></li><li><a href="#Summary">Summary</a></li><li><a href="#Graphs">Graphs</a></li></ul></li><li><input hidden id="group-3" type="checkbox"/><label for="group-3"><span class="fa fa-angle-right"></span>DP1 Dynamic Programming</label><ul class="group-list"><li><a href="#Overview">Overview</a></li><li><a href="#Class-Methodology">Class Methodology</a></li><li><a href="#Ex-1:-FIB-Fibonacci-Numbers">Ex 1 FIB-Fibonacci Numbers</a></li><li><a href="#Ex-2:-LIS-Longest-Increasing-Subsequence">Ex 2 LIS-Longest Increasing Subsequence</a></li><li><a href="#Ex-3:-LCS-Longest-Common-Subsequence">Ex 3 LCS-Longest Common Subsequence</a></li><li><a href="#Ex-4:-Contiguous-Subsequence">Ex 4 Contiguous Subsequence</a></li><li><a href="#1.x---Coins">1.x - Coins</a></li><li><a href="#Exercises">Exercises</a></li></ul></li><li><input hidden id="group-4" type="checkbox"/><label for="group-4"><span class="fa fa-angle-right"></span>DP2 Knapsack &amp; Chain Multiply</label><ul class="group-list"><li><a href="#Edit-Distance-(-Bonus-)">Edit Distance  Bonus </a></li><li><input hidden id="group-4" type="checkbox"/><label for="group-4"><span class="fa fa-angle-right"></span>2.0 Knapsack</label><ul class="sub-group-4"><li><a href="#V1---no-repetition">V1 - no repetition</a></li><li><a href="#V2---with-repetition">V2 - with repetition</a></li></ul></li><li><a href="#Ex---Electoral-College">Ex - Electoral College</a></li><li><a href="#2.1:-Chain-Multiply">2.1 Chain Multiply</a></li><li><a href="#Exercises">Exercises</a></li></ul></li><li><input hidden id="group-5" type="checkbox"/><label for="group-5"><span class="fa fa-angle-right"></span>DP3 Shortest Path Problem</label><ul class="group-list"><li><a href="#Intro---DP3">Intro - DP3</a></li><li><a href="#Single-Source---Bellman">Single Source - Bellman</a></li><li><a href="#Algo-Bellman-Ford">Algo Bellman Ford</a></li><li><a href="#Negative-Weights&amp;Cycles">Negative Weights&amp;Cycles</a></li><li><a href="#All-Pairs---Floyd">All Pairs - Floyd</a></li><li><a href="#Algo:-Floyd-Warshall">Algo Floyd-Warshall</a></li><li><a href="#Comparison-Ford-v-Floyd">Comparison Ford v Floyd</a></li><li><a href="#DP3-Exercises">DP3-Exercises</a></li><li><a href="#DP3-Summary">DP3-Summary</a></li></ul></li><li><input hidden id="group-6" type="checkbox"/><label for="group-6"><span class="fa fa-angle-right"></span>DC0 Divide &amp; Conquer</label><ul class="group-list"><li><a href="#Review---Binary-Search">Review - Binary Search</a></li><li><a href="#Review---Merge-Sort">Review - Merge Sort</a></li><li><a href="#Ex1---Max-Sub-Array-Sum">Ex1 - Max Sub-Array Sum</a></li></ul></li><li><a href="#DC1:-Fast-Integer-multiplication">DC1 Fast Integer multiplication</a></li><li><a href="#DC2:-Linear-Time-Median">DC2 Linear Time Median</a></li><li><input hidden id="group-9" type="checkbox"/><label for="group-9"><span class="fa fa-angle-right"></span>DC3 Solving Recurrances</label><ul class="group-list"><li><a href="#Example-Recurrances">Example Recurrances</a></li><li><a href="#Master-Theorem-Generalization">Master Theorem Generalization</a></li></ul></li><li><input hidden id="group-10" type="checkbox"/><label for="group-10"><span class="fa fa-angle-right"></span>DC4 FFT-Fast Fourier Transform</label><ul class="group-list"><li><a href="#P1:-Review-Polynomials-&amp;-Convolutions">P1 Review-Polynomials &amp; Convolutions</a></li><li><a href="#P2:--Review-Complex-Numbers">P2  Review-Complex Numbers</a></li><li><a href="#Roots-of-Unity">Roots of Unity</a></li><li><a href="#Examples-FFT">Examples-FFT</a></li></ul></li><li><input hidden id="group-11" type="checkbox"/><label for="group-11"><span class="fa fa-angle-right"></span>DC5 FFT-Algorithm</label><ul class="group-list"><li><a href="#Example">Example</a></li><li><a href="#FFT-Polynomial-Multiplication">FFT Polynomial Multiplication</a></li><li><a href="#Inverse-FFT">Inverse FFT</a></li><li><a href="#Ex-1">Ex 1</a></li><li><a href="#Ex-2">Ex 2</a></li><li><a href="#FFT-Summary">FFT Summary</a></li></ul></li><li><a href="#DC6:-Summary">DC6 Summary</a></li><li><a href="#RA0:-Randomized-Algorithms">RA0 Randomized Algorithms</a></li><li><input hidden id="group-14" type="checkbox"/><label for="group-14"><span class="fa fa-angle-right"></span>RA1 Modular Arithmetic</label><ul class="group-list"><li><a href="#Euclid's-Rule">Euclids Rule</a></li><li><a href="#Extended-Euclid">Extended Euclid</a></li></ul></li><li><input hidden id="group-15" type="checkbox"/><label for="group-15"><span class="fa fa-angle-right"></span>RA2 RSA Cryptosystem</label><ul class="group-list"><li><a href="#Fermat's-little-theorem">Fermats little theorem</a></li><li><a href="#Euler's-Theorem">Eulers Theorem</a></li><li><a href="#RSA:-Cryptography">RSA Cryptography</a></li><li><a href="#Primality-Testing">Primality Testing</a></li><li><a href="#Fermat-Witness">Fermat Witness</a></li></ul></li><li><a href="#RA3-Bloom-Filters---todo">RA3-Bloom Filters - todo</a></li><li><input hidden id="group-17" type="checkbox"/><label for="group-17"><span class="fa fa-angle-right"></span>GR0 Graph Algorithms</label><ul class="group-list"><li><a href="#Terminology">Terminology</a></li><li><a href="#Introduction">Introduction</a></li><li><a href="#BFS:-Breadth-First-Search---Review">BFS Breadth First Search - Review</a></li><li><a href="#Dijkstra's-Algorithm---Review">Dijkstras Algorithm - Review</a></li></ul></li><li><input hidden id="group-18" type="checkbox"/><label for="group-18"><span class="fa fa-angle-right"></span>GR1 Strongly Connected Components</label><ul class="group-list"><li><a href="#DFS-for-undirected-graphs">DFS for undirected graphs</a></li><li><a href="#DFS-for-directed-graphs">DFS for directed graphs</a></li><li><a href="#DFS-vs-Explore">DFS vs Explore</a></li><li><a href="#SCC---Strongly-Connected-Components">SCC - Strongly Connected Components</a></li><li><a href="#GraphSearch-Summary">GraphSearch-Summary</a></li></ul></li><li><input hidden id="group-19" type="checkbox"/><label for="group-19"><span class="fa fa-angle-right"></span>GR2 Satisfiability</label><ul class="group-list"><li><a href="#GR2-Intro">GR2 Intro</a></li><li><a href="#kSAT-Problem">kSAT Problem</a></li><li><a href="#2SAT-Algorithm">2SAT Algorithm</a></li></ul></li><li><input hidden id="group-20" type="checkbox"/><label for="group-20"><span class="fa fa-angle-right"></span>GR3 Minimum Spanning Tree</label><ul class="group-list"><li><a href="#Kruskal's-Algorithm">Kruskals Algorithm</a></li><li><a href="#Correctness">Correctness</a></li><li><a href="#Graph-Cut-&amp;-Min-Cut-Property">Graph Cut &amp; Min Cut Property</a></li><li><a href="#P1-Proof-T'-is-a-tree">P1-Proof T is a tree</a></li><li><a href="#P2-Proof-T-is-an-MST">P2-Proof T is an MST</a></li><li><a href="#Prim's-Algorithm">Prims Algorithm</a></li><li><a href="#Kruskal-v-Prim">Kruskal v Prim</a></li></ul></li><li><a href="#MF0:-Max-Flow-Problem">MF0 Max Flow Problem</a></li><li><input hidden id="group-22" type="checkbox"/><label for="group-22"><span class="fa fa-angle-right"></span>MF1 Ford-Fulkerson Algorithm</label><ul class="group-list"><li><a href="#Residual-Networks">Residual Networks</a></li><li><a href="#Ford-Fulkerson-Algo">Ford Fulkerson Algo</a></li></ul></li><li><input hidden id="group-23" type="checkbox"/><label for="group-23"><span class="fa fa-angle-right"></span>MF2 Max-Flow Min-Cut</label><ul class="group-list"><li><a href="#MaxFlow---MinCut-Theorem">MaxFlow - MinCut Theorem</a></li><li><a href="#Min-ST-cut-Problem-Formulation">Min ST-cut Problem Formulation</a></li><li><a href="#Properties">Properties</a></li></ul></li><li><input hidden id="group-24" type="checkbox"/><label for="group-24"><span class="fa fa-angle-right"></span>MF4 Edmonds-Karp Algorithm</label><ul class="group-list"><li><a href="#Edmonds-Karp">Edmonds Karp</a></li></ul></li><li><input hidden id="group-25" type="checkbox"/><label for="group-25"><span class="fa fa-angle-right"></span>MF5 Max-Flow Generalized</label><ul class="group-list"><li><a href="#Demand-Constraints">Demand Constraints</a></li><li><a href="#Feasible-iff-Saturating">Feasible iff Saturating</a></li><li><a href="#Example">Example</a></li></ul></li><li><a href="#MF3:-Image-Segmentation">MF3 Image Segmentation</a></li><li><a href="#NP0:-NP-Completeness">NP0 NP Completeness</a></li><li><input hidden id="group-28" type="checkbox"/><label for="group-28"><span class="fa fa-angle-right"></span>NP1 Intro and Examples</label><ul class="group-list"><li><a href="#SAT-Problem">SAT Problem</a></li><li><a href="#K-Colorings-Problem">K-Colorings Problem</a></li><li><a href="#MST-Problem">MST Problem</a></li><li><a href="#Knapsack-Problem">Knapsack Problem</a></li><li><a href="#Knapsack-Search-Modified-Knapsack">Knapsack-Search Modified Knapsack</a></li><li><a href="#Intuition">Intuition</a></li></ul></li><li><input hidden id="group-29" type="checkbox"/><label for="group-29"><span class="fa fa-angle-right"></span>NP2 NP-Complete Proofs - Pt1</label><ul class="group-list"><li><a href="#3SAT-NP-Complete">3SAT NP-Complete</a></li></ul></li><li><input hidden id="group-30" type="checkbox"/><label for="group-30"><span class="fa fa-angle-right"></span>NP3 NP-Complete Proofs - Pt2</label><ul class="group-list"><li><a href="#IS-Independent-Sets">IS Independent Sets</a></li><li><a href="#Clique">Clique</a></li><li><a href="#VC-Vertex-Cover">VC Vertex Cover</a></li><li><a href="#Travelling-Salesman-Problem">Travelling Salesman Problem</a></li><li><a href="#Problems">Problems</a></li><li><a href="#Summary">Summary</a></li></ul></li><li><input hidden id="group-31" type="checkbox"/><label for="group-31"><span class="fa fa-angle-right"></span>NP4 Knapsack</label><ul class="group-list"><li><a href="#Subset-Sum">Subset-Sum</a></li><li><a href="#Knapsack">Knapsack</a></li></ul></li><li><input hidden id="group-32" type="checkbox"/><label for="group-32"><span class="fa fa-angle-right"></span>NP5 Halting Problem</label><ul class="group-list"><li><a href="#Description">Description</a></li><li><a href="#Example">Example</a></li><li><a href="#Proof">Proof</a></li></ul></li><li><a href="#LP0:-Linear-Programming">LP0 Linear Programming</a></li><li><input hidden id="group-34" type="checkbox"/><label for="group-34"><span class="fa fa-angle-right"></span>LP1 Linear Programming</label><ul class="group-list"><li><a href="#2Dim-Example">2Dim Example</a></li><li><a href="#3Dim-Example">3Dim Example</a></li><li><a href="#Standard-Formulation">Standard Formulation</a></li><li><a href="#Simplex-Method">Simplex Method</a></li><li><a href="#Simplex-Example-3Dim">Simplex Example 3Dim</a></li></ul></li><li><input hidden id="group-35" type="checkbox"/><label for="group-35"><span class="fa fa-angle-right"></span>LP2 LP Geometry</label><ul class="group-list"><li><a href="#Feasiblity">Feasiblity</a></li><li><input hidden id="group-35" type="checkbox"/><label for="group-35"><span class="fa fa-angle-right"></span>LP Duality</label><ul class="sub-group-35"><li><a href="#Example">Example</a></li></ul></li></ul></li><li><a href="#LP3:-Duality---Weak-and-Strong">LP3 Duality - Weak and Strong</a></li><li><input hidden id="group-37" type="checkbox"/><label for="group-37"><span class="fa fa-angle-right"></span>LP4 Max-SAT Approximation</label><ul class="group-list"><li><a href="#Simple-Algo">Simple Algo</a></li><li><a href="#Ek-SAT">Ek-SAT</a></li><li><a href="#ILP---Integer-LP">ILP - Integer LP</a></li><li><a href="#Summary">Summary</a></li><li><a href="#Comparison:-Simple-v-LP">Comparison Simple v LP</a></li></ul></li><li><a href="#End-of-Notes">End of Notes</a></li><li><a href="#EX1-:-GR4-Markov-Chains-and-Page-Rank---todo">EX1  GR4 Markov Chains and Page Rank - todo</a></li><li><input hidden id="group-40" type="checkbox"/><label for="group-40"><span class="fa fa-angle-right"></span>Slack Notes</label><ul class="group-list"><li><a href="#DP-vs-Memoization">DP vs Memoization</a></li></ul></li><li><input hidden id="group-41" type="checkbox"/><label for="group-41"><span class="fa fa-angle-right"></span>Exam 2</label><ul class="group-list"><li><a href="#Week-2">Week 2</a></li></ul></li><li><input hidden id="group-42" type="checkbox"/><label for="group-42"><span class="fa fa-angle-right"></span>Appendix</label><ul class="group-list"><li><a href="#Feasible-&amp;-Saturating-Solution">Feasible &amp; Saturating Solution</a></li></ul></li></ul></nav><div id="contentBody"><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"></div>
-
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="CS6515---Intro-to-Graduate-Algorithms">CS6515 - Intro to Graduate Algorithms<a class="anchor-link" href="#CS6515---Intro-to-Graduate-Algorithms">¶</a></h1>
 </div>
 </div>
@@ -416,7 +242,7 @@ $$\large \frac{f_2(n)}{f_1(n)} = \frac{2n+20}{n^2} \le 22 $$<p>for all n. So by 
 </ul>
 </li>
 </ul>
-<p><img src="images/W00-001.png" width="400;"/></p>
+<p><img src="CS6515_images/W00-001.png" width="400;"/></p>
 <h3 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h3><p>Review of big-O notation<br/>
 Some simple rules</p>
 <ul>
@@ -475,7 +301,7 @@ Some simple rules</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DP1-Dynamic-Programming---Class">DP1-Dynamic Programming - Class<a class="anchor-link" href="#DP1-Dynamic-Programming---Class">¶</a></h2><p>Our first topic is dynamic programming. The key to really mastering dynamic programming is to do lots and lots of practice problems. Dynamic programming (DP) is a style of algorithms that relies on combining the solutions of subproblems to arrive at the solution of a larger problem in an efficient manner. A standard example of this is the Fibonnacci numbers which are defined recursively. As we will see without DP a fibonacci solution will generally repeatedly perform a great deal of work in order to arrive at the final solution. Typically, but not always, DP is used to solve optimization problems which can have multiple outcomes, but which also have an ideal or optimal solution.</p>
+<h2 id="DP1:-Dynamic-Programming">DP1: Dynamic Programming<a class="anchor-link" href="#DP1:-Dynamic-Programming">¶</a></h2><p>Our first topic is dynamic programming. The key to really mastering dynamic programming is to do lots and lots of practice problems. Dynamic programming (DP) is a style of algorithms that relies on combining the solutions of subproblems to arrive at the solution of a larger problem in an efficient manner. A standard example of this is the Fibonnacci numbers which are defined recursively. As we will see without DP a fibonacci solution will generally repeatedly perform a great deal of work in order to arrive at the final solution. Typically, but not always, DP is used to solve optimization problems which can have multiple outcomes, but which also have an ideal or optimal solution.</p>
 <p>In general DP algorithms can be designed using the following methodology:</p>
 <ol>
 <li>Characterize the structure of an optimal solution</li>
@@ -498,7 +324,8 @@ Some simple rules</p>
 </ul>
 </li>
 </ul>
-<h4 id="Methodology">Methodology<a class="anchor-link" href="#Methodology">¶</a></h4><p>Here is the approach we will take to design our algorithms, Note that this is an iterative process so you may need to go back a step and reformulate in order to move forward</p>
+<p><strong>Methodology</strong></p>
+<p>Here is the approach we will take to design our algorithms, Note that this is an iterative process so you may need to go back a step and reformulate in order to move forward</p>
 <ol>
 <li>Find and define the subproblem. All DP problems can be deconstructed into many subproblems. This is the key to DP! </li>
 </ol>
@@ -558,7 +385,8 @@ Some simple rules</p>
 <li>Original problem: solved via subproblems</li>
 <li>Time analysis</li>
 </ul>
-<h4 id="Tips-and-Tricks">Tips and Tricks<a class="anchor-link" href="#Tips-and-Tricks">¶</a></h4><p>If the input = sequence of X with length n</p>
+<p><strong>Tips and Tricks</strong></p>
+<p>If the input = sequence of X with length n</p>
 <p>good subproblems are:</p>
 <ul>
 <li>prefixes x[:i]</li>
@@ -575,7 +403,7 @@ Some simple rules</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h4><p>This is the method advocated by this class</p>
+<h3 id="Class-Methodology">Class Methodology<a class="anchor-link" href="#Class-Methodology">¶</a></h3><p>This is the method advocated by this class</p>
 <p><strong>FIRST :</strong> Define the subproblem in words</p>
 <ul>
 <li><strong>Provide a short explanation in English explaining the meaning of each table entry</strong></li>
@@ -872,7 +700,7 @@ max\{L(i-1,j), L(i,j-1)\} &amp; X_i \ne Y_j \\
                 L(i,j)=max{ L(i,j-1), L(i-1,j) }
 return L(n,n)</code></pre>
 <p>Be sure to observe that L is a table ( not a vector like previous problems )
-<img src="images/DP1-002.png" width="400;"/></p>
+<img src="CS6515_images/DP1-002.png" width="400;"/></p>
 </div>
 </div>
 </div>
@@ -1051,7 +879,7 @@ return max(T(:))</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DP2-Knapsack-&amp;-Chain-Multiply">DP2-Knapsack &amp; Chain Multiply<a class="anchor-link" href="#DP2-Knapsack-&amp;-Chain-Multiply">¶</a></h2>
+<h2 id="DP2:-Knapsack-&amp;-Chain-Multiply">DP2: Knapsack &amp; Chain Multiply<a class="anchor-link" href="#DP2:-Knapsack-&amp;-Chain-Multiply">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1322,9 +1150,9 @@ $$\large k(i,b)=max\left\{ k(i-1,b) , v_i + k(i,b-w_i) \right\}$$<p>Let's take a
 </ul>
 <p>So, the recurrence for k of b is going to be, we're going to try all possibilities for the last object to add and we're going to take the best of those. How do we get the best? We take the max, and we'll use i to denote the last object that we're trying to add. So, last object that we're going at is going to be object i, and we'll consider all i between one and n. If we add in object i, we gain value, Vi. And in addition, we gain the optimal solution to the subproblem where the total weight goes down by Wi. This is expressed in K(b-Wi). And we're trying all possibilities for i between one and n. But we need that the i'th object fits in the backpack.</p>
 <p>Version 1: to solve the initial problem
-<img src="images/DP1-003.png" width="400;"/></p>
+<img src="CS6515_images/DP1-003.png" width="400;"/></p>
 <p>Version 2: if the multiset solution is also required
-<img src="images/DP1-004.png" width="400;"/></p>
+<img src="CS6515_images/DP1-004.png" width="400;"/></p>
 </div>
 </div>
 </div>
@@ -1459,10 +1287,10 @@ also we can compute $Z_{ij} = \sum_{k=1}^b W_{i,k} \cdot Y_{k,j}$</p>
 </li>
 </ul>
 <p>To get some intuition for this problem, Let's look at an alternative representation of the problem and instead of looking at it as parenthesization we're going to represent it as a binary tree.</p>
-<p><img src="images/DP1-005.png" width="500;"/></p>
+<p><img src="CS6515_images/DP1-005.png" width="500;"/></p>
 <p>How these subtrees are structured tells us the parenthesization.</p>
 <p>Here is a slightly modified version that articulates the same general problem in binary tree format
-<img src="images/DP1-006.png" width="500;"/></p>
+<img src="CS6515_images/DP1-006.png" width="500;"/></p>
 <p>As you can see we will take the substring approach.</p>
 <p>There's going to be two parameters, I and J.</p>
 <ul>
@@ -1504,7 +1332,7 @@ also we can compute $Z_{ij} = \sum_{k=1}^b W_{i,k} \cdot Y_{k,j}$</p>
 <p>Before we detail the Pseudocode for this dynamic programming algorithm, let's go back and look at our recurrence a little more carefully, and see how we're going to fill the table up.</p>
 <p>What we're looking at in this situation is a two-dimensional table, let's call it C. We're trying to compute the upper diagonal of this table. Where the entries where j is at least i. Recall that our base case was diagonal, these are the entries C(i, i). This is the first thing we're going to fill in.</p>
 <p>What is the next thing that we're going to fill in? The next entries we're going to fill in are the entries C(i,i+1), which are just the off diagonals. After this we will compute the next diagonal C(i,i+2) and on we go until we get to C(1,n) which is the upper most corner.</p>
-<p><img src="images/DP1-007.png" width="500;"/></p>
+<p><img src="CS6515_images/DP1-007.png" width="500;"/></p>
 <p>Now, we can go ahead and detail our Pseudocode for our dynamic programming algorithm.</p>
 <p><strong>$\color{red}{\text{Algorithm}}$</strong></p>
 <pre><code>ChainMultiply(m0,m1,...,mn):
@@ -1547,10 +1375,10 @@ return C(1,n)</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DP3-Shortest-Path-Problem">DP3-Shortest Path Problem<a class="anchor-link" href="#DP3-Shortest-Path-Problem">¶</a></h2><h3 id="Intro">Intro<a class="anchor-link" href="#Intro">¶</a></h3><p>In this lecture, we'll look at several versions of shortest path problems and we'll use dynamic programming to design fast algorithms for these problems.</p>
+<h2 id="DP3:-Shortest-Path-Problem">DP3: Shortest Path Problem<a class="anchor-link" href="#DP3:-Shortest-Path-Problem">¶</a></h2><h3 id="Intro---DP3">Intro - DP3<a class="anchor-link" href="#Intro---DP3">¶</a></h3><p>In this lecture, we'll look at several versions of shortest path problems and we'll use dynamic programming to design fast algorithms for these problems.</p>
 <p>The setting is that we have a directed graph $\overset{\rightarrow}G = (V,E)$ And in addition, we have weights on the edges which is denoted by W(e). Some of the edges will have negative weights. We may also have these anti-parallel edges, like (a to d) and (d to a)  So we have an edge from A to D and from D to A and they might have the same or different weights.</p>
 <p>Here's a small illustration:
-<img src="images/DP1-008.png" width="400;"/></p>
+<img src="CS6515_images/DP1-008.png" width="400;"/></p>
 <p>In our first problem, we have a designated start for text which will denote as S. We're going to look at the length of the shortest path from S to every other vertex in this graph. To do this let's define the following function: for $z \in V$ let dist(z) = length of the shortest path from s to z. Since z is a multiset we have that dist(z) is defined for every vertex in the graph. So it's an array of length n; our goal is to compute this array.</p>
 <p>Let's take a closer look at dist(z):</p>
 <ul>
@@ -1561,7 +1389,7 @@ return C(1,n)</code></pre>
 </ul>
 <p>You may recall that there is a famous solution to similar problems called Dijkstra's algorithm. Which takes a directed graph $\overset{\rightarrow}G=(V,E)$ with edge weights $w(e)$ and $s \in V$ and finds a distance array dist(z) for all $z \in V$. It does so using a Breadth first search approach, which explored the graph in a layered approach. It has a total run time of O((n+m) log n). Recall also that Dijkstra's algo generally uses a min-heap or priority queue data structure, both of whose operations require (log n) time. One downfall or constraint is that it can't handle negative weights. They must be positive and greater than 0. Reason behind this is that it won't explore a vertex twice, consequently if it encounters a negative weight that results in a shorter path it cannot update the previous path weight. We will be working towards allowing negative weights.</p>
 <p>Our first question is whether or not the problem is well defined? Well in our example it is but would it be if the negative weight were a bit more extreme? Suppose for example that instead of -2, the edge a -&gt; e was -6.
-<img src="images/DP1-009.png" width="400;"/></p>
+<img src="CS6515_images/DP1-009.png" width="400;"/></p>
 <p>Previously dist(d) = 5+3+3=11. This time around though it can be less, due to the negative cycle that has appeared. Look at the cycle b -&gt; a -&gt; d, it's -1, meaning we can reduce our path length by taking the cycle. Now if we take this path then dist(d) is 10. In fact we could repeatedly walk around this cycle to get a lower path length.</p>
 <blockquote><p>Prev Path: s -&gt; b -&gt; a -&gt; d<br/>
 New  Path: s -&gt; b -&gt; a -&gt; e -&gt; b -&gt; a -&gt; d</p>
@@ -1630,7 +1458,7 @@ New  Path: s -&gt; b -&gt; a -&gt; e -&gt; b -&gt; a -&gt; d</p>
 </ul>
 </li>
 </ul>
-<p><img src="images/DP1-010.png" width="400;"/></p>
+<p><img src="CS6515_images/DP1-010.png" width="400;"/></p>
 <p><strong>Note:</strong></p>
 <ul>
 <li><p>$\large D(i,z) = \underset{y:\overrightarrow{yz} \in E}{min}\{ D(i-1,y) + w(y,z) \}$</p>
@@ -1650,7 +1478,7 @@ New  Path: s -&gt; b -&gt; a -&gt; e -&gt; b -&gt; a -&gt; d</p>
 </li>
 </ul>
 <p>Here's a nice animated gif to help visualize:</p>
-<p><img src="images/Bellman-Ford_algorithm_example.gif" width="350;"/></p>
+<p><img src="CS6515_images/Bellman-Ford_algorithm_example.gif" width="350;"/></p>
 </div>
 </div>
 </div>
@@ -1660,7 +1488,7 @@ New  Path: s -&gt; b -&gt; a -&gt; e -&gt; b -&gt; a -&gt; d</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Bellman-Ford">Bellman Ford<a class="anchor-link" href="#Bellman-Ford">¶</a></h4><p><strong>$\color{red}{\text{Algorithm - aka: Bellman-Ford}}$</strong></p>
+<h3 id="Algo-Bellman-Ford">Algo Bellman Ford<a class="anchor-link" href="#Algo-Bellman-Ford">¶</a></h3><p><strong>$\color{red}{\text{Algorithm - aka: Bellman-Ford}}$</strong></p>
 <pre><code>Input: G=(V,E),S,w
 
 for all z in V
@@ -1699,12 +1527,12 @@ After reversing we can get the edges into z</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Negative-Weights">Negative Weights<a class="anchor-link" href="#Negative-Weights">¶</a></h4><p>How can we find whether a graph has a negative way cycle or not?</p>
-<p><img src="images/DP1-009.png" width="400;"/></p>
+<h3 id="Negative-Weights&amp;Cycles">Negative Weights&amp;Cycles<a class="anchor-link" href="#Negative-Weights&amp;Cycles">¶</a></h3><p>How can we find whether a graph has a negative way cycle or not?</p>
+<p><img src="CS6515_images/DP1-009.png" width="400;"/></p>
 <p>Here's our earlier example on six vertices and it has a negative weight Cycle (A-&gt;B-&gt;C-&gt;A) which is of length -1.</p>
 <p>So, what's going to happen for our Bellman Ford algorithm that we just defined on this example?</p>
 <p>We're going to have a two dimensional table. The columns of the tables are going to be the vertices of the graph: S, A, B, C, D, E. The rows of the table are going to correspond to the path lengths we consider. We start with the base case, i=0. In the base case we have D(0,s) = 0, and the other entries are infinite.</p>
-<p><img src="images/DP1-012.png" width="400;"/></p>
+<p><img src="CS6515_images/DP1-012.png" width="400;"/></p>
 <p>Our algorithm will fill up the table from I=1,2,3,4,5, let's work through this</p>
 <pre><code>i    s    a    b    c    d    e
 0    0  inf  inf  inf  inf  inf &lt;- this is just a result of our initialization and base case
@@ -1783,7 +1611,7 @@ For i &gt;= 0:
 <p>Now we put it all together. Recall that we want the shortest path, t/f we will take the min of the two cases above</p>
 <blockquote><p>$\large D(i,s,t) = min\{ D(i-1,s,t), D(i-1,s,i) + D(i-1,i,t)  \}$</p>
 </blockquote>
-<h4 id="Algo:-Floyd-Warshall">Algo: Floyd-Warshall<a class="anchor-link" href="#Algo:-Floyd-Warshall">¶</a></h4><p><strong>$\color{red}{\text{Floyd-Warshall}}$</strong><br/>
+<h3 id="Algo:-Floyd-Warshall">Algo: Floyd-Warshall<a class="anchor-link" href="#Algo:-Floyd-Warshall">¶</a></h3><p><strong>$\color{red}{\text{Floyd-Warshall}}$</strong><br/>
 Note <strong>this algo allows neg weights - but assumes NO negative weight cycles</strong></p>
 <pre><code>Inputs: G, w
 
@@ -1825,7 +1653,7 @@ Return D(n,:,:)</code></pre>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Comparison-Ford-v-Floyd">Comparison Ford v Floyd<a class="anchor-link" href="#Comparison-Ford-v-Floyd">¶</a></h3><p>let's take a quick look at some of the differences b/w Bellman-ford and Floyd-Marshall</p>
 <p>Consider the following graph<br/>
-<img src="images/DP1-011.png" width="400;"/></p>
+<img src="CS6515_images/DP1-011.png" width="400;"/></p>
 <p>How would bellman-ford handle this for say d = start? Well there are no paths leading out from d and thus it would not find the negative cycle. Floyd-Marshall, however, would look at all vertices and would invariably find it.</p>
 </div>
 </div>
@@ -1836,7 +1664,7 @@ Return D(n,:,:)</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">¶</a></h3><ul>
+<h3 id="DP3-Exercises">DP3-Exercises<a class="anchor-link" href="#DP3-Exercises">¶</a></h3><ul>
 <li>DPV - 4.21 ( Currency Exchange )</li>
 </ul>
 </div>
@@ -1848,7 +1676,7 @@ Return D(n,:,:)</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h3><ol>
+<h3 id="DP3-Summary">DP3-Summary<a class="anchor-link" href="#DP3-Summary">¶</a></h3><ol>
 <li>Find &amp; Define the subproblem</li>
 </ol>
 <ul>
@@ -1929,7 +1757,7 @@ Return D(n,:,:)</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DC0-Divide-&amp;-Conquer">DC0-Divide &amp; Conquer<a class="anchor-link" href="#DC0-Divide-&amp;-Conquer">¶</a></h2><p><a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap2.pdf">Berkeley</a></p>
+<h2 id="DC0:-Divide-&amp;-Conquer">DC0: Divide &amp; Conquer<a class="anchor-link" href="#DC0:-Divide-&amp;-Conquer">¶</a></h2><p><a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap2.pdf">Berkeley</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm">Wikipedia</a></p>
 <p>Divide and Conquer algorithms use recursion to break a problem down into two or more similar, yet simpler, subproblems, that can be solved more easily. It then uses recursion to recombine the simpler solutions into a solution for the initial problem.</p>
 <p>Application of D&amp;C follows a simple strategy:</p>
@@ -1942,9 +1770,10 @@ Return D(n,:,:)</code></pre>
 <p>We will look at a fundamental problem multiplying two n bit numbers. Here, we'll assume the numbers are huge (thousands of bits long). This will be the case in an application such as RSA.</p>
 <p>Another fundamental problem we'll look at is given n numbers, we'd like to find the median element. The numbers are unsorted, so they are in arbitrary order. Can we find the median without first sorting the list?</p>
 <p>Finally, we'll dive into the beautiful FFT algorithm, Fast Fourier Transform. It's impossible to overstate the importance of this algorithm, it's used in many fields, such as signal processing. In fact, it was called the most important numerical algorithm of our lifetime.</p>
-<h3 id="Review">Review<a class="anchor-link" href="#Review">¶</a></h3><h4 id="Binary-Search">Binary Search<a class="anchor-link" href="#Binary-Search">¶</a></h4><p>Suppose you have a phone book and need to find someones number. You could technically start at the very beginning and work your way, line by line, page by page, until you found the person. Of course this would be very tedious and time consuming. In the best case you find them on the first page. In the worst case they appear on the very last page.</p>
+<h3 id="Review---Binary-Search">Review - Binary Search<a class="anchor-link" href="#Review---Binary-Search">¶</a></h3><p>Suppose you have a phone book and need to find someones number. You could technically start at the very beginning and work your way, line by line, page by page, until you found the person. Of course this would be very tedious and time consuming. In the best case you find them on the first page. In the worst case they appear on the very last page.</p>
 <p>Of course, you're smarter than the average bear. So you decide to start at the middle of the phone book. Since you have this person's last name you can now determine if they are in the first half of the phone book or the second half. Which ever case it is you choose the appropriate half and divide again. What you are performing here is called a binary search. at first you n people to look through. after the first division you have n/2, after the second division you have n/4, keep going and eventually you'll have n/n left meaning you've found the person your looking for.</p>
-<p>This is the simplest and easiest of all divide and conquer algorithms.</p>
+<p>This is the simplest and easiest of all divide and conquer algorithms. 
+<img src="CS6515_images/Binary-search-work.gif"/></p>
 <pre><code>Input:  A is the array, 
         n is the number of elements in A or length(A)
         x the target element 
@@ -1963,7 +1792,6 @@ while lpt &lt;= rpt
         return m
 
 return -1              # if hit element not found</code></pre>
-<p><img src="images/Binary-search-work.gif"/></p>
 <p><strong>Running Time</strong><br/>
 It turn out that binary search has a run time of $O(log_2 n)$. to understand why let's do a quick review of logarithms.</p>
 <p>Recall that logarithms represent the inverse of exponentiation. A logarithm is the power to which a number must be raised in order to get some other number. For example, the base 2 logarithm of 16 is 4, because 2 raised to the power of 4 is 16.
@@ -1974,7 +1802,7 @@ $$ \log_{4} 16 = 2 \text{  since  } 4^2 = 16  $$</p>
 $$ \log_2 n = \log_2 (2^k) = k \log_2 (2) = k $$</p>
 <p>Thus T(n/2)=T(k) is bounded by O($\log_2 n$) (note that the base is often ommitted as it is almost always base 2)</p>
 <p>You can also use the master theorem, see Recurrance Generalization, to see that this is true.</p>
-<h4 id="Merge-Sort">Merge-Sort<a class="anchor-link" href="#Merge-Sort">¶</a></h4><p>Another classic examples of DC is the merge sort algorithm for sorting an array of numbers.</p>
+<h3 id="Review---Merge-Sort">Review - Merge Sort<a class="anchor-link" href="#Review---Merge-Sort">¶</a></h3><p>Another classic examples of DC is the merge sort algorithm for sorting an array of numbers.</p>
 <pre><code>MERGESORT(A,p,r):
 if p&gt;= r:
     return
@@ -1985,7 +1813,7 @@ MERGESORT(A,q+1,r)      # recursively sort A[q+1 : r]
 
 MERGE(A,p,q,r)          # Merge A[p:q], A[q+1 : r] into A[p,r]</code></pre>
 <p>Here's a nice little illustration
-<img src="images/DC1-001.png" width="400;"/></p>
+<img src="CS6515_images/DC1-001.png" width="400;"/></p>
 </div>
 </div>
 </div>
@@ -2022,7 +1850,7 @@ Then the max sum is 187 = sum A[2 : 6]</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DC1-Fast-Integer-multiplication">DC1-Fast Integer multiplication<a class="anchor-link" href="#DC1-Fast-Integer-multiplication">¶</a></h2><p>What we're going to look at now is multiplying n-bit integers.</p>
+<h2 id="DC1:-Fast-Integer-multiplication">DC1: Fast Integer multiplication<a class="anchor-link" href="#DC1:-Fast-Integer-multiplication">¶</a></h2><p>What we're going to look at now is multiplying n-bit integers.</p>
 <p><strong>Problem formulation</strong></p>
 <ul>
 <li>Given: two n-bit integers: x, and y</li>
@@ -2182,7 +2010,7 @@ return Z</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DC2-Linear-Time-Median">DC2-Linear Time Median<a class="anchor-link" href="#DC2-Linear-Time-Median">¶</a></h2><p>Let's look now at another nice example of divide and conquer. This is the problem of finding the median.</p>
+<h2 id="DC2:-Linear-Time-Median">DC2: Linear Time Median<a class="anchor-link" href="#DC2:-Linear-Time-Median">¶</a></h2><p>Let's look now at another nice example of divide and conquer. This is the problem of finding the median.</p>
 <p>Description:</p>
 <ul>
 <li>Given: an unsorted list $A=[a_1,...,a_n]$ of n numbers<ul>
@@ -2350,7 +2178,7 @@ else return p</code></pre>
 </li>
 </ul>
 <p>Sketch of the proof that in fact p is a good pivot!
-<img src="images/DC2-001.png" width="500;"/></p>
+<img src="CS6515_images/DC2-001.png" width="500;"/></p>
 </div>
 </div>
 </div>
@@ -2371,8 +2199,8 @@ else return p</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DC3-Solving-Recurrances">DC3-Solving Recurrances<a class="anchor-link" href="#DC3-Solving-Recurrances">¶</a></h2><p><a href="https://web.stanford.edu/class/archive/cs/cs161/cs161.1168/lecture3.pdf">Stanford Link</a></p>
-<p>This is a short refresher lecture on Solving Recurrences, with a focus on the type of recurrences that arise in divide and conquer algorithms.</p>
+<h2 id="DC3:-Solving-Recurrances">DC3: Solving Recurrances<a class="anchor-link" href="#DC3:-Solving-Recurrances">¶</a></h2><p><a href="https://web.stanford.edu/class/archive/cs/cs161/cs161.1168/lecture3.pdf">Stanford Link</a></p>
+<h3 id="Example-Recurrances">Example Recurrances<a class="anchor-link" href="#Example-Recurrances">¶</a></h3><p>This is a short refresher lecture on Solving Recurrences, with a focus on the type of recurrences that arise in divide and conquer algorithms.</p>
 <p>First let's look at a few that we've encountered already</p>
 <ol>
 <li><strong>MergeSort</strong>: T(n)=2*T(n/2)+O(n); which you may recall solves to O(n log n)       </li>
@@ -2380,7 +2208,8 @@ else return p</code></pre>
 <li><strong>Fast Integer Multiplication</strong>: T(n) = 3*T(n/2)+O(n) which solves to O($n^{log_2 3}$)         </li>
 <li><strong>Median Finding</strong>: T(n) = T(3n/4)+O(n); Which solves to O(n)           </li>
 </ol>
-<h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">¶</a></h3><p>Let's now take a closer look at #2 to better understand how this solved.</p>
+<p><strong>MERGESORT</strong></p>
+<p>Let's now take a closer look at #2 to better understand how this solved.</p>
 <p>We begin with T(n) = 4T(n/2)+O(n) which is just the original/raw time complexity.<br/>
 Recall that O(n) just means that there is a constant c &gt; 0 s.t. O(n) $\le$ c*n<br/>
 t/f we can replace O(n) with cn to get an upper bound: $T(n) \le 4T(n/2) + cn$</p>
@@ -2420,7 +2249,8 @@ t/f we can replace O(n) with cn to get an upper bound: $T(n) \le 4T(n/2) + cn$</
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Geometric-Series">Geometric Series<a class="anchor-link" href="#Geometric-Series">¶</a></h4><p>A quick refresher</p>
+<p><strong>Geometric Series</strong></p>
+<p>A quick refresher</p>
 <ul>
 <li>Consider some alpha $\alpha &gt; 0$</li>
 <li>Then <ul>
@@ -2433,7 +2263,8 @@ O(1) &amp; \text{ if } \alpha &lt; 1  \\
 </ul>
 </li>
 </ul>
-<h4 id="Polynomials">Polynomials<a class="anchor-link" href="#Polynomials">¶</a></h4><p>How do we convert an exponential logarithm such as $3^{log_2 n}$ to a polynomial like $n^c$?<br/>
+<p><strong>Polynomials</strong></p>
+<p>How do we convert an exponential logarithm such as $3^{log_2 n}$ to a polynomial like $n^c$?<br/>
 First we observe that $3 = 2^{log_2 3}$ by definition of logarithms<br/>
 We sub this back into our original problem $3^{log_2 n}$</p>
 <ul>
@@ -2447,7 +2278,8 @@ We sub this back into our original problem $3^{log_2 n}$</p>
 <ul>
 <li>for $c = (log_2 3)$ we have $n^c = 3^{log_2 n}$ as required</li>
 </ul>
-<h4 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">¶</a></h4><p>Recall that the complexity for our fast integer multiplication was given as  T(n) = 3*T(n/2)+O(n) which we solved to O($n^{log_2 3}$). Now let's look at how we can derive this.</p>
+<p><strong>Example 2</strong></p>
+<p>Recall that the complexity for our fast integer multiplication was given as  T(n) = 3*T(n/2)+O(n) which we solved to O($n^{log_2 3}$). Now let's look at how we can derive this.</p>
 <p>T(n) = 3*T(n/2)+O(n). Similar to before let's just jump stright into the expansion</p>
 <ul>
 <li>$T(n) \le cn(1+(3/2)+(3/2)^2+\cdots+(3/2)^{i-1}) + 3^i T(n/2^i) $</li>
@@ -2470,8 +2302,7 @@ We sub this back into our original problem $3^{log_2 n}$</p>
 <li>$T(n) \le O(3^{log_2(n)}) $ since $3^{log_2(n)}$ doesn't exceed the former</li>
 <li>$T(n) \le O(n^{log_2(3)}) $ from our result in the previous section on polynomials</li>
 </ul>
-<h4 id="Recurrance-Generalization">Recurrance Generalization<a class="anchor-link" href="#Recurrance-Generalization">¶</a></h4><p><strong>Master Theorem</strong></p>
-<p>If $T(n) = aT(n/b)+O(n^d)$, for a&gt;0, b&gt;0,d$\ge$0<br/>
+<h3 id="Master-Theorem-Generalization">Master Theorem Generalization<a class="anchor-link" href="#Master-Theorem-Generalization">¶</a></h3><p>If $T(n) = aT(n/b)+O(n^d)$, for a&gt;0, b&gt;0,d$\ge$0<br/>
 Then<br/>
 $ T(n) = 
 \begin{cases}
@@ -2526,7 +2357,7 @@ $ T(n) =
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DC4-FFT-Fast-Fourier-Transform">DC4-FFT-Fast Fourier Transform<a class="anchor-link" href="#DC4-FFT-Fast-Fourier-Transform">¶</a></h2><p>What we've seen so far is how to use divide and conquer in a clever way to multiply large integers. So for N bit integers, we were able to multiply and compute their product in time better than $O(n^2)$. What we're going to do now is multiply polynomials. To do this, we're going to use the beautiful divide and conquer algorithm known as FFT.</p>
+<h2 id="DC4:-FFT-Fast-Fourier-Transform">DC4: FFT-Fast Fourier Transform<a class="anchor-link" href="#DC4:-FFT-Fast-Fourier-Transform">¶</a></h2><p>What we've seen so far is how to use divide and conquer in a clever way to multiply large integers. So for N bit integers, we were able to multiply and compute their product in time better than $O(n^2)$. What we're going to do now is multiply polynomials. To do this, we're going to use the beautiful divide and conquer algorithm known as FFT.</p>
 <ul>
 <li>FFT stands for fast fourier transform.</li>
 </ul>
@@ -2560,7 +2391,7 @@ $ T(n) =
 </ul>
 </li>
 </ul>
-<h3 id="P1:--Review-Polynomials-&amp;-Convolutions">P1:  Review-Polynomials &amp; Convolutions<a class="anchor-link" href="#P1:--Review-Polynomials-&amp;-Convolutions">¶</a></h3><p>Let's do a quick review of polynomial multiplication</p>
+<h3 id="P1:-Review-Polynomials-&amp;-Convolutions">P1: Review-Polynomials &amp; Convolutions<a class="anchor-link" href="#P1:-Review-Polynomials-&amp;-Convolutions">¶</a></h3><p>Let's do a quick review of polynomial multiplication</p>
 <ul>
 <li>Let A = $1+2x+3x^2$ and B = $2-x+4x^2$</li>
 <li>Then c = a*b = (2,3,8,5,12) <ul>
@@ -2691,7 +2522,7 @@ To get $A(x)$ of deg $\le n-1$ at 2n points $x_1,...x_{2n}$ of our choosing.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="P2:--Review-Complex-Numbers">P2:  Review-Complex Numbers<a class="anchor-link" href="#P2:--Review-Complex-Numbers">¶</a></h4><p>Recall</p>
+<h3 id="P2:--Review-Complex-Numbers">P2:  Review-Complex Numbers<a class="anchor-link" href="#P2:--Review-Complex-Numbers">¶</a></h3><p>Recall</p>
 <ul>
 <li>$z=a+bi$ is how we define a complex number</li>
 <li>a is said to be the real part </li>
@@ -2700,7 +2531,7 @@ To get $A(x)$ of deg $\le n-1$ at 2n points $x_1,...x_{2n}$ of our choosing.</p>
 </ul>
 <p>You may also recall that when working with complex numbers it is often more convenient to work in the polar co-ordinate system where a point such as (a,b) in the compelx plane is translate to (r,$\theta$) in the polar plane. r describes the points radius or distance from (0,0) and $\theta$ describes the angle from the real axis.</p>
 <p>The following illustration may be a better explanation
-<img src="images/FFT-001.png" width="400;"/></p>
+<img src="CS6515_images/FFT-001.png" width="400;"/></p>
 <p>We will state without prrof the following properties</p>
 <ul>
 <li>$(a,b) = (r cos \theta, r sin \theta)$ This is how we can convert between the two planes</li>
@@ -2729,8 +2560,8 @@ Consider two complex numbers $z_1,z_2$</p>
 </ul>
 </li>
 </ul>
-<p><img src="images/FFT-002.png" width="400;"/></p>
-<h4 id="Roots-of-Unity">Roots of Unity<a class="anchor-link" href="#Roots-of-Unity">¶</a></h4><p>For our purpose we will need numbers called the n'th complex roots of unity (unity here means 1)</p>
+<p><img src="CS6515_images/FFT-002.png" width="400;"/></p>
+<h3 id="Roots-of-Unity">Roots of Unity<a class="anchor-link" href="#Roots-of-Unity">¶</a></h3><p>For our purpose we will need numbers called the n'th complex roots of unity (unity here means 1)</p>
 <ul>
 <li>n'th complex root examples<ul>
 <li>for n=2: the roots are 1, -1</li>
@@ -2744,7 +2575,7 @@ Consider two complex numbers $z_1,z_2$</p>
 </ul>
 <p>This can be bit difficult to conceptualize. What it boils down to is that the roots of n'th complex roots of unity are the n'th points on a unit circle in the complex space. Mathematically this means that for $z=(r,\theta)$ we have $z^n = (r^n,n \theta)$. $r^n$ is always 1 as this is a unit circle. $n\theta$ is very simple. Just solve for theta $\theta = 2 \pi j / n$ where j is an integer s.t. $0 \le j \le n$. This basically just amounts to dividing the unit circle into n points, evenly spaced of course.</p>
 <p>Here is a visualization 
-<img src="images/FFT-003.png" width="400;"/></p>
+<img src="CS6515_images/FFT-003.png" width="400;"/></p>
 <p>Let's kick it up a notch</p>
 <ul>
 <li>let $\omega_n = (1,2\pi/n)$ which corresponds to j=1</li>
@@ -2756,9 +2587,9 @@ Consider two complex numbers $z_1,z_2$</p>
 </ul>
 </li>
 </ul>
-<p><img src="images/FFT-004.png" width="400;"/></p>
+<p><img src="CS6515_images/FFT-004.png" width="400;"/></p>
 <p>Here's a worked example showing the relationship between $\omega_n^8$ and $\omega_n^{16}$ which is just$ (\omega_n^8)^2$</p>
-<p><img src="images/FFT-005.png" width="500;"/></p>
+<p><img src="CS6515_images/FFT-005.png" width="500;"/></p>
 <p>All of this was just to demonstrate two key properties of the n'th roots of unity which we will need for our FFT algo.</p>
 <p><strong>Property 1</strong><br/>
 For an even n: the n'th roots satisfy the $\pm$ property.</p>
@@ -2791,7 +2622,7 @@ For n a power of 2, $n=2^k$, the $(\text{ n'th roots})^2 = \text{ (n/2)'nd roots
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h5 id="Examples">Examples<a class="anchor-link" href="#Examples">¶</a></h5><p><strong>Q1: What is the sum of the n'th roots of Unity?</strong><br/>
+<h3 id="Examples-FFT">Examples-FFT<a class="anchor-link" href="#Examples-FFT">¶</a></h3><p><strong>Q1: What is the sum of the n'th roots of Unity?</strong><br/>
 Recall that the n'th roots are defined as $\omega_n^j = e^{2 \pi i j / n}$</p>
 <ul>
 <li>So we take the sum</li>
@@ -2814,7 +2645,7 @@ Recall that the n'th roots are defined as $\omega_n^j = e^{2 \pi i j / n}$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DC5-FFT-Algorithm">DC5-FFT-Algorithm<a class="anchor-link" href="#DC5-FFT-Algorithm">¶</a></h2><p>Now that we have all the necassary pieces we can begin to put the puzzle together. So let's recap the problem, then draw out our algorithm</p>
+<h2 id="DC5:-FFT-Algorithm">DC5: FFT-Algorithm<a class="anchor-link" href="#DC5:-FFT-Algorithm">¶</a></h2><p>Now that we have all the necassary pieces we can begin to put the puzzle together. So let's recap the problem, then draw out our algorithm</p>
 <p><strong>Goal</strong> To Evaluate the polynomial A(x) of deg $\le n-1$ at n points, where n is a power of k</p>
 <p>Recall that in order to perform the polynomial multiplication we will need A(x) at 2n points. In order to obtain at two N points instead of N points, we can just pad the polynomial, the coefficients with zeros, so that we view the polynomial as a degree 2n-1 polynomial.</p>
 <p>Now what are these n points that we're going to choose? We're going to choose the n'th roots of unity as our end points, which we're going to evaluate the polynomial of A(x) at. Now since n is a power of 2, ie N equals $2^k$ for some positive integer k. Then we know that these n points, the n'th roots of unity, will satisfy the $\pm$ property. So the first N over two are opposite of the last N over two. Also recall that the second poperty demonstrated that the square of the n'th roots are the (n/2)'nd roots.</p>
@@ -2923,9 +2754,9 @@ You don't need to go through the entire fft algorithm. Just compute $A(\omega_n^
 $= (1,x_j,x_j^2,...,x_j^{n-1}) \times (a_0,a_1,a_2,...,a_{n-1})$</p>
 </blockquote>
 <p>So for n points it gets rather tedious to write this all out so we switch to matrix notation:<br/>
-<img src="images/FFT-006.png" width="400;"/></p>
+<img src="CS6515_images/FFT-006.png" width="400;"/></p>
 <p>The above is just for an arbitrary x. Watch what happens when we apply our evaluation using the n roots of unity, ie take $x_j=\omega_n^j$
-<img src="images/FFT-007.png" width="400;"/></p>
+<img src="CS6515_images/FFT-007.png" width="400;"/></p>
 <p>Notice the symmetry. Also notice that the central matrix is just powers of $\omega_n$.</p>
 <p>Let's simplify this a bit more. Call the middle matrix $M_n(\omega_n)$, the final vector a and the vector at the left is A<br/>
 Then we can write this as</p>
@@ -2956,18 +2787,18 @@ There's two ways to think about it.</p>
 <p>The other approach is to apply the $\pm$ property. Recall that for each j $\omega_n^j = - \omega_n^{(n/2)+j}$</p>
 <p>We can actually generalize this even further<br/>
 <strong>Claim:</strong> for any n'th root of unity $\omega$ where $\omega \ne 1$, $0=1+\omega_n+\omega_n^2+\cdots+\omega_n^{n-1}$</p>
-<p><img src="images/FFT-008.png" width="400;"/></p>
+<p><img src="CS6515_images/FFT-008.png" width="400;"/></p>
 <p>Now let's go through a proof of the lemma.<br/>
 Recall that we need to show $M_n(\omega_n)^{-1} = \frac{1}{n} M_n(\omega_n^{-1})$</p>
 <p>If true then it would mean that $\frac{1}{n} M_n(\omega_n^{-1}) M_n(\omega_n) = I$<br/>
 where I is the identity matrix (1's along the diagonal and 0's otherwise)</p>
 <p>So we will demonstrate that $M_n(\omega_n^{-1}) M_n(\omega_n)$ results in a matrix with n's along the diagonal and is 0 in all other entries.</p>
 <p>for entries (k,k), we will work out the dot product of the k'th row and k'th column 
-<img src="images/FFT-009.png" width="400;"/></p>
+<img src="CS6515_images/FFT-009.png" width="400;"/></p>
 <p>for entries (k,j), where $k \ne j$, again we will work out the dot product of the k'th row and j'th column 
-<img src="images/FFT-010.png" width="400;"/></p>
+<img src="CS6515_images/FFT-010.png" width="400;"/></p>
 <p>Finally we can return to our polynomial multiplication algorithm 
-<img src="images/FFT-011.png" width="400;"/></p>
+<img src="CS6515_images/FFT-011.png" width="400;"/></p>
 <p>Finally the pain is over!!</p>
 </div>
 </div>
@@ -3093,7 +2924,7 @@ By converting the binary numbers we can make use of the FFT algorithm to multipl
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DC-Summary">DC-Summary<a class="anchor-link" href="#DC-Summary">¶</a></h2><p>Approach</p>
+<h2 id="DC6:-Summary">DC6: Summary<a class="anchor-link" href="#DC6:-Summary">¶</a></h2><p>Approach</p>
 <ul>
 <li>Break problem into several parts or subproblems</li>
 <li>solve each one independently </li>
@@ -3142,7 +2973,7 @@ By converting the binary numbers we can make use of the FFT algorithm to multipl
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="RA0-Randomized-Algorithms">RA0-Randomized Algorithms<a class="anchor-link" href="#RA0-Randomized-Algorithms">¶</a></h2><p>Let's now dive into randomized algorithms. Hopefully at the end, you'll appreciate how randomness is a beautiful and powerful algorithmic tool. We'll start with cryptography. We'll look at the amazing RSA Cryptosystem. This is one of the most widely used Cryptosystems. It's extremely elegant.</p>
+<h2 id="RA0:-Randomized-Algorithms">RA0: Randomized Algorithms<a class="anchor-link" href="#RA0:-Randomized-Algorithms">¶</a></h2><p>Let's now dive into randomized algorithms. Hopefully at the end, you'll appreciate how randomness is a beautiful and powerful algorithmic tool. We'll start with cryptography. We'll look at the amazing RSA Cryptosystem. This is one of the most widely used Cryptosystems. It's extremely elegant.</p>
 <p>Once we learn some of the basic mathematics about modular arithmetic, you'll appreciate the ingenuity of the RSA protocol. Then you'll have a basic understanding of how these Cryptosystem that we use everyday, many times a day in fact, actually work. Another beautiful and incredibly useful application of randomized algorithms that we'll study is for hashing. We're going to look at a hashing scheme known as Bloom Filters. This is a simple scheme that's quite popular in many different fields. We'll look at the mathematics behind it. This will involve some basic probability analysis and then you'll do a programming project to implement and study Bloom Filters.</p>
 </div>
 </div>
@@ -3153,7 +2984,7 @@ By converting the binary numbers we can make use of the FFT algorithm to multipl
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="RA1-Modular-Arithmetic">RA1-Modular Arithmetic<a class="anchor-link" href="#RA1-Modular-Arithmetic">¶</a></h2><p>The mathematics of the RSA cryptosystem are very beautiful and they're fairly simple once you have the right mathematical background. So we're going to start with a short primer on the mathematical topics that we need.</p>
+<h2 id="RA1:-Modular-Arithmetic">RA1: Modular Arithmetic<a class="anchor-link" href="#RA1:-Modular-Arithmetic">¶</a></h2><p>The mathematics of the RSA cryptosystem are very beautiful and they're fairly simple once you have the right mathematical background. So we're going to start with a short primer on the mathematical topics that we need.</p>
 <p>The relevant topic that we need is Modular Arithmetic. Then one key concept that we need are multiplicative inverses, and what they mean in modular arithmetic. And then we're gonna look at Euclid's GCD algorithm, greatest common divisor, which is gonna be used in the RSA cryptosystem. Next we're going to learn about Fermat's Little Theorem and it's the key tool in the design of the RSA algorithm. So at this point we'll be able to detail the RSA algorithm. Finally, we'll look at Primality testing, given a number, can we test whether the number is prime or not, or composite?</p>
 <p>Once we see how to do that using Fermat's Little Theorem, then we're going to be able to generate random primes. Generating random primes is a key component in the RSA algorithm. So once we complete that, we'll have completed our discussion of the RSA algorithm. Now let's go ahead and dive into the algorithms related to the RSA.</p>
 <p>Lets look at the context of the RSA algorithm. In cryptography, we're going to work with N-bit numbers X, Y and N. For example, the number of bits in these numbers is going to be huge. Think of the number of bits as 1024 or 2048.
@@ -3407,7 +3238,7 @@ A: Run Ext−Euclid(360,7)</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="RA2-RSA-Cryptosystem">RA2-RSA Cryptosystem<a class="anchor-link" href="#RA2-RSA-Cryptosystem">¶</a></h2><p>Before we dive into the RSA cryptosystem, we're going to dive into the mathematical concept which is the basis for the whole cryptosystem.</p>
+<h2 id="RA2:-RSA-Cryptosystem">RA2: RSA Cryptosystem<a class="anchor-link" href="#RA2:-RSA-Cryptosystem">¶</a></h2><p>Before we dive into the RSA cryptosystem, we're going to dive into the mathematical concept which is the basis for the whole cryptosystem.</p>
 <h3 id="Fermat's-little-theorem">Fermat's little theorem<a class="anchor-link" href="#Fermat's-little-theorem">¶</a></h3><p>If  p is prime then for every $1 \le z \le p$ we have $z^{p-1} \equiv 1 \mod p$</p>
 <ul>
 <li>Note that $1 \le z \le p-1$ is equivalent being relatively prime ie gcd(z,p) = 1</li>
@@ -3460,7 +3291,7 @@ $$\large Z^{(p-1)(q-1)} \equiv 1 \mod pq$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="RSA-Cryptography">RSA Cryptography<a class="anchor-link" href="#RSA-Cryptography">¶</a></h3><p><strong>Setting</strong><br/>
+<h3 id="RSA:-Cryptography">RSA: Cryptography<a class="anchor-link" href="#RSA:-Cryptography">¶</a></h3><p><strong>Setting</strong><br/>
 There are 3 people: Alice the sender, Bob the reciever, and Eve the aptly named evesdropper. Alice takes her message m and encrypts then sends it, e(m) is the message she sends. Bob receives e(m) and decrypts it using his decryption function d(), so he gets the message m = d(e(m)). This is what is often called a public-key cryptosystem. Everyone can see e(m). Furthermore Bob will give everyone the keys to send him a message. He publishes the private key N and e. Now anyone can use these to encrypt their messages. What bob keeps safeguarded is his private key d, which is the inverse of e in modulo (p-1)(q-1)</p>
 <p>Here's a sketch of the process</p>
 <ol>
@@ -3597,7 +3428,7 @@ t/f (d = 103 mod 360 = 103)</code></pre>
 <p><strong>Density of the Primes</strong> It turns out that prime numbers are dense. The probability of a random number being a prime number is $\approx \frac{1}{n}$</p>
 <p><strong>Fermat's test</strong><br/>
 Recall: Fermat's theorem: If r is prime then for all z in {1,2,...,r-1} we have that $z^{r-1} \equiv 1 \mod r$. This will form the basis of our primality test. But first let's also consider the non-prime numbers, ie composite, that we are bound to run into. These are simply the numbers which are not relatively prime, ie  $z^{r-1} \not\equiv 1 \mod r$. In a humourous stroke we will call such a z, that proves r is composite, <strong>Fermat's witness</strong>. Does every composite r have a Fermat witness? Yes, in fact they do. They always have at least 1, and may even have more. These are much easier to find.</p>
-<h4 id="Fermat-Witness">Fermat Witness<a class="anchor-link" href="#Fermat-Witness">¶</a></h4><p>Define the Fermat witness for r as the number z such that $1 \le z \le r-1$ and $z^{r-1} \not\equiv 1 \mod r$</p>
+<h3 id="Fermat-Witness">Fermat Witness<a class="anchor-link" href="#Fermat-Witness">¶</a></h3><p>Define the Fermat witness for r as the number z such that $1 \le z \le r-1$ and $z^{r-1} \not\equiv 1 \mod r$</p>
 <p><strong>Proof: Every Composite r has at least 1 fermat witness</strong><br/>
 Since r is composite then it must have at least 2 divisors. Let's choose one of them and call it z. Then we know that gcd(r,z)=z&gt;1. Of course this works for any divisor of r, so if it has 100 divisors then we would have 100 witnesses. You may also recall from our properties of inverses that if the gcd of two numbers, in mod n, is not 1, then the inverse does not exist. This is our current situation gcd(r,z)=z implies that the inverse does not exist.</p>
 <p>Let's proceed by contradicition. Suppose there is an inverse, ie $z^{r-1} \equiv 1 \mod r$. This would imply that $z*z^{r-2} \equiv 1 \mod r$, which in turn implies that z has the inverse, $z^{r-2}$ in mod r. But the inverse cannot exist, therefore we have a contradiction.</p>
@@ -3698,13 +3529,13 @@ We have n identical balls and n bins $B_1,B_2,...,B_n$. Each ball is thrown into
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="GR0-Graph-Algorithms">GR0-Graph Algorithms<a class="anchor-link" href="#GR0-Graph-Algorithms">¶</a></h2><p><strong>Great Links and resources</strong></p>
+<h2 id="GR0:-Graph-Algorithms">GR0: Graph Algorithms<a class="anchor-link" href="#GR0:-Graph-Algorithms">¶</a></h2><p><strong>Great Links and resources</strong></p>
 <ul>
 <li><a href="https://cs.slu.edu/~esposito/teaching/1080/webscience/graphs.html">https://cs.slu.edu/~esposito/teaching/1080/webscience/graphs.html</a></li>
 </ul>
 <p>Assume all graphs are simple there are no loop edges, (u,u)</p>
-<h3 id="Background">Background<a class="anchor-link" href="#Background">¶</a></h3><p>Formally a graph is defined or specified as a set of vertices, aka Nodes, and a set of Edges that connect them. This is written mathematically as G={V,E}. One of the most characteristics of a graph is whether or not it is directed. Consider the following illustration.</p>
-<p><img src="images/GA1-001.png" width="400;"/></p>
+<h3 id="Terminology">Terminology<a class="anchor-link" href="#Terminology">¶</a></h3><p>Formally a graph is defined or specified as a set of vertices, aka Nodes, and a set of Edges that connect them. This is written mathematically as G={V,E}. One of the most characteristics of a graph is whether or not it is directed. Consider the following illustration.</p>
+<p><img src="CS6515_images/GA1-001.png" width="400;"/></p>
 <p>In these examples $V=\{ V_1, V_2, V_3 \}$. For the undirected graph on the left we would write $E = \{ (V_1,V_2), (V_1,V_3), (V_2,V_3)  \}$ as unordered pairs. But for the directed graph on the right we would write $E = \{ (V_1,V_2), (V_1,V_3), (V_2,V_3)  \}$, which appears the same but here these are ordered pairs and this quality must be remembered.</p>
 <p>There are two standard methods for representing a graph:</p>
 <ul>
@@ -3712,7 +3543,7 @@ We have n identical balls and n bins $B_1,B_2,...,B_n$. Each ball is thrown into
 <li>B: adjacency list</li>
 </ul>
 <p>Consider the following example
-<img src="images/GA1-002.png" width="400;"/></p>
+<img src="CS6515_images/GA1-002.png" width="400;"/></p>
 <pre><code>Undirected
 Adj List            Adj Mtx 
 1 -&gt; 2 -&gt; 3         0  1  1  - think of the cols as the end pt and the rows as the start point
@@ -3750,13 +3581,13 @@ Adj List            Adj Mtx
 <p>We'll then move to a quick review of how DFS is used to find the connected components of an undirected graph, and then we'll build on that to look at connectivity in directed graphs. We'll use DFS to find the strongly connected components of directed graphs. These are the analog of connected components in directed graphs. And then we'll see an application of our strongly connected component algorithm to solve the two set problem.</p>
 <p>Next, we'll look at the minimum spanning tree problem, MSTs. You've likely seen that Kruskal's and Prim's algorithm before for finding an MST. We'll look at the correctness behind these algorithms.</p>
 <p>Finally, we'll look at the PageRank algorithm. This is the algorithm that looks at the Web graph and assigns weights to vertices or webpages. It's a measure of their importance. This algorithm was devised by Brin and Page, and it's at the heart of Google's search engine. To understand the PageRank algorithm, We will need a quick primer on Markov chains, and then you'll see how it relates to strongly connected components.</p>
-<h3 id="Review">Review<a class="anchor-link" href="#Review">¶</a></h3><p>Let's now do a quick review of some common graph algorithms that we will be building off of.</p>
+<p>Let's now do a quick review of some common graph algorithms that we will be building off of.</p>
 <ul>
 <li>DFS for depth-first search</li>
 <li>BFS for breadth-first search</li>
 </ul>
-<p><img alt="dfs &amp; BFS Animation" src="images/animated_DFS-BFS.gif" title="DFS v. BFS Algo Animated"/></p>
-<h4 id="BFS:-Breadth-First-Search">BFS: Breadth First Search<a class="anchor-link" href="#BFS:-Breadth-First-Search">¶</a></h4><p>This is probably one of the simplest algos for searching a graph and is used as a building block for many advanced graphs algorithms. It works on both directed and undirected graphs. BFS is named as such because it operates by expanding the frontier between discovered and undiscovered vertices uniformly across the breadth of the frontier.</p>
+<p><img alt="dfs &amp; BFS Animation" src="CS6515_images/animated_DFS-BFS.gif" title="DFS v. BFS Algo Animated"/></p>
+<h3 id="BFS:-Breadth-First-Search---Review">BFS: Breadth First Search - Review<a class="anchor-link" href="#BFS:-Breadth-First-Search---Review">¶</a></h3><p>This is probably one of the simplest algos for searching a graph and is used as a building block for many advanced graphs algorithms. It works on both directed and undirected graphs. BFS is named as such because it operates by expanding the frontier between discovered and undiscovered vertices uniformly across the breadth of the frontier.</p>
 <p>Given a graph G=(V,E) and a distinguished source vertex s, bfs systematically explores the edges of G to discover every vertex reachable from s.  In a manner of speaking it computes the minimum distance from s to each reachable vertex v, this call also be thought of as the minimum number of edges needed to get from s to v, or just the path with the smallest number of edges.</p>
 <p>In order to keep track of these discovered vertices it generally uses a single first-in first-out queue which contains some vertices at a distance k, k+1, etc etc from the source. In doing so BFS will color the vertices of the graph as white, black, and grey.</p>
 <ul>
@@ -3765,7 +3596,7 @@ Adj List            Adj Mtx
 <li>black is the assigned color to vertices once the frontier of discovery is pushed forward</li>
 <li>see gif below</li>
 </ul>
-<p><img alt="BFS Animation" src="images/Animated_BFS.gif" title="BFS Algo Animated"/></p>
+<p><img alt="BFS Animation" src="CS6515_images/Animated_BFS.gif" title="BFS Algo Animated"/></p>
 <p><strong>$\color{red}{\text{BFS Algorithm}}$</strong></p>
 <ul>
 <li>unweighted edges</li>
@@ -3790,7 +3621,7 @@ Runs in O(n+m)</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Dijkstra's-Algorithm">Dijkstra's Algorithm<a class="anchor-link" href="#Dijkstra's-Algorithm">¶</a></h4><p>This is sometimes also known as the Single Source Shortest Path problem, or Just SSSP.</p>
+<h3 id="Dijkstra's-Algorithm---Review">Dijkstra's Algorithm - Review<a class="anchor-link" href="#Dijkstra's-Algorithm---Review">¶</a></h3><p>This is sometimes also known as the Single Source Shortest Path problem, or Just SSSP.</p>
 <p>Helpful resources</p>
 <ul>
 <li><a href="https://www.cartagena99.com/recursos/alumnos/apuntes/dijkstra_algorithm.pdf">https://www.cartagena99.com/recursos/alumnos/apuntes/dijkstra_algorithm.pdf</a></li>
@@ -3838,7 +3669,7 @@ inserts &amp; removals on a min-heap cost O(log n)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="GR1-Strongly-Connected-Components">GR1 Strongly Connected Components<a class="anchor-link" href="#GR1-Strongly-Connected-Components">¶</a></h2><p><a href="https://cs6505.wordpress.com/schedule/scc/">Handy ref link</a></p>
+<h2 id="GR1:-Strongly-Connected-Components">GR1: Strongly Connected Components<a class="anchor-link" href="#GR1:-Strongly-Connected-Components">¶</a></h2><p><a href="https://cs6505.wordpress.com/schedule/scc/">Handy ref link</a></p>
 <p>Our goal in this section is to look at graph connectivity via DFS-based algorithms. first let's do a quick review</p>
 <ul>
 <li>DFS for undirected graphs</li>
@@ -3942,7 +3773,7 @@ EXPLORE(z):
     clock++</code></pre>
 <p>For our purposes we will only care about the post numbers, and will not be using the pre numbers. They have been included only for completeness sake.</p>
 <p>Let's look at an example. It should be noted our example is effectively a single tree as each vertex is reachable. But this is not mandatory. It could very well be a forest of trees where not all vertices reachable from all other vertices. 
-<img src="images/GA1-003.png" width="400;"/></p>
+<img src="CS6515_images/GA1-003.png" width="400;"/></p>
 <p>Let's run DFS supposing we start at B.</p>
 <ul>
 <li>the black arrows indicate a newly explored path, or first time exploration<ul>
@@ -4020,7 +3851,7 @@ What does it mean for a Directed Acyclic Graph, DAG, to be sorted. It means that
 </li>
 </ul>
 <p>Let's do a small example. There is actually 3 possible topological orderings in this example. Can you spot them?
-<img src="images/GA1-004.png" width="400;"/></p>
+<img src="CS6515_images/GA1-004.png" width="400;"/></p>
 <p>The full ordering is: x -&gt; y -&gt; z -&gt; u -&gt; w<br/>
 Note that z will always come before u &amp; w as it has an outgoing edge. But u &amp; w are sinks with no outgoing vertex.</p>
 <p>There is an alternative topological sorting algo that is useful for general directed graphs</p>
@@ -4038,7 +3869,7 @@ Note that z will always come before u &amp; w as it has an outgoing edge. But u 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="DFS-vs-Explore">DFS vs Explore<a class="anchor-link" href="#DFS-vs-Explore">¶</a></h4><p>Let's take a moment to focus on the <strong>EXPLORE</strong> Subroutine in the DFS algorithm.</p>
+<h3 id="DFS-vs-Explore">DFS vs Explore<a class="anchor-link" href="#DFS-vs-Explore">¶</a></h3><p>Let's take a moment to focus on the <strong>EXPLORE</strong> Subroutine in the DFS algorithm.</p>
 <ul>
 <li>Input  G=(V,E); $v \in V$</li>
 <li>Output visited(u) boolean value TRUE for all nodes u reachable from v</li>
@@ -4090,20 +3921,20 @@ for all v in V
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="SCC---Strongly-Connected-Components">SCC - Strongly Connected Components<a class="anchor-link" href="#SCC---Strongly-Connected-Components">¶</a></h4><p><strong>Define: Strongly Connected</strong><br/>
+<h3 id="SCC---Strongly-Connected-Components">SCC - Strongly Connected Components<a class="anchor-link" href="#SCC---Strongly-Connected-Components">¶</a></h3><p><strong>Define: Strongly Connected</strong><br/>
 Vertices v &amp; w are strongly connected if there is a path v -&gt; w &amp; w -&gt; v.</p>
 <p>Given this definition we define Strongly Connected Components, denoted as a SCC, as a maximal set of strongly connected vertices. Let's look at an example</p>
-<p><img src="images/GA1-005.png" width="400;"/></p>
+<p><img src="CS6515_images/GA1-005.png" width="400;"/></p>
 <ul>
 <li>How many Strongly Connected Components, SCCs, does this have?             </li>
 <li>What are the SCCs ?</li>
 </ul>
-<p><img src="images/GA1-006.png" width="400;"/></p>
+<p><img src="CS6515_images/GA1-006.png" width="400;"/></p>
 <p>Let's now consider some important properties of SCCs. Begin by creating a meta-vertex for every SCC, these are the set of vertexes inside the purple partitions. Construct a new graph where each of the SCCs are a single vertex and look at the edges between that is inherited.</p>
 <ul>
 <li>Metagraph: a single vertex for each SCC</li>
 </ul>
-<p><img src="images/GA1-007.png" width="400;"/><br/>
+<p><img src="CS6515_images/GA1-007.png" width="400;"/><br/>
 Notice anything about this meta-graph? There are no cycles. It's a DAG, despite the underlying graph not being one. In fact any metagraph on SCC is a dag. Suppose there was a cycle in the metagraph on SCC. ie Suppose S -&gt; S' and S' -&gt; S where both S and S' are SCC. Then this would imply that is a path from every vertex in S to every vertix in S', and vice versa. But there a SCC than contains both S and S'. So we should merge these SCC into a larger component to form our metagraph.</p>
 <p><strong>Every directed Graph is a DAG of it's SCCs</strong></p>
 <p>Now all we need to do it determine how to find, and sort, these SCCs to come up with a DAG. Which surprisingly is not as difficult as it may seem. In fact it is done with just 2 runs of the dfs algorithm</p>
@@ -4164,12 +3995,12 @@ To find a vertex w in a sink SCC of G</p>
 </ul>
 <p>In a manner of speaking this is like a transformation approach. we can't find a sink in G so we transform it to $G^R$, find the source, and transform back to get the sink of G. it's pretty simple when you think of it.</p>
 <p>Consider our previous example:<br/>
-<img src="images/GA1-008.png" width="500;"/></p>
+<img src="CS6515_images/GA1-008.png" width="500;"/></p>
 <p>look at what happens when we run DFS on this from a randomly chosen starting vertex C, D, L.<br/>
-<img src="images/GA1-009.png" width="500;"/></p>
+<img src="CS6515_images/GA1-009.png" width="500;"/></p>
 <p>This illustrates one complete run of DFS on the inverse of G, with the final ordering from highest to lowest post order number. The vertices C,D,L are abitrarily chosen, and your algo may choose some other random starting point.</p>
 <p>The next step is to run DFS again but this time we use the ordering provided by the last step. The first 5 vertices are marked as 1 to indicate that they come from the 1st visited SCC. Next we choose D as it is the vertex with the highest remaining post order number remaining in our unvisited list sorted in topological order. This will get marked 2 as it is in the 2nd visited SCC, then it is removed. Similarly {C,G,F} are marked as 3 and then removed. We continue this process until all our vertices are marked and have been removed. Voila we have our SCCs.</p>
-<p><img src="images/GA1-010.png" width="500;"/></p>
+<p><img src="CS6515_images/GA1-010.png" width="500;"/></p>
 <p>You'll notice the ordering looks a bit wonky right? It's in reverse topological order, thankfully we can work with this.</p>
 <p><strong>$\color{red}{\text{SCC Algorithm}}$</strong></p>
 <pre><code>StronglyConnectedComponents(G):
@@ -4213,7 +4044,7 @@ Let u be the first vertex in $S \cup S'$ that is visited. if $u \in S'$, then we
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img src="images/GA1-009.png" width="500;"/></p>
+<p><img src="CS6515_images/GA1-009.png" width="500;"/></p>
 </div>
 </div>
 </div>
@@ -4223,7 +4054,7 @@ Let u be the first vertex in $S \cup S'$ that is visited. if $u \in S'$, then we
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h3><ul>
+<h3 id="GraphSearch-Summary">GraphSearch-Summary<a class="anchor-link" href="#GraphSearch-Summary">¶</a></h3><ul>
 <li>DG Directed Graph</li>
 <li>UG Undirected Graph</li>
 </ul>
@@ -4320,7 +4151,7 @@ Let u be the first vertex in $S \cup S'$ that is visited. if $u \in S'$, then we
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="GR2-Satisfiability">GR2 Satisfiability<a class="anchor-link" href="#GR2-Satisfiability">¶</a></h2><p>Let's now turn our attention to an application of the SCC algorithm. We will be looking at the satisfiability problem, aka SAT problem. This problem will haunt us ... returning when we study the idea of NP completeness.</p>
+<h2 id="GR2:-Satisfiability">GR2: Satisfiability<a class="anchor-link" href="#GR2:-Satisfiability">¶</a></h2><h3 id="GR2-Intro">GR2 Intro<a class="anchor-link" href="#GR2-Intro">¶</a></h3><p>Let's now turn our attention to an application of the SCC algorithm. We will be looking at the satisfiability problem, aka SAT problem. This problem will haunt us ... returning when we study the idea of NP completeness.</p>
 <p>Some terms we will need<br/>
 We will be working  with boolean formulas composed of the following</p>
 <ul>
@@ -4433,7 +4264,7 @@ Creating a DAG</p>
 </li>
 </ul>
 <p>Example $f = (\bar{x_1} \vee \bar{x_2})\wedge(x_2 \vee x_3)\wedge(\bar{x_3} \vee \bar{x_1})$<br/>
-<img src="images/GA1-011.png" width="500;"/></p>
+<img src="CS6515_images/GA1-011.png" width="500;"/></p>
 <p>Let's dig into this example</p>
 <ul>
 <li>observe the path of $x_1$<ul>
@@ -4609,10 +4440,10 @@ Goal: Find a minimal size, connected subgraph of min weight</p>
 <blockquote><p>repeatedly add the lightest edge that does not produce a cycle</p>
 </blockquote>
 <p>Consider the following example 
-<img src="images/GA1-012.png" width="500;"/></p>
+<img src="CS6515_images/GA1-012.png" width="500;"/></p>
 <p>Imagine that we are given the graph and must construct a minimum spanning tree. We will take a greedy approach and begin by adding edges one at a time according to the minimum weight. First we add the edge 1, then 2, then 3, etc, but when we get to 6 we must move outwards. Adding 6 would create a cycle and our tree may not have cycles!</p>
 <p>We keep going and keep adding edges. Until finally we get to the following situation. Notice that the edge from v to w does not get added. Nor do any of the edges with weight 12. What we are left with is in fact the minimum spanning tree.
-<img src="images/GA1-013.png" width="500;"/></p>
+<img src="CS6515_images/GA1-013.png" width="500;"/></p>
 <p>What we have just done is perform Kruskal's algorithm which we will now formalize.</p>
 <p><strong>$\color{red}{\text{Kruskal's Algorithm}}$</strong></p>
 <pre><code>Kruskal's(G):
@@ -4647,7 +4478,7 @@ step 3: is a bit tricky</p>
 </ul>
 <p>Finally we can claim that the total runtime is O(|E| log |V|) for the whole agorithm.</p>
 <h3 id="Correctness">Correctness<a class="anchor-link" href="#Correctness">¶</a></h3><p>Let's use our example from before, and let's freeze the algo after we've included the two edges with weight 7. At this point the algorithm is going to consider edges with weight 9. So let's suppose it consider the edge (v,w) circled in purple.
-<img src="images/GA1-014.png" width="500;"/></p>
+<img src="CS6515_images/GA1-014.png" width="500;"/></p>
 <p>We assume by induction that X is correct so far. By correct we mean $X \subset T$ where T is an MST. We haven't found the MST yet, but we assume it's existence. think of X as the partial construction of an MST T. Suppose we add the edge (v,w) to X, then we must ensure that $(v,w) \cup X$ is still part of an MCT. Claim $X \cup e \subset T'$ where T' is an MST. T' may be different than T, but this doesn't really matter. All that matters is that the union doesn't violate the properties of an MST. So how do we know that it's inclusion is still an MST?</p>
 <p>Take a closer look at the graph illustration. Before adding v,w they are in different components. This means that adding them will bridge their components without creating any cycles. Had they been in the same component adding this edge would have created a second path between them, which would indicate a cycle.</p>
 <p>Now, the key property is that if we consider one of these components, let's say the component containing V and we let S be the set of vertices and the component containing V. And $\bar{S}$ is the complement of this set (the rest of these vertices). Then the key property is that our current subset X, has no edges which go from S to S_bar.</p>
@@ -4656,7 +4487,7 @@ step 3: is a bit tricky</p>
 <h3 id="Graph-Cut-&amp;-Min-Cut-Property">Graph Cut &amp; Min Cut Property<a class="anchor-link" href="#Graph-Cut-&amp;-Min-Cut-Property">¶</a></h3><p><strong>Definition: Cut</strong></p>
 <p>For an undirected graph G=(V,E) with partition $V=S \cup \bar{S}$<br/>
 Then cut($S,\bar{S}$) = {$(v,w)\in E : v \in S, w \in \bar{S}$} (look closely to see this refers to edges that cut across the two distinct sets). Later on we'll see other optimization problems that make use of this idea. Like the min-cut, and max-cut problems</p>
-<p><img src="images/GA1-015.png" width="500;"/></p>
+<p><img src="CS6515_images/GA1-015.png" width="500;"/></p>
 <p>We are now ready to state the cut property, this will help us to finalize the correctness of our MST Algorithms.</p>
 <p><strong>Lemma:</strong></p>
 <p>For undirected graph G=(V,E)</p>
@@ -4671,7 +4502,7 @@ Then cut($S,\bar{S}$) = {$(v,w)\in E : v \in S, w \in \bar{S}$} (look closely to
 </ul>
 </li>
 <li>Then $X \cup e^* \subset T'$ where T' is a MST
-<img src="images/GA1-016.png" width="500;"/></li>
+<img src="CS6515_images/GA1-016.png" width="500;"/></li>
 </ul>
 <p>Now how did this apply for Kruskal's algorithm? For Kruskal's algorithm we said that the edge $e^*$ was between vertices v and w. We added this edge $e^*$, if the component containing v, one of the endpoints of $e^*$ was not the same as a component containing w. So v and w were not connected in the current subgraph.</p>
 <p>So what was the set $S$ in this example? The set $S$ in this example was the component containing v, and $\bar{S}$ is the  component containing w. Therefore since the component is a maximal set of connective vertices we know that there is no edge in the partial solution which crosses from $S$ to $\bar{S}$. And then since we consider the edges in increasing order, in sorted order, then we know that e-star must be the minimum weight edge crossing from this component to outside. So $e^*$ or that Kruskal's algorithm considers is satisfies the hypothesis of the Lemma. So if we add an $e^*$ to our partial solution we'll still be on our way to an MST.</p>
@@ -4718,12 +4549,12 @@ Fix G, X, T, and S</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Proof---T'-is-a-tree">Proof - T' is a tree<a class="anchor-link" href="#Proof---T'-is-a-tree">¶</a></h4><p>First we prove that T prime is a tree. How do we construct T prime once again? We took the tree T and we added it in this edge $e^*$ that created a cycle. Now, along that cycle we removed any edge of that cycle. In this case we removed, let's say e'.</p>
+<h3 id="P1-Proof-T'-is-a-tree">P1-Proof T' is a tree<a class="anchor-link" href="#P1-Proof-T'-is-a-tree">¶</a></h3><p>First we prove that T prime is a tree. How do we construct T prime once again? We took the tree T and we added it in this edge $e^*$ that created a cycle. Now, along that cycle we removed any edge of that cycle. In this case we removed, let's say e'.</p>
 <p>What we're going to show now is that we can remove any edge of this cycle and the resulting graph T' will be a tree. Now, how are we going to show that the T' is a tree? Well, we're going to show that T' is connected and has exactly n-1 edges.</p>
 <p>Recall from the beginning of the lecture, we said that if a sub graph has exactly n-1 edges and is connected then it must be a tree. Now the fact that it has exactly n-1 edges is obvious. Why? Because T is a tree so it has exactly n-1 edges, we added one edge in and removed one edge. So we still have exactly n-1 edges. So what remains? We just have to show that it's connected. So take any pair of vertices y and z and let's show that there's a path between y and z in this sub graph T'.</p>
 <p>In T there is a path between y and z of course because T is connected. The path goes along this edge e prime. Now what happens 
 in T'? T' doesn't contain the edge e' ($T' = T \cup e^* - e'$). So this old path between y and z no longer exists in T prime.  So let's let P denote the path $y \rightsquigarrow z \in T$, the original tree. And now we have to construct a path in T prime which goes from y to z. Now, recall that when we looked at $T \cup e^*$ what do we get? We got a cycle, these blue edges are the cycle in $T \cup e^*$. So let C denote the cycle in $T \cup e^*$. Let's denote the end points of e prime as c and d. Now e prime is a path from c  to d in T. Now this cycle C has two paths between c and d, e' is one of those paths, let's take the other path.</p>
-<p><img src="images/GA1-017.png" width="500;"/></p>
+<p><img src="CS6515_images/GA1-017.png" width="500;"/></p>
 <p>So let's look at this cycle C and take out the edge e prime, what do we have? We have a path and this path goes from c to d and all these edges in this path, exist in T prime because T prime contains all these edges except for e prime but we're not using e prime, we took e prime out. So we took the cycle, dropped off the edge e prime and this gives us a path from c to d in T prime. So, how do we get from y to z in T prime? Well, we're going to follow the original path P for whenever we hit this edge e prime, we replace this edge e prime by this new path P'. Now, to show that y and z are connected in T'. So we want to show that there is a path from y to z in T prime. Well, we're going to use the original path in T and then whenever we hit the edge e prime, we're going to replace the edge e prime by this path P prime because the edge e prime does not exist in T prime but the path P prime does exist. So we're going to go along this path and now the original path uses this edge e prime but it doesn't exist now so we use the rest of the cycle. It gets over to d and then from d we follow the rest of the path P. So,  actually, in this example we're backtracking. So this doesn't actually give us a path, it gives us a walk. But it shows that y and z are connected in T prime and then, of course, we can truncate this walk to make a path.</p>
 <p>Our whole point is to show that y and z are connected and that's all we need to show. We've shown that's the case for any y and z therefore, T' is connected and since it has exactly n-1 edges then T' is in fact a tree.</p>
 </div>
@@ -4735,7 +4566,7 @@ in T'? T' doesn't contain the edge e' ($T' = T \cup e^* - e'$). So this old path
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Proof---T-is-an-MST">Proof - T is an MST<a class="anchor-link" href="#Proof---T-is-an-MST">¶</a></h4><p>Now we want to show that it's a minimum spanning tree. How do we show it's of minimum weight? Well we know that T is an MST,  so we know that the weight of T is a minimum over all trees. So to show that T' is a minimum spanning tree, we have to show that the weight of T' equals the weight of T. What do we know about the weight of $e^*$ compared to that of e prime? Well, we know that the weight of $e^*$ is minimum over all edges cross the cut, e' also crosses the cut from $S$ to $\bar{S}$ therefore, $w(e^*) \le w(e')$.</p>
+<h3 id="P2-Proof-T-is-an-MST">P2-Proof T is an MST<a class="anchor-link" href="#P2-Proof-T-is-an-MST">¶</a></h3><p>Now we want to show that it's a minimum spanning tree. How do we show it's of minimum weight? Well we know that T is an MST,  so we know that the weight of T is a minimum over all trees. So to show that T' is a minimum spanning tree, we have to show that the weight of T' equals the weight of T. What do we know about the weight of $e^*$ compared to that of e prime? Well, we know that the weight of $e^*$ is minimum over all edges cross the cut, e' also crosses the cut from $S$ to $\bar{S}$ therefore, $w(e^*) \le w(e')$.</p>
 <p>Now what is the weight of T'? It's $w(T') = w(T) + w(e^*) - w(e')$. With $w(e^*)$ at most the $w(e')$ so this part is almost zero. So this whole thing is at most the weight of T, $w(T') \le w(T)$. So we've shown that w(T') is at most w(T), and because T is minimum weight, therefore T' is also a minimum weight and in fact, the weight of T' must equal the weight of T. So the weight of $e^*$ must equal the weight of e'. Otherwise we retrain the new tree T prime which is strictly smaller weight than t,
  which would contradict the fact that T is an MST. So all these edges of T which cross this cut, must be of exactly the same weight as e star otherwise, we can obtain a new tree which is of smaller weight. That completes the proof of the cut property.</p>
 <p>Now the key idea that I want to stress, is that I can take a tree T and I add an edge into that tree so I take T union e star that creates a cycle. Now I can remove any edge of that cycle and I get a new tree T prime. Now that's the idea that I wanted to get from the proof of the cut property. The other idea I want you to get, is the idea from the statement of the cut property. From the statement of the cut property, I want you to get the idea that a minimum weight edge across the cut is part of a MST. Those are the two key ideas I want you to get from the statement of the cut property and the proof idea of the cut property.</p>
@@ -4748,7 +4579,7 @@ in T'? T' doesn't contain the edge e' ($T' = T \cup e^* - e'$). So this old path
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Prim's-Algorithm">Prim's Algorithm<a class="anchor-link" href="#Prim's-Algorithm">¶</a></h4><p>An alternative to kruskal's algorithm is Prim's, in which the intermediate set of edges X always forms a subtree. In contrast to kruskal, Prim is focused on the vertices rather than the edges. It begins at a root vertex r, looks for the lightest edge starting at r, adds it, then takes the end point as the new root. It proceeds in this manner to by growing a single tree. Kruskal's approach grows multiple trees, a forest, and by the end converges to an MST</p>
+<h3 id="Prim's-Algorithm">Prim's Algorithm<a class="anchor-link" href="#Prim's-Algorithm">¶</a></h3><p>An alternative to kruskal's algorithm is Prim's, in which the intermediate set of edges X always forms a subtree. In contrast to kruskal, Prim is focused on the vertices rather than the edges. It begins at a root vertex r, looks for the lightest edge starting at r, adds it, then takes the end point as the new root. It proceeds in this manner to by growing a single tree. Kruskal's approach grows multiple trees, a forest, and by the end converges to an MST</p>
 <pre><code>Prim(G):
 Input   Undirected graph G=(V,E) with weights w(e)
 
@@ -4767,7 +4598,7 @@ while |X| != |V| - 1
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Kruskal-v-Prim">Kruskal v Prim<a class="anchor-link" href="#Kruskal-v-Prim">¶</a></h4><table>
+<h3 id="Kruskal-v-Prim">Kruskal v Prim<a class="anchor-link" href="#Kruskal-v-Prim">¶</a></h3><table>
 <thead><tr>
 <th style="text-align:left">Num</th>
 <th style="text-align:left">Prim’s Algorithm</th>
@@ -4816,7 +4647,7 @@ while |X| != |V| - 1
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="MF0-Max-Flow-Problem">MF0-Max Flow Problem<a class="anchor-link" href="#MF0-Max-Flow-Problem">¶</a></h2><p>We will now turn our attention to a well known problem known as the max flow problem. It's a quite useful problem. We'll first look at basic algorithm for the problem, known as a Ford Fulkerson Algorithm, and then we'll prove correctness of the Ford Fulkerson Algorithm. And along the way, we'll get the classic result known as the Max-flow- min-cut theorem. Next, we'll look at the nice application of the Max-flow problem to computer vision known as the Image Segmentation problem. We'll also look at a more general version of the problem,  Max-flow with additional demand constraints,  and we'll see how to reduce this more general problem to the original Max-flow problem. Finally, we'll see a faster Algorithm for the Max-flow problem, known as the Edmonds-Karp Algorithm.</p>
+<h2 id="MF0:-Max-Flow-Problem">MF0: Max Flow Problem<a class="anchor-link" href="#MF0:-Max-Flow-Problem">¶</a></h2><p>We will now turn our attention to a well known problem known as the max flow problem. It's a quite useful problem. We'll first look at basic algorithm for the problem, known as a Ford Fulkerson Algorithm, and then we'll prove correctness of the Ford Fulkerson Algorithm. And along the way, we'll get the classic result known as the Max-flow- min-cut theorem. Next, we'll look at the nice application of the Max-flow problem to computer vision known as the Image Segmentation problem. We'll also look at a more general version of the problem,  Max-flow with additional demand constraints,  and we'll see how to reduce this more general problem to the original Max-flow problem. Finally, we'll see a faster Algorithm for the Max-flow problem, known as the Edmonds-Karp Algorithm.</p>
 </div>
 </div>
 </div>
@@ -4838,7 +4669,7 @@ while |X| != |V| - 1
 </ul>
 <p>Problem Setup: Sending a supply from a vertex s to a destination t. This supply could be internet traffic, electricity, or it may be products. In all three examples there is an s and t, which represent the starting and end points. There is also a medium with a capacity. An electrical wire has a maximum capcity, overload it and sparks fly. A sewage pipe can only carry so much before it backs up, the road used by a delivery truck has a max flow, go over and you get a gridlock.</p>
 <p>We can model each of these situations with a network graph like the following, with a designated start s, and end t. We also add some capacity weights to better reflect our constraint. Clearly capacity is always positive .... would a black hole have negative capacity? Food for thought.
-<img src="images/MF1-001.png" width="400;"/></p>
+<img src="CS6515_images/MF1-001.png" width="400;"/></p>
 <p>Formally: A <strong>Flow Network</strong> consists of</p>
 <ul>
 <li>a directed graph G=(V,E), </li>
@@ -4881,29 +4712,29 @@ while |X| != |V| - 1
 </li>
 </ul>
 <p>Consider the following flow network, the numbers in red denote the capacity of that edge. 
-<img src="images/MF1-002.png" width="500;"/></p>
+<img src="CS6515_images/MF1-002.png" width="500;"/></p>
 <p>No bones about it ... this is a tedious and error prone computation to try by hand. To make matters worse there is no 1 right answer in this case. There are three here and they all end up with the output of 5 and 7 to t. This gives a size(f) of 12.</p>
-<p><img src="images/MF1-003.png" width="500;"/></p>
+<p><img src="CS6515_images/MF1-003.png" width="500;"/></p>
 <p>Notice also that there is a cycle in this graph, consider c -&gt; f -&gt; e -&gt; d -&gt; c. Recall that in some situations cycles can cause problems. When looking at a flow problem like this it makes no sense to use the cycle for the simple reason that by passing it will produce the same output. It can't gain flow, recall the conservation of flow constraint. Gaining would violate this. Anyhoo, the point is that cycles are ok, and in fact help simplify the problem in some cases. However, the problem is well defined regardless of the existance of cycles.</p>
 <p><strong>Anti-Parallel Edges</strong><br/>
 Roughly speaking Anti-parallel edges are edges in the opposite direction between the same two vertices. In general this sort of event is not allowed in a flow network. Generally a flow network direction is like a one way street.</p>
 <p>They deserve a special call out as handling them, replacing, becomes necassary in many cases. In this situation we will want to insert a vertex at some point along one of the edges. However, we must retain the characteristic of the original network intact so both the new edges will have the same capacity as the old edge.</p>
 <p>In this image we can see a simple flow network with anti-parallel edges on the left. The network on the right is after they've been handled using the process above. 
-<img src="images/MF1-004.png" width="500;"/></p>
+<img src="CS6515_images/MF1-004.png" width="500;"/></p>
 <p><strong>Toy Example</strong><br/>
 Consider the following toy example which we will use to help visualize our algorithms.<br/>
-<img src="images/MF1-005.png" width="500;"/></p>
+<img src="CS6515_images/MF1-005.png" width="500;"/></p>
 <p>We will work through an iteration of a simple algorithm</p>
 <ol>
 <li><p>we begin with three graphs, our input, our flow initialized to 0, and our availability
-<img src="images/MF1-006.png" width="500;"/></p>
+<img src="CS6515_images/MF1-006.png" width="500;"/></p>
 </li>
 <li><p>our next step is to find an path P from s to t with available flow. So we choose one, highlighted in green in our availability graph in the middle.</p>
 </li>
 </ol>
 <ul>
 <li>find st-path p with available capacity 
-<img src="images/MF1-007.png" width="500;"/></li>
+<img src="CS6515_images/MF1-007.png" width="500;"/></li>
 </ul>
 <ol>
 <li>We will also need to calculate the capacity along this edge. </li>
@@ -4914,10 +4745,10 @@ Consider the following toy example which we will use to help visualize our algor
 </ul>
 <ol>
 <li>Augment our flow by c(p) along p
-<img src="images/MF1-008.png" width="500;"/></li>
+<img src="CS6515_images/MF1-008.png" width="500;"/></li>
 </ol>
 <p>now all we need to do is repeat by going back to 2. But this time we will need to update our available capacity in order to reflect the augmentation in step 4. 
-<img src="images/MF1-009.png" width="500;"/></p>
+<img src="CS6515_images/MF1-009.png" width="500;"/></p>
 <p>Of course this being a toy example we guessed the path on the first try.</p>
 <p>Let's summarize our approach</p>
 <ul>
@@ -4931,7 +4762,7 @@ Consider the following toy example which we will use to help visualize our algor
 </li>
 </ul>
 <p>Let's consider the last, and final, step from our example above.<br/>
-<img src="images/MF1-009.png" width="500;"/></p>
+<img src="CS6515_images/MF1-009.png" width="500;"/></p>
 </div>
 </div>
 </div>
@@ -4944,9 +4775,9 @@ Consider the following toy example which we will use to help visualize our algor
 <h3 id="Residual-Networks">Residual Networks<a class="anchor-link" href="#Residual-Networks">¶</a></h3><p>You'll notice that we still have some capacity along two of the edges. In particular along (s,b) we have 7 and (a,t) also has 7 available. So we want to augment our flow, but to do so we would need an path s -&gt; b -&gt; a -&gt; t. we have a path from s -&gt; b and we have an edge from a -&gt; t. But we're missing an edge from b -&gt; a.</p>
 <p>This begs the question what does it mean to augment a path? Even more so when there is no such edge. In this case the available capacities illustrated by the middle graph is not properly representing everything that's possible given the flow graph, far right. In particular because there is no edge from b-&gt;a.</p>
 <p>So we will augment it by adding an edge from b-&gt;a, with available capacity 10, similar to the edge a-&gt;b. This new edge is limited not by the capacity in the input graph but by the flow graph at the far right. The flow along this new edge would offset the flow along a-&gt;b. This is now officially referred to as the residual network.</p>
-<p><img src="images/MF1-010.png" width="500;"/></p>
+<p><img src="CS6515_images/MF1-010.png" width="500;"/></p>
 <p>Now we update our flow and look at what happens! It's size has increased from 10, to 17! Pretty weird, eh?
-<img src="images/MF1-011.png" width="500;"/></p>
+<img src="CS6515_images/MF1-011.png" width="500;"/></p>
 <p>Let's now give a more formal definition of a residual network,</p>
 <p>Let $G^f = (V,E^f)$ denote a residual flow network</p>
 <ul>
@@ -5032,7 +4863,7 @@ Note that $v \in L$ and $w \in R$. We are NOT concerned about edges that go from
 <li>a cut may result in disconnected vertices</li>
 <li>see image below</li>
 </ul>
-<p><img src="images/MF2-001.png" width="500;"/></p>
+<p><img src="CS6515_images/MF2-001.png" width="500;"/></p>
 </div>
 </div>
 </div>
@@ -5045,15 +4876,15 @@ Note that $v \in L$ and $w \in R$. We are NOT concerned about edges that go from
 <h3 id="Min-ST-cut-Problem-Formulation">Min ST-cut Problem Formulation<a class="anchor-link" href="#Min-ST-cut-Problem-Formulation">¶</a></h3><p>INPUT: a Flow network, directed graph with source and end vertex (s,t), a positive capacities for all edges<br/>
 OUTPUT: st-cut(L,R) with minimum capacity</p>
 <p>Let's consider our flow network from before, here is one possible st-cut. We can sum up the edges leaving L to see that the st-cut has a capacity of 27=(8+2+2+5+3+7). Seems a bit high no?
-<img src="images/MF2-002.png" width="500;"/></p>
+<img src="CS6515_images/MF2-002.png" width="500;"/></p>
 <p>Looking at the flow network graph we know that we can do better than 27. I'm sure you can see where this is going. Consider the following st-cut, with a capacity of 12, which just so happens to be the max flow: 
-<img src="images/MF2-003.png" width="500;"/></p>
+<img src="CS6515_images/MF2-003.png" width="500;"/></p>
 <p>Do you think it would be possible to go lower than this? I hope not because what we've just illustrated is the MaxFlow MinCut theorem.</p>
 <p><strong>$\color{red}{\text{MaxFlow-MinCut Theorem}}$</strong> For any flow network the size of the max flow is the minimum capacity of an st-cut.</p>
 <p>Sketch of proof: To prove equality we prove (1) max flow is at most the min st-cut, and (2) max flow is at least the min st-cut. Put together these will prove equality.</p>
 <p>To prove (1) We will see that for any flow f and any st-cut(L,R), $size(f) \le capacity(L,R)$. Of course the max flow is one of these flows and similarly the capacity(L,R) could be the min st-cut capacity, so our result follows directly from this. In fact so does (2). The general case proves that the max flow is "at most"</p>
 <p>Let's recycle our example from before to develop our intuition
-<img src="images/MF2-002.png" width="500;"/></p>
+<img src="CS6515_images/MF2-002.png" width="500;"/></p>
 <p>The flow must go from s to t, and s is in L. Further, we can say that the flow leaving L is at most the sum of the capacities of the edges from L to R. The flow cannot escape L any other way! The total capacities of these edges is 27, so the total possible flow is 27, so the flow is bounded by 27.</p>
 <p>Formally, we claim that $size(f) = f_{out}(L) - f_{in}(L)$ (this is a NOT a typo)</p>
 <ul>
@@ -5092,7 +4923,7 @@ OUTPUT: st-cut(L,R) with minimum capacity</p>
 </li>
 <li>This leaves us with $f_{out}(s)$ which we know is the size of the flow </li>
 <li>This ends the proof of  $size(f) = f_{out}(L) - f_{in}(L)$
-<img src="images/MF2-004.png" width="500;"/></li>
+<img src="CS6515_images/MF2-004.png" width="500;"/></li>
 </ul>
 <p>Now we want to demonstrate that $size(f) \le capacity(L,R)$<br/>
 From above we observe that $size(f) = f_{out}(L) - f_{in}(L)$<br/>
@@ -5117,7 +4948,7 @@ $$\underset{f}{max} size(f) \ge size(f^*) = capacity(L,R) \ge \underset{L,R}{max
 <li>we now have now partitioned V into an st-cut!</li>
 <li>Now we need to prove that the capacity of this cut is equal to the $size(f^*)$</li>
 </ul>
-<h3 id="Properties">Properties<a class="anchor-link" href="#Properties">¶</a></h3><p><img src="images/MF2-005.png" width="500;"/></p>
+<h3 id="Properties">Properties<a class="anchor-link" href="#Properties">¶</a></h3><p><img src="CS6515_images/MF2-005.png" width="500;"/></p>
 <p>But first we will need some properties of cuts so that we may conclude our proof. Consider the above image: At left we have a flow network with capacities in red, and a max flow in green. On the right we have a residual graph $G^{f^*}$</p>
 <p>Consider some observations:</p>
 <ul>
@@ -5293,7 +5124,7 @@ which is what we wanted</p>
 </ul>
 </li>
 </ul>
-<p><img src="images/MF4-001.png" width="500;"/></p>
+<p><img src="CS6515_images/MF4-001.png" width="500;"/></p>
 <p>The path from s to t that is found by BFS, is going to be the path where the level does up by 1 at every edge. This will be important to the proof of the lemma as we will look at how the level(z) changes as the residual graph $G^f$ changes.</p>
 <p>How does level(z) change as $G^f$ changes? Consider removing the edge a-&gt;d in the graph above. Upon removal the level of d would become 3, as it is no longer reachable in 2 steps. You might be wondering if inserting would decrease the level, you would be correct in this, except this will never happen. What we will see is that for every $z \in V$, level(z) does not decrease. It may increase or remain the same, but it will never decrease. To better understand why we will need to consider which edges and inserted and which are removed.</p>
 <p>Consider an edge in the original flow $\overset{\rightarrow}{vw} \in E$<br/>
@@ -5373,11 +5204,11 @@ Goal: To find a feasible flow, where feasible is defined as: for $e \in E, \; d(
 <p>This problem leads to two questions: first, is there a feasible flow? Second, given the feasibility flow, what is the max flow?<br/>
 <strong>Example</strong><br/>
 Let's re-use our example from previous sections. Numbers in green represent the demand and those in red represents the capacity. Is there a feasible flow for this example?
-<img src="images/MF5-001.png" width="500;"/></p>
+<img src="CS6515_images/MF5-001.png" width="500;"/></p>
 <p>There is a feasible flow and it is tedious to determine
-<img src="images/MF5-002.png" width="500;"/></p>
+<img src="CS6515_images/MF5-002.png" width="500;"/></p>
 <p>Algorithmically this is done by reducing the feasible flow problem to one of the max-flow. It's important to note that the feasible flow need NOT be a max flow, it just has to be feasible. Reduction implies that we will be able to make use of our max-flow algorithms without any alteration. We can modify the inputs of course, just as we did earlier to re-use DFS to find our strongly connected components. An added bonus to this approach is knowing the runtime of our algorithm, as well as their correctness.</p>
-<p><img src="images/MF5-003.png" width="500;"/></p>
+<p><img src="CS6515_images/MF5-003.png" width="500;"/></p>
 <p>Above is a rough sketch of our approach</p>
 <ul>
 <li>We will use some algo g to construct G',c' to fit the inputs expected by our max-flow algo</li>
@@ -5386,7 +5217,7 @@ Let's re-use our example from previous sections. Numbers in green represent the 
 </ul>
 <p><strong>Part 1</strong> Let's begin by looking at how to create G' and c', from the original inputs G,c, and d. Somehow we need to encode, or incorporate, the demand d into G and c to get G' and c'.</p>
 <p>As is our usual approach to such problems let's sketch a simple graph to help us visualize the situation. In the image below our simple graph is on the left. The first number represents the demand, the second number is the capacity.<br/>
-<img src="images/MF5-004.png" width="500;"/></p>
+<img src="CS6515_images/MF5-004.png" width="500;"/></p>
 <p>On the right side of the image we have a working prototype of G', we've taken the liberty of adding two new vertices s' and t'. It will become apprarent later why we've added these. For now it suffices to know these represent the start and end points of G'. Also notice that G' contains all the same vertices, and edges found in the original graph G.</p>
 <p>What we will do is change the capacities so as to reflect the demands of the original problem. What we want to capture is that there is non-negative flow along an edge, f'(e) &gt; 0, if and only if we can construct a flow in the original graph G that meets, or exceeds, the demand required (1). What we will also want is that the flow in G' satisfies this new capacity constraint, c' &gt; f', iff the flow f satisfies the capacity constraint in the original network, c &gt; f (2).</p>
 <p>(1) $f'(e) \ge 0 \iff f(e) \ge d(e) $ (A flow of 0 in G' should correspond to a flow of d in G)<br/>
@@ -5397,7 +5228,7 @@ Let's re-use our example from previous sections. Numbers in green represent the 
 <li>ie $\forall e \in E$ add e to G' with c'(e) = c(e) - d(e)</li>
 </ul>
 <p>This results in the following Graph 
-<img src="images/MF5-005.png" width="500;"/></p>
+<img src="CS6515_images/MF5-005.png" width="500;"/></p>
 <p>Our next step is to add some additional edges to G' to incorporate the start and end vertices, s' &amp; t'. This is a bit trickier to understand. We want a valid flow in G' to correspond to a feasible flow in the original G. Suppose that the flow is 0 in G'. For example f'(sa)=f'(ab)=f'(at) = 0. Then what does this say about those edges in G? According to (1) above this means that  each of these edges in G have a flow equal to their demand. But this could result in an invalid flow. In our example we would end up with a flow of 3 into a, and 7 out of a. This violates the conservation of flow and is t/f invalid. So we will use our new start and end vertices to remedy this situation. To do this we add an edge from s' to each vertice in G</p>
 <ul>
 <li>ie $\forall v \in V$ add s'-&gt;v to G' with c'(s',v) = d_into(v)<ul>
@@ -5406,15 +5237,15 @@ Let's re-use our example from previous sections. Numbers in green represent the 
 </li>
 <li>This gives us the ability to offset the flow, in order that we may conserve the flow</li>
 </ul>
-<p><img src="images/MF5-006.png" width="500;"/></p>
+<p><img src="CS6515_images/MF5-006.png" width="500;"/></p>
 <p>In a similar fashion we will also add an edge from each vertex to t'. Here we take the capacity to be the output demand of the vertex.</p>
 <ul>
 <li>ie $\forall v \in V$ add v-&gt;t' to G' with c'(v,t') = d_outof(v)</li>
 </ul>
-<p><img src="images/MF5-007.png" width="500;"/></p>
+<p><img src="CS6515_images/MF5-007.png" width="500;"/></p>
 <p>We're almost ready but there's a rather odd problem that is not so obvious. In G' s &amp; t are no longer the start and end vertices. By adding a new start and end we've changed them into internal vertices, meaning they are now subject to the conservation of flow requirement. recall that s,t were excluded from this requirement because it wouldn't make sense before. A start vertex cannot have an inflow, nor can and end vertex have an outflow. But now they can. No worries, we will add a back edge from t to s to remedy this situation. Furthermore, there are no constraints on this edge so we will assign it a capacity of $\infty$</p>
 <p>Now finally we have our final graph.
-<img src="images/MF5-008.png" width="500;"/></p>
+<img src="CS6515_images/MF5-008.png" width="500;"/></p>
 <p>So what is the max-flow of this new graph G'? What we can see that is that it will be bounded by the total capacities out of s' and the total into t'. Let's consider this to see where it takes us</p>
 <p>first observe that $D = \sum_{e \in E} d(e) = \sum_{v \in V} d\_into(v) = \sum_{v \in V} d\_outof(v)$</p>
 <ul>
@@ -5530,8 +5361,8 @@ f(\overset{\rightarrow}{wv}) - d(\overset{\rightarrow}{wv}) &amp; if (\overset{\
 </li>
 <li>Case 3 all edges not in 1 or 2</li>
 </ul>
-<h4 id="Example">Example<a class="anchor-link" href="#Example">¶</a></h4><p>Here is our example from earlier, along with it's graph G'. Your goal is to specify the capacities along each edge in G'
-<img src="images/MF5-009.png" width="500;"/></p>
+<h3 id="Example">Example<a class="anchor-link" href="#Example">¶</a></h3><p>Here is our example from earlier, along with it's graph G'. Your goal is to specify the capacities along each edge in G'
+<img src="CS6515_images/MF5-009.png" style="float:left" width="500;"/></p>
 <p>Solutions are in the appendix</p>
 </div>
 </div>
@@ -5542,7 +5373,7 @@ f(\overset{\rightarrow}{wv}) - d(\overset{\rightarrow}{wv}) &amp; if (\overset{\
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="MF3-Image-Segmentation">MF3-Image Segmentation<a class="anchor-link" href="#MF3-Image-Segmentation">¶</a></h2><p>An application of max-flow to Image segmentation. What we want to do is divide an image into it's foreground and background.</p>
+<h2 id="MF3:-Image-Segmentation">MF3: Image Segmentation<a class="anchor-link" href="#MF3:-Image-Segmentation">¶</a></h2><p>An application of max-flow to Image segmentation. What we want to do is divide an image into it's foreground and background.</p>
 <p>In order to formulate this problem into a graph setting we will think of an image as a graph. Each pixel corresponding to the vertices of the graph. The edges will simply be the neighbouring pixels. So each pixel has at most 8 edges that connect it to the 8 pixels in it's immediate neighborhood. This will be an undirected graph as each neighbour pixel is also connected to the originating pixel as well.</p>
 <p>We will also add a couple of parameters to help solve this problem</p>
 <p>For all i in V (all pixels in our image)</p>
@@ -5555,11 +5386,11 @@ f(\overset{\rightarrow}{wv}) - d(\overset{\rightarrow}{wv}) &amp; if (\overset{\
 <li>Let $P_{ij} \ge 0$ be the seperation cost, the cost of seperating pixels i &amp; j into different objects</li>
 </ul>
 <p>Here's an illustration on a toy 3x3 image composed of only black and white pixels
-<img src="images/MF3-001.png" width="500;"/></p>
+<img src="CS6515_images/MF3-001.png" width="500;"/></p>
 <p>We will partition the image vertices, V, into F &amp; B, just as before $V = F \cup B$. Perhaps you can see where this is going? Clearly a pixel cannot belong to both F &amp; B so this defines a cut. so we can compute the weight/capacity of this cut just as before.</p>
 $$w(F,B) = \sum_{i \in F} f_i + \sum_{j \in B} b_j - \sum_{i \in F, j \in B} P_{ij} - \sum_{j \in F, i \in B} P_{ij} $$<p>This defines a weight for an assignment of pixels to foreground and background. Now our image segmentation becomes just an optimization problem! Our goal is to maximize the weight w(F,B), we do this by looking over the possible partitions. Unfortunately though our min-cut algorithm requires an st-cut and returns a minimum. So a little extra work is required. Also recall that all the terms in a min-cut problems must be positive, so we need to convert the subtraction of the penalty into a positive term somehow.</p>
 <p>So let's reformulate our problem just a bit 
-<img src="images/MF3-002.png" width="500;"/></p>
+<img src="CS6515_images/MF3-002.png" width="500;"/></p>
 <p>What this means is that</p>
 <ul>
 <li>for $L = \sum_{i \in V} (f_i + b_i)$</li>
@@ -5596,12 +5427,12 @@ $$w(F,B) = \sum_{i \in F} f_i + \sum_{j \in B} b_j - \sum_{i \in F, j \in B} P_{
 <li>backgrounds: $for i \in V$ add edge i -&gt; t of capacity $b_i$</li>
 </ul>
 <p>Here's what our final graph looks like<br/>
-<img src="images/MF3-003.png" width="500;"/></p>
+<img src="CS6515_images/MF3-003.png" width="500;"/></p>
 <p>Now we have a flow network, and we have source &amp; sink vertices. We can now run Ford-Fulkerson and get a Max-flow. Once we do we can compute the max-flow size to determine the min st-cut.</p>
 <p>Let's take a moment to understand st-cuts in the context of this problem.</p>
 <p>What is the capacity(F,B)? Recall that this is the sum of capacities of edges going from F to B. What are these edges?<br/>
 Suppose we define a partition like so<br/>
-<img src="images/MF3-004.png" width="500;"/></p>
+<img src="CS6515_images/MF3-004.png" width="500;"/></p>
 <p>Which edges cross from F to B?</p>
 <ul>
 <li>for $i \in F$, get edges i -&gt; t with cap $b_i$, since all pixels got an edge to t</li>
@@ -5631,7 +5462,7 @@ Suppose we define a partition like so<br/>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="NP0-P&amp;NP-Completeness">NP0-P&amp;NP Completeness<a class="anchor-link" href="#NP0-P&amp;NP-Completeness">¶</a></h2><p>This section deals with the classification of algorithms based on efficient runtimes. The run time to compute a solution, as well as the run time to verify a solution. Although this may seem like a simple division it turns out that in many cases it's difficult if not impossible to determine the runtime. In such cases determining if an efficient can exist is an even harder ask than it seems.</p>
+<h2 id="NP0:-NP-Completeness">NP0: NP Completeness<a class="anchor-link" href="#NP0:-NP-Completeness">¶</a></h2><p>This section deals with the classification of algorithms based on efficient runtimes. The run time to compute a solution, as well as the run time to verify a solution. Although this may seem like a simple division it turns out that in many cases it's difficult if not impossible to determine the runtime. In such cases determining if an efficient can exist is an even harder ask than it seems.</p>
 <p>First some definitions:</p>
 <ul>
 <li>Efficiency: for an algorithm to be efficient this means that at a minimum the runtime is bounded by a polynomial function on the input size. ie there exists a c for which the runtime is $O(n^c)$.</li>
@@ -5696,9 +5527,8 @@ Search Problem:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="NP1---Intro-Examples">NP1 - Intro Examples<a class="anchor-link" href="#NP1---Intro-Examples">¶</a></h2><p>Most proofs of being NP tend towards being short and crisp, and quite trivial to be frank.</p>
-<p><strong>SAT Problem</strong></p>
-<p>Recall that we first introduced the SAT problem back in section GR2, where we looked at the 2-SAT problem.</p>
+<h2 id="NP1:-Intro-and-Examples">NP1: Intro and Examples<a class="anchor-link" href="#NP1:-Intro-and-Examples">¶</a></h2><p>Most proofs of being NP tend towards being short and crisp, and quite trivial to be frank.</p>
+<h3 id="SAT-Problem">SAT Problem<a class="anchor-link" href="#SAT-Problem">¶</a></h3><p>Recall that we first introduced the SAT problem back in section GR2, where we looked at the 2-SAT problem.</p>
 <ul>
 <li>Input: Boolean formula f in CNF form, with n variables and m clauses</li>
 <li>Output: an assignment of variables if one exists, else No otherwise<ul>
@@ -5711,8 +5541,7 @@ $f = (x_3 \vee \bar{x_2} \vee \bar{x_1})\wedge(x_1)\wedge(x_2 \vee \bar{x_3})\we
 Rest assured this formula has a solution and we'll leave it as an exercise to find a solution to this</p>
 <p>Suppose we provided you with a solution to this. How long would take to verify the correctness of the solution? Pretty quick I would hope for such an easy problem instance.</p>
 <p>Let's generalize this type of problem. Suppose we provided you a formula f and an assignment of values to variables x_1,...,x_n. What would be the runtime of verification? For m clauses this would have a worst case of O(nm). O(n) for verifying that a clause is satisfied, then multiplied by m clauses. Since n x m is polynomial in the input size, this proves that SAT is in NP.</p>
-<p><strong>K-Colorings Problem</strong></p>
-<ul>
+<h3 id="K-Colorings-Problem">K-Colorings Problem<a class="anchor-link" href="#K-Colorings-Problem">¶</a></h3><ul>
 <li>Input: undirected G=(V,E), and integer k &gt; 0</li>
 <li>Output: Assign each vertex a color in {1,2,...,k} <ul>
 <li>s.t. no edge has the same color at it's endpoints, adjacent vertices are of different colors   </li>
@@ -5721,8 +5550,7 @@ Rest assured this formula has a solution and we'll leave it as an exercise to fi
 </li>
 </ul>
 <p>What would it take to verify that for a given G and a coloring that the assignment is valid? Pretty easy when you consider that this boils down to an edge having ends of different colours. So we iterate through the m-edges and check colour(v) $\ne$ colour(w). This should take no more than O(m). Which of course means that K-Colouring $\in$ NP.</p>
-<p><strong>MST Problem</strong></p>
-<ul>
+<h3 id="MST-Problem">MST Problem<a class="anchor-link" href="#MST-Problem">¶</a></h3><ul>
 <li>Input: G=(V,E) with positive edge lengths</li>
 <li>Output: Tree T with minimum weight</li>
 </ul>
@@ -5730,8 +5558,7 @@ Rest assured this formula has a solution and we'll leave it as an exercise to fi
 <p>First notice that a solution is guaranteed, unlike in our previous example problems which could return No if a solution didn't exist. So we will always have a tree.</p>
 <p>Second, suppose we're given the graph G and the tree T. First we can run DFS/BFS to verify that T is in fact a tree. Recall that these run in O(|V|+|E|). Second we can run Kruskal or Prim to verify that T is of min weight. The weight of the Tree T given to us must be of the same weight as T' that is returned by prim/kruskal. It doesn't have to be the same tree with the same edges. Only the weight matters. Further, these both run in linear time so we can conclude that verifying MST can be done in Polynomial time. This concludes the proof of MST$\in$NP.</p>
 <p>Now we move on to proving that MST$\in$P. This of course is trivial as we've already proven that both Kruskal and Prim can compute/determine a min tree in O(m log n). Thus a solution can be found in polynomial time and thus MST$\in$P.</p>
-<p><strong>Knapsack Problem</strong></p>
-<ul>
+<h3 id="Knapsack-Problem">Knapsack Problem<a class="anchor-link" href="#Knapsack-Problem">¶</a></h3><ul>
 <li>Inputs: capacity B, and n objects with integer weights $w_1,...,w_n$ and n integer values $v_1,...,v_n$</li>
 <li>Outputs: subset S of objects with a total weight$\le$B, and max total value</li>
 <li>Note: recall that there are two variants of this problem, with and without repetition</li>
@@ -5741,8 +5568,7 @@ Rest assured this formula has a solution and we'll leave it as an exercise to fi
 <p>To prove in NP we need to prove that the capacity is less than B and that the values are at a max. Proving the capacity statement is rather trivial. Proving the max value is a bit trickier. For this problem we don't have a graph representation. All we have is a DP method that takes exponential time. So we have no way to verify the solution in polynomial time.</p>
 <p>You might be thinking well if KP$\in$NP is false then KP$\not\in$NP is true, but this wrong. Frankly we don't know if there exists an algorithm to check the solution in polynomial time, but we also cannot rule it out. So we're like Shrodeingers cat, we can say which is true. Similarly there may exist an algo that finds the max subset in polynomial time, but until the day it's announced to the world neither KP$\in$P nor KP$\not\in$P are true.</p>
 <p>Let's consider a small adjustment to the above. What if instead of maximizing the value we wanted to achieve a value V.</p>
-<p><strong>Modified Knapsack: Knapsack-Search</strong></p>
-<ul>
+<h3 id="Knapsack-Search-Modified-Knapsack">Knapsack-Search Modified Knapsack<a class="anchor-link" href="#Knapsack-Search-Modified-Knapsack">¶</a></h3><ul>
 <li>Inputs: capacity B, and n objects with integer weights $w_1,...,w_n$ and n integer values $v_1,...,v_n$<ul>
 <li>and a goal g</li>
 </ul>
@@ -5767,7 +5593,7 @@ Rest assured this formula has a solution and we'll leave it as an exercise to fi
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Intuition">Intuition<a class="anchor-link" href="#Intuition">¶</a></h3><p><img src="images/NP-001.png" width="500;"/></p>
+<h3 id="Intuition">Intuition<a class="anchor-link" href="#Intuition">¶</a></h3><p><img src="CS6515_images/NP-001.png" width="500;"/></p>
 <p>Now that we've looked at several we should be good to go a bit deeper.</p>
 <p>The donut area problems are generally called NP-Complete. These are problems that can be verified in polynomial time, but they cannot be solved in polynomial time. They are also known as the hardest problems in NP, you think of these as the outermost layer of the donut.</p>
 <p>Consider:</p>
@@ -5787,7 +5613,7 @@ Rest assured this formula has a solution and we'll leave it as an exercise to fi
 </li>
 </ul>
 <p>For example if we use the SAT problem then "SAT is NP-Complete" means that SAT is the hardest problem in NP, which in turn means that If we can solve a problem like SAT in poly-time then this we can solve every problem in NP in poly-time. This would imply that there is what's called a reduction, from any problem in NP to SAT. ie MST, Colorings, TSP are reducible to SAT. Of course the reader is reminded that the reduction is an implication of being NP-Complete. See the visual below, Conversely if $P\ne NP$ then of course $SAT \ne P$. At this time there is no known polynomial time algo for SAT, there is also no known proof that $P\ne NP$. So we're in a bit of a limbo.</p>
-<p><img src="images/NP-002.png" width="300;"/></p>
+<p><img src="CS6515_images/NP-002.png" width="300;"/></p>
 <p>Let's look at how reduction works. Suppose we have problems A &amp; B. For arguements sake think of A as the coloring problem and B as the SAT problem. We want to show/prove the reduction from A to B, denoted $A \rightarrow B$ or $A \le B$. This is read B is at least as computationally hard as A. It means that when we show a reduction from A to B, we're showing that B is at least as hard computationally as A. So if we can solve B then we can solve A.</p>
 <p><strong>Formally:</strong></p>
 <ul>
@@ -5805,7 +5631,7 @@ Rest assured this formula has a solution and we'll leave it as an exercise to fi
 </ul>
 </li>
 </ul>
-<p><img src="images/NP-003.png" width="500;"/></p>
+<p><img src="CS6515_images/NP-003.png" width="500;"/></p>
 <p>Let's go through this model. I represents the input Instance for the problem, so let's Say we're working with a coloring problem. This would be a graph G and integer K, so we need a function f that can transform these into the appropriate input for SAT, which you may recall is a boolean set of assignments. In short F(G,k) is the input for SAT.</p>
 <p>Then SAT can do it's thing, we need not concern ourselves with what it's doing. And it spits out it's response. The No is trivial, but when we a solution S it will be in the form that SAT operates under. Consequently this will again need to be transformed back to the form that would represent a solution to the initial problem, Colorings.</p>
 <p>a) f(Colorings Input) $\rightarrow$ f(G,K) input for SAT<br/>
@@ -5852,7 +5678,7 @@ Then to show the IS problem is NP-Complete</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="NP2---NP-Completeness-Proof">NP2 - NP-Completeness Proof<a class="anchor-link" href="#NP2---NP-Completeness-Proof">¶</a></h2><p>In this section we will illustrate an example of an NP-completeness proof. We will do prove that the 3SAT problem is NP-Complete. In doing so we will make use of the fact that SAT is NP-Complete, which was first proven by Steven Cook &amp; Leonid Levin in 1971. Incidentally, after Cook &amp; Levin proved SAT NP-Completeness, Dick Karp in 1972 used it to prove that another 21 problems were also NP-Complete. We will look at a few of these problems, beginning with 3SAT.</p>
+<h2 id="NP2:-NP-Complete-Proofs---Pt1">NP2: NP-Complete Proofs - Pt1<a class="anchor-link" href="#NP2:-NP-Complete-Proofs---Pt1">¶</a></h2><p>In this section we will illustrate an example of an NP-completeness proof. We will do prove that the 3SAT problem is NP-Complete. In doing so we will make use of the fact that SAT is NP-Complete, which was first proven by Steven Cook &amp; Leonid Levin in 1971. Incidentally, after Cook &amp; Levin proved SAT NP-Completeness, Dick Karp in 1972 used it to prove that another 21 problems were also NP-Complete. We will look at a few of these problems, beginning with 3SAT.</p>
 <h3 id="3SAT-NP-Complete">3SAT NP-Complete<a class="anchor-link" href="#3SAT-NP-Complete">¶</a></h3><p>Recall the parameters of the 3SAT Problem</p>
 <ul>
 <li>Input: <ul>
@@ -5884,7 +5710,7 @@ Recall</p>
 </ul>
 </li>
 </ul>
-<p><img src="images/NP-004.png" width="500;"/></p>
+<p><img src="CS6515_images/NP-004.png" width="500;"/></p>
 <p>How do we find f'? f is the input to SAT and may very well contain clauses w more than 3 literals. So our f' must be able to transform any number of literals into clauses of at most 3 literals. Let's look at an example to see how we may transform</p>
 <p>Consider f = $(x_3) \wedge (\bar{x_2} \vee x_3 \vee \bar{x_1} \vee \bar{x_4}) \wedge (x_2 \vee x_1)$</p>
 <ul>
@@ -6043,7 +5869,7 @@ $C \implies C'$,</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="NP3---NP-Complete-Proofs">NP3 - NP-Complete Proofs<a class="anchor-link" href="#NP3---NP-Complete-Proofs">¶</a></h2><p>In this section we will look at some more examples of NP-completness proofs in particular those focused on Graph Problems.</p>
+<h2 id="NP3:-NP-Complete-Proofs---Pt2">NP3: NP-Complete Proofs - Pt2<a class="anchor-link" href="#NP3:-NP-Complete-Proofs---Pt2">¶</a></h2><p>In this section we will look at some more examples of NP-completness proofs in particular those focused on Graph Problems.</p>
 <ul>
 <li>IS: Independent Sets</li>
 <li>IS Clique</li>
@@ -6062,7 +5888,7 @@ $C \implies C'$,</p>
 For an undirected graph G=(V,E), subset $S \subset V$ is an independent set if no edges are contained in S.<br/>
 ie $\forall x,y \in S; \; (x,y) \not\in E$</p>
 <p>It's easy to find trivial independent sets. The null set is an independent set, as is the set containing just a single node, a singleton vertex. We will be looking for the maximum independent set, the set with the largest number of vertices. Consider the below illustration. The red vertices are an independent set as there is no edge between any two vertices in red. Also note that adding any of the white nodes would create a dependency and the set would no longer be independent.</p>
-<p><img src="images/NP-005.png" width="250;"/></p>
+<p><img src="CS6515_images/NP-005.png" width="250;"/></p>
 <p>First, consider whether Maximum Independent Sets, MIS, is "known to be" in NP or not. If you guessed this to be false then you would be correct. Given a solution S there is no way to verify, in poly-time, that it is of max size without solving the source problem, ie running the base algorithm. This can only be done if P=NP. Recall that we encountered a similar situation when we examined the knapsack problem. Since we could not verify a maximum directly we took a search style approach where we verified that the solution value was less than a boundary value. We incremented the boundary value until we found no solution.</p>
 <p>We will take a similar approach and reformat the MIS problem to the a more general IS problem:</p>
 <ul>
@@ -6088,23 +5914,23 @@ We begin by creating a graph G with 3 vertices: $x_1,\bar{x_3},x_2)$, and we add
 <li>but since g=m, our solution must have exactly 1 vertex/clause. This corresponds to the satisfied literal in the clause  </li>
 </ul>
 <p>Consider the following example, (NB the assignement here is random and produces a contradiction. It is not a valid Solution to the cnf formula on the left side.<br/>
-<img src="images/NP-006.png" width="250;"/></p>
+<img src="CS6515_images/NP-006.png" width="250;"/></p>
 <p>The above example can be further refined, by adding variable edges. This helps us to avoid invalid assignments that lead to contraditions.</p>
 <p><strong>Variable Edges</strong><br/>
 Consider the example above, add an edge between literals of the same variable. In our case add an edge from $x_1$ to $\bar{x_1}$.</p>
 <ul>
 <li>For all $x_i$, add edge between all $x_i$ and $\bar{x_i}$</li>
 </ul>
-<p><img src="images/NP-007.png" width="250;"/></p>
+<p><img src="CS6515_images/NP-007.png" width="250;"/></p>
 <p>Here's another example which is more fulsome:</p>
 <p>The first step is to write out the literals as nodes, in groups corresponding to clauses
-<img src="images/NP-008.png" width="250;"/></p>
+<img src="CS6515_images/NP-008.png" width="250;"/></p>
 <p>The next step is to connect the literals in a clause, these are our clause edges
-<img src="images/NP-009.png" width="250;"/></p>
+<img src="CS6515_images/NP-009.png" width="250;"/></p>
 <p>The next step is to connect literals to their negations, these are our variable edges
-<img src="images/NP-010.png" width="250;"/></p>
+<img src="CS6515_images/NP-010.png" width="250;"/></p>
 <p>Let's take an example of an IS, of size 4, from this graph. We've circled the 4 vertices in red
-<img src="images/NP-011.png" width="250;"/></p>
+<img src="CS6515_images/NP-011.png" width="250;"/></p>
 <p>This leads to the assignment x=F,y=F,w=F,z=?. You'll observe that it doesn't matter what z is. Further more this assignment satisfies the original formula f. This observation can, and will, be generalized for our proof.</p>
 <p>More formally:</p>
 <ul>
@@ -6146,7 +5972,7 @@ A problem that is NP-Hard is a problem that is not known to be in NP, but is at 
 </ul>
 <p>Small cliques tend to be trivial to find. For instance 2 vertices with an edge between them is a trivial clique. The null set is also a trivial clique. We will generally want to focus on the largest Clique, or the clique of max size.</p>
 <p>Example, Clique elements are in red
-<img src="images/NP-012.png" width="300;"/></p>
+<img src="CS6515_images/NP-012.png" width="300;"/></p>
 <p>This is in fact also a max clique. To understand why look/Consider each white node. Can any of the white nodes be added? No! none of them would retain the fully connected nature of the the red nodes.</p>
 <p>Let's now formalize the Clique problem structure:</p>
 <ul>
@@ -6203,7 +6029,7 @@ Given the input G=(V,E) and a goal g for the IS problem</p>
 <strong>Alt Define:</strong> For an undirected graph G=(V,E) $S \subset V$ is vertex cover if S includes one endpoint of every edge<br/>
 Formally: For every $(x,y)\in E$ either $x \in S$ and/or $y \in S$</p>
 <p>Consider the below image. At least one endpoint of each edge is included, both endpoints can be included but this is not required by the definition. Obviously there is the trivial case of simply including all vertices. So as you can imagine we will generally be searching for a minimum vertex cover
-<img src="images/NP-013.png" width="300;"/></p>
+<img src="CS6515_images/NP-013.png" width="300;"/></p>
 <p><strong>Problem Structure</strong></p>
 <ul>
 <li>Input: undirected G=(V,E) &amp; budget b</li>
@@ -6220,7 +6046,7 @@ Given an input to VC, (G,b), and a proposed solution S, can we verify that S is 
 As per our usual approach we want to choose a known problem in NP that we can use to perform a reduction. Because VC is a graph problem it makes the most sense to choose either IS or Clique. Since these are quite similar it shouldn't make much of a difference.</p>
 <p>We choose IS and proceed to construct our reduction: $IS \rightarrow VC$. Take another look at the example of the vertex cover just above. Notice anything? Hint: Focus on the white nodes. You may notice that they form an independent set. Not maximal by any means but independent nonetheless.</p>
 <p>Here's our example graph again, but this time the nodes painted red form a minimal vertex cover. 
-<img src="images/NP-014.png" width="250;"/>
+<img src="CS6515_images/NP-014.png" width="250;"/>
 Again we see the white nodes forming an independent set.</p>
 <p>I'm sure you're beginning to pick up on where this is going.</p>
 <p><strong>Claim</strong> S is a Vertex Cover $\iff$ $\bar{S}$ is an independent set. Once we prove this claim the reduction of IS to VC will be much simpler. The proof of the claim is rather straight forward.</p>
@@ -6248,7 +6074,7 @@ Given a solution S for VC we return $\bar{S}$ as a solution to IS. If there no s
 <h3 id="Travelling-Salesman-Problem">Travelling Salesman Problem<a class="anchor-link" href="#Travelling-Salesman-Problem">¶</a></h3><p>from Youtube (<a href="https://www.youtube.com/watch?v=0sQ37m3whP4&amp;list=PLQfaHkBRINsxngvO_CIM74kUauPd-BGa3">https://www.youtube.com/watch?v=0sQ37m3whP4&amp;list=PLQfaHkBRINsxngvO_CIM74kUauPd-BGa3</a>)</p>
 <p><strong>Problem Formulation</strong><br/>
 Given a graph G=(V,E) and vertices $v_1$ and $v_n$ in that graph, what is the minimum weight path from $v_1$ to $v_n$ that visits every vertex exactly once.</p>
-<p><img src="images/NP-020.png" width="350;"/></p>
+<p><img src="CS6515_images/NP-020.png" width="350;"/></p>
 </div>
 </div>
 </div>
@@ -6315,7 +6141,7 @@ We choose 3SAT as our known problem and demonstrate the reduction: $3SAT \righta
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Here's an example. Rows represent literals and the columns represent the variables and the clauses. 
-<img src="images/NP-015.png" width="350;"/></p>
+<img src="CS6515_images/NP-015.png" width="350;"/></p>
 <p>We begin by placing ones along the diagonal for the variables $x_1,x_2,x_3$, and 0 in all other entries. Note that this is only for the variables so as to ensure each variable is in the solution/assignment. To ensure it is a satifying assignment we will use the columns for the clauses.</p>
 <p>So digit n+j correspond to clause $C_j$.</p>
 <ul>
@@ -6324,11 +6150,11 @@ We choose 3SAT as our known problem and demonstrate the reduction: $3SAT \righta
 What this does is encode the clause into the literals $v_i,v'_i$  </li>
 </ul>
 <p>For our example we get the following
-<img src="images/NP-016.png" width="350;"/></p>
+<img src="CS6515_images/NP-016.png" width="350;"/></p>
 <p>Now let's take a minute to think about the row t for each clause column. In order to satisfy the clause we require 1,2, or 3 of the literals to be satisfied. So we take the max, 3, as the sum for each column. Now of course all three literals may not be satisfied. If not then we will need the buffer numbers in order to make up the difference. The buffer numbers are represented by the s variables. Consequently if only 1 literal in a clause is satisfied then we can make use of the buffer numbers to ensure the summation which in turn will satisfy the clause. 
-<img src="images/NP-017.png" width="350;"/></p>
+<img src="CS6515_images/NP-017.png" width="350;"/></p>
 <p>Each row can now represent a number. Just read it from the left to the right
-<img src="images/NP-018.png" width="350;"/></p>
+<img src="CS6515_images/NP-018.png" width="350;"/></p>
 <p>Let's summarize our clause reduction</p>
 <ul>
 <li>Digit n+j corresponds to clause $C_j$            <ul>
@@ -6485,7 +6311,7 @@ Now later, many other problems were showed to be undecidable, but the halting pr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="LP0-Linear-Programming">LP0-Linear Programming<a class="anchor-link" href="#LP0-Linear-Programming">¶</a></h2><p>Linear programming is a very general technique for solving optimization problems.
+<h2 id="LP0:-Linear-Programming">LP0: Linear Programming<a class="anchor-link" href="#LP0:-Linear-Programming">¶</a></h2><p>Linear programming is a very general technique for solving optimization problems.
 It handles any problem that can be formulated as an optimization over a set of variables with
 a goal known as the objective function and the constraints can all be expressed as linear functions of the variables.</p>
 <p>We'll see that max flow can be formulated as a linear program.
@@ -6562,11 +6388,11 @@ an approximation algorithm to the classic SAT problem.</p>
 </li>
 </ul>
 <p>For a minute let's consider this from a geometric point of view in a 2 dimensional plane. (2dim for the 2 variables). For now let's ignore the objective function and just look at the five constraints. Each of the five constraints is a half plane. (recall that equality would produce a line, so an inequality produces a half plane containing all feasible values). In this situation all 5 constraints will come together to form a bounded area that is the intersection of all their planes. All points in the intersection are the feasible values of X where X is a solution to the objective function. Of course only one of these will be a max, optimal, value.</p>
-<p><img src="images/LP-001.png" width="350;"/></p>
+<p><img src="CS6515_images/LP-001.png" width="350;"/></p>
 <p>Consider the above diagram which illustrates our problem geometrically. Now we can apply our objective function using values inside our feasible region.</p>
 <p>Example 1: $x_1 + 6x_2 = 600$ is one solution in the feasible region but is certainly not optimal.<br/>
 Example 2: $x_1 + 6x_2 = 1300$ is another solution and is in fact the optimal solution.</p>
-<p><img src="images/LP-002.png" width="350;"/></p>
+<p><img src="CS6515_images/LP-002.png" width="350;"/></p>
 <p>Now, this was a simple two dimensional example. Let's look at a simple three dimensional example and then we'll get some idea of how it generalizes to higher dimensions.</p>
 <p>Let's pause for a moment to consider from key issues that could arise:</p>
 <ul>
@@ -6620,7 +6446,7 @@ Example 2: $x_1 + 6x_2 = 1300$ is another solution and is in fact the optimal so
 <li>we always add this as it doesn't make sense otherwise</li>
 </ul>
 <p>Here's a geometric view
-<img src="images/NP-019.png" width="450;"/></p>
+<img src="CS6515_images/NP-019.png" width="450;"/></p>
 </div>
 </div>
 </div>
@@ -6812,7 +6638,7 @@ else
 </ul>
 </li>
 </ul>
-<p><img src="images/LP-003.png" width="350;"/></p>
+<p><img src="CS6515_images/LP-003.png" width="350;"/></p>
 <ul>
 <li>Exception 2: When the LP is unbounded<ul>
 <li>this can happen when the optimal is arbitrarily large</li>
@@ -7010,7 +6836,7 @@ t/f</p>
 </li>
 </ul>
 <p><strong>NB: The Dual LP must also have non-negative constraints!!</strong></p>
-<p><img src="images/NP-021.png" width="350;"/></p>
+<p><img src="CS6515_images/NP-021.png" width="350;"/></p>
 <p>Now things can get a little weird</p>
 <ul>
 <li>Suppose you have a primal lp, call it $LP_{primal}$</li>
@@ -7594,7 +7420,7 @@ Suppose we have a series of positive numbers : $x_i,...,x_k \ge 0$</p>
 </li>
 <li>so just check the values at 0 and 1, and you're good to go </li>
 </ul>
-<p><img src="images/LP-004.png" width="450;"/></p>
+<p><img src="CS6515_images/LP-004.png" width="450;"/></p>
 <p>Finally we can put all the pieces together</p>
 <ul>
 <li>Pr($C_j$ is satisfied)</li>
@@ -7635,7 +7461,7 @@ Suppose we have a series of positive numbers : $x_i,...,x_k \ge 0$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Comparison:-Simple-v-LP">Comparison: Simple v LP<a class="anchor-link" href="#Comparison:-Simple-v-LP">¶</a></h3><p>At the start of this section we said there would be three possible methods.</p>
 <p>first let's compare the two previous methods on each of the problems examined so far</p>
-<p><img src="images/LP-005.png" width="450;"/></p>
+<p><img src="CS6515_images/LP-005.png" width="450;"/></p>
 <p>Suppose we took the best of each approach? The max in that row? Then the min approximation would be 3/4. Caused by the k=2 case.
 Our third and final algo is the most basic of all, which just takes the max.</p>
 <p>Given a formula f</p>
@@ -7655,7 +7481,7 @@ Our third and final algo is the most basic of all, which just takes the max.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="End-of-Notes">End of Notes<a class="anchor-link" href="#End-of-Notes">¶</a></h2><p>Hooray you made it to the bottom</p>
-<p><img alt="SegmentLocal" src="images/dancing_cat.gif" title="segment"/></p>
+<p><img alt="SegmentLocal" src="CS6515_images/dancing_cat.gif" title="segment"/></p>
 </div>
 </div>
 </div>
@@ -7667,7 +7493,7 @@ Our third and final algo is the most basic of all, which just takes the max.</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="EX1-:-GR4-Markov-Chains-and-Page-Rank---todo">EX1 : GR4 Markov Chains and Page Rank - todo<a class="anchor-link" href="#EX1-:-GR4-Markov-Chains-and-Page-Rank---todo">¶</a></h2><p>In our last an final section we present the page rank algorithm. For the uninitiated the page-rank algorithm is the mathematical formulation of the importance of a webpage. It was designed by the Google's founders Sergey Brin and Larry page and it's most well known application is Google's search results.</p>
 <p>But before we jump into the algorithm we will need to review some mathematics. In particular the page rank algorithm is an example of a Markov Chain.</p>
-<p><img src="images/GR4-001.png" width="450;"> 
+<p><img src="CS6515_images/GR4-001.png" width="450;"> 
 Here' a simple example of a markov chain as a directed graph with probabilities. Each vertex is intended to represent a student's state. Each edge weight is the probability that the student moves along that edge from the source state/vertex to the destination/state.</img></p>
 <ul>
 <li>These provide a mapping between states.        </li>
@@ -7723,7 +7549,7 @@ from our P^2 matrix
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img src="images/GR4-001.png" width="450;"/></p>
+<p><img src="CS6515_images/GR4-001.png" width="450;"/></p>
 </div>
 </div>
 </div>
@@ -7733,7 +7559,7 @@ from our P^2 matrix
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img src="images/NP-003.png" width="500;"/></p>
+<p><img src="CS6515_images/NP-003.png" width="500;"/></p>
 </div>
 </div>
 </div>
@@ -7744,7 +7570,7 @@ from our P^2 matrix
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>$\color{red}{\text{Bernoulli}}$</strong></p>
-<p><img src="images/GA1-011.png" width="500;"/></p>
+<p><img src="CS6515_images/GA1-011.png" width="500;"/></p>
 </div>
 </div>
 </div>
@@ -7815,8 +7641,8 @@ from our P^2 matrix
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Feasible-&amp;-Saturating-Solution">Feasible &amp; Saturating Solution<a class="anchor-link" href="#Feasible-&amp;-Saturating-Solution">¶</a></h3><p><img src="images/MF5-010.png" width="500;"/></p>
-<p><img src="images/MF5-011.png" width="500;"/></p>
+<h3 id="Feasible-&amp;-Saturating-Solution">Feasible &amp; Saturating Solution<a class="anchor-link" href="#Feasible-&amp;-Saturating-Solution">¶</a></h3><p><img src="CS6515_images/MF5-010.png" width="500;"/></p>
+<p><img src="CS6515_images/MF5-011.png" width="500;"/></p>
 </div>
 </div>
 </div>
