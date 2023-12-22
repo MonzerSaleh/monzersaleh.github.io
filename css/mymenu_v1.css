@@ -27,7 +27,7 @@ table {
 }
 
 body {
-  font: 100% "roboto", "Trebuchet MS", sans-serif;
+  font: 80% "roboto", "Trebuchet MS", sans-serif;
   background-color:#EF476F;
 }
 
@@ -143,11 +143,12 @@ label > span {
 /*
 position: fixed;
 position: sticky;top: 0;width: 20%;	float: left; height: 1000px; 
+background-color: green;
 */
 #leftMenu {
 	margin:4px, 4px; 
 	padding:4px; 
-	background-color: green; 
+	 
 	width: 20%; 
 	height: 100%; 
 	overflow-x: hidden; 
