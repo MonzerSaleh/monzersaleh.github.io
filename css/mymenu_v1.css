@@ -149,7 +149,7 @@ background-color: green;
 	margin:4px, 4px; 
 	padding:4px; 
 	 
-	width: 20%; 
+	width: 30%; 
 	height: 100%; 
 	overflow-x: hidden; 
 	overflow-x: auto; 
@@ -158,6 +158,6 @@ background-color: green;
 	position: fixed;
 }
 #contentBody {
-	width: 75%;
-	padding-left: 20%;
+	width: 60%;
+	padding-left: 30%;
 }
